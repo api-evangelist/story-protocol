@@ -1,0 +1,147 @@
+openapi: 3.1.0
+info:
+  title: Story Protocol API Reference Collections Modules API
+  version: v1
+  contact: {}
+servers:
+- url: https://api.storyapis.com
+  description: Production server
+tags:
+- name: Modules
+paths:
+  /api/v3/modules:
+    post:
+      description: Retrieve a paginated, filtered list of Modules
+      parameters:
+      - description: API Key
+        in: header
+        name: X-Api-Key
+        required: true
+        type: string
+      - description: Chain Destination
+        in: header
+        name: X-Chain
+        required: true
+        type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/github_com_storyprotocol_protocol-api_api_internal_models_protocolv2.ModuleRequestBody'
+        description: Query Parameters must be wrapped in options object (though it can be left empty) ❗️ 👀. OrderBy must be blockNumber or empty.
+        required: true
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/github_com_storyprotocol_protocol-api_api_internal_models_protocolv1.ModulesResponse'
+          description: OK
+      security:
+      - ApiKeyAuth: []
+      summary: List Modules
+      tags:
+      - Modules
+  /api/v3/modules/{moduleId}:
+    get:
+      description: Retrieve a Module
+      parameters:
+      - description: API Key
+        in: header
+        name: X-Api-Key
+        required: true
+        type: string
+      - description: Chain Destination
+        in: header
+        name: X-Chain
+        required: true
+        type: string
+      - description: Module ID
+        in: path
+        name: moduleId
+        required: true
+        type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/github_com_storyprotocol_protocol-api_api_internal_models_protocolv1.ModuleResponse'
+          description: OK
+      security:
+      - ApiKeyAuth: []
+      summary: Get a Module
+      tags:
+      - Modules
+components:
+  schemas:
+    github_com_storyprotocol_protocol-api_api_internal_models_protocolv1.ModuleResponse:
+      properties:
+        data:
+          $ref: '#/components/schemas/github_com_storyprotocol_protocol-api_api_internal_models_protocolv1.Module'
+      type: object
+    github_com_storyprotocol_protocol-api_api_internal_models_protocolv1.ModulesResponse:
+      properties:
+        data:
+          items:
+            $ref: '#/components/schemas/github_com_storyprotocol_protocol-api_api_internal_models_protocolv1.Module'
+          type: array
+        next:
+          type: string
+        prev:
+          type: string
+      type: object
+    github_com_storyprotocol_protocol-api_api_internal_models_protocolv2.ModuleRequestBody:
+      properties:
+        options:
+          $ref: '#/components/schemas/github_com_storyprotocol_protocol-api_api_internal_models_protocolv2.ModuleQueryOptions'
+      type: object
+    github_com_storyprotocol_protocol-api_api_internal_models_protocolv1.Module:
+      properties:
+        blockNumber:
+          type: string
+        blockTimestamp:
+          type: string
+        deletedAt:
+          type: string
+        id:
+          type: string
+        module:
+          type: string
+        moduleType:
+          type: string
+        moduleTypeInterfaceId:
+          type: string
+        name:
+          type: string
+        transactionHash:
+          type: string
+      type: object
+    github_com_storyprotocol_protocol-api_api_internal_models_protocolv2.ModuleQueryOptions:
+      properties:
+        orderBy:
+          type: string
+        orderDirection:
+          type: string
+        pagination:
+          properties:
+            after:
+              type: string
+            before:
+              type: string
+            limit:
+              type: integer
+          type: object
+        where:
+          properties:
+            blockNumber:
+              type: string
+            id:
+              type: string
+          type: object
+      type: object
+  securitySchemes:
+    ApiKeyAuth:
+      in: header
+      name: X-Api-Key
+      type: apiKey

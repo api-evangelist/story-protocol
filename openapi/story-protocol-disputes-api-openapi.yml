@@ -1,0 +1,165 @@
+openapi: 3.1.0
+info:
+  title: Story Protocol API Reference Collections Disputes API
+  version: v1
+  contact: {}
+servers:
+- url: https://api.storyapis.com
+  description: Production server
+tags:
+- name: Disputes
+paths:
+  /api/v3/disputes:
+    post:
+      description: Retrieve a paginated, filtered list of Disputes
+      parameters:
+      - description: API Key
+        in: header
+        name: X-Api-Key
+        required: true
+        type: string
+      - description: Chain Destination
+        in: header
+        name: X-Chain
+        required: true
+        type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/github_com_storyprotocol_protocol-api_api_internal_models_protocolv2.DisputeRequestBody'
+        description: Query Parameters must be wrapped in options object (though it can be left empty) ❗️ 👀. OrderBy must be blockNumber or empty.
+        required: true
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/github_com_storyprotocol_protocol-api_api_internal_models_protocolv1.DisputesResponse'
+          description: OK
+      security:
+      - ApiKeyAuth: []
+      summary: List Disputes
+      tags:
+      - Disputes
+  /api/v3/disputes/{disputeId}:
+    get:
+      description: Retrieve a Dispute
+      parameters:
+      - description: Dispute ID
+        in: path
+        name: disputeId
+        required: true
+        type: string
+      - description: API Key
+        in: header
+        name: X-Api-Key
+        required: true
+        type: string
+      - description: Chain Destination
+        in: header
+        name: X-Chain
+        required: true
+        type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/github_com_storyprotocol_protocol-api_api_internal_models_protocolv1.DisputeResponse'
+          description: OK
+      security:
+      - ApiKeyAuth: []
+      summary: Get a Dispute
+      tags:
+      - Disputes
+components:
+  schemas:
+    github_com_storyprotocol_protocol-api_api_internal_models_protocolv1.DisputesResponse:
+      properties:
+        data:
+          items:
+            $ref: '#/components/schemas/github_com_storyprotocol_protocol-api_api_internal_models_protocolv1.Dispute'
+          type: array
+      type: object
+    github_com_storyprotocol_protocol-api_api_internal_models_protocolv1.Dispute:
+      properties:
+        arbitrationPolicy:
+          type: string
+        blockNumber:
+          $ref: '#/components/schemas/big.Int'
+        blockTimestamp:
+          $ref: '#/components/schemas/big.Int'
+        counterEvidenceHash:
+          type: string
+        currentTag:
+          type: string
+        data:
+          type: string
+        deletedAt:
+          $ref: '#/components/schemas/big.Int'
+        disputeTimestamp:
+          $ref: '#/components/schemas/big.Int'
+        evidenceHash:
+          type: string
+        id:
+          $ref: '#/components/schemas/big.Int'
+        initiator:
+          type: string
+        liveness:
+          $ref: '#/components/schemas/big.Int'
+        logIndex:
+          $ref: '#/components/schemas/big.Int'
+        status:
+          type: string
+        targetIpId:
+          type: string
+        targetTag:
+          type: string
+        transactionHash:
+          type: string
+        umaLink:
+          type: string
+      type: object
+    github_com_storyprotocol_protocol-api_api_internal_models_protocolv1.DisputeResponse:
+      properties:
+        data:
+          $ref: '#/components/schemas/github_com_storyprotocol_protocol-api_api_internal_models_protocolv1.Dispute'
+      type: object
+    github_com_storyprotocol_protocol-api_api_internal_models_protocolv2.DisputeQueryOptions:
+      properties:
+        orderBy:
+          type: string
+        orderDirection:
+          type: string
+        pagination:
+          properties:
+            limit:
+              type: integer
+          type: object
+        where:
+          properties:
+            blockNumber:
+              type: string
+            blockNumberLte:
+              type: string
+            id:
+              type: string
+            initiator:
+              type: string
+            targetIpId:
+              type: string
+          type: object
+      type: object
+    github_com_storyprotocol_protocol-api_api_internal_models_protocolv2.DisputeRequestBody:
+      properties:
+        options:
+          $ref: '#/components/schemas/github_com_storyprotocol_protocol-api_api_internal_models_protocolv2.DisputeQueryOptions'
+      type: object
+    big.Int:
+      type: object
+  securitySchemes:
+    ApiKeyAuth:
+      in: header
+      name: X-Api-Key
+      type: apiKey

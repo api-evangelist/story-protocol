@@ -1,0 +1,316 @@
+openapi: 3.1.0
+info:
+  title: Story Protocol API Reference Collections IPLicenseTerms API
+  version: v1
+  contact: {}
+servers:
+- url: https://api.storyapis.com
+  description: Production server
+tags:
+- name: IPLicenseTerms
+paths:
+  /api/v3/detailed-ip-license-terms:
+    post:
+      description: Retrieve detailed IP License Terms associated with list of IP ID
+      parameters:
+      - description: API Key
+        in: header
+        name: X-Api-Key
+        required: true
+        type: string
+      - description: Chain Destination
+        in: header
+        name: X-Chain
+        required: true
+        type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/github_com_storyprotocol_protocol-api_api_internal_models_protocolv1.DetailedIPLicenseTermsRequestBody'
+        description: Query Parameters must be wrapped in options object (though it can be left empty) ❗️ 👀. OrderBy must be blockNumber or empty.
+        required: true
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/github_com_storyprotocol_protocol-api_api_internal_models_protocolv2.DetailedTermsResponse'
+          description: OK
+      security:
+      - ApiKeyAuth: []
+      summary: List detailed ip license term
+      tags:
+      - IPLicenseTerms
+  /api/v3/licenses/ip/terms:
+    post:
+      description: Retrieve a paginated, filtered list of IPLicenseTerms
+      parameters:
+      - description: API Key
+        in: header
+        name: X-Api-Key
+        required: true
+        type: string
+      - description: Chain Destination
+        in: header
+        name: X-Chain
+        required: true
+        type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/github_com_storyprotocol_protocol-api_api_internal_models_protocolv2.IPLicenseTermsRequestBody'
+        description: Query Parameters must be wrapped in options object (though it can be left empty) ❗️ 👀. OrderBy must be blockNumber or empty.
+        required: true
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/github_com_storyprotocol_protocol-api_api_internal_models_protocolv1.IPLicenseTermsResponse'
+          description: OK
+      security:
+      - ApiKeyAuth: []
+      summary: List IPLicenseTerms
+      tags:
+      - IPLicenseTerms
+  /api/v3/licenses/ip/terms/{ipId}:
+    get:
+      description: Retrieve IP License Terms associated with an IP ID
+      parameters:
+      - description: API Key
+        in: header
+        name: X-Api-Key
+        required: true
+        type: string
+      - description: Chain Destination
+        in: header
+        name: X-Chain
+        required: true
+        type: string
+      - description: IP ID
+        in: path
+        name: ipId
+        required: true
+        type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/github_com_storyprotocol_protocol-api_api_internal_models_protocolv1.IPLicenseTermsResponse'
+          description: OK
+      security:
+      - ApiKeyAuth: []
+      summary: Get IP License Terms for an IP
+      tags:
+      - IPLicenseTerms
+  /api/v3/licenses/terms/default:
+    get:
+      description: Retrieve default license term
+      parameters:
+      - description: API Key
+        in: header
+        name: X-Api-Key
+        required: true
+        type: string
+      - description: Chain Destination
+        in: header
+        name: X-Chain
+        required: true
+        type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/github_com_storyprotocol_protocol-api_api_internal_models_protocolv2.DetailedTermsDefaultResponse'
+          description: OK
+      security:
+      - ApiKeyAuth: []
+      summary: Get default license term
+      tags:
+      - IPLicenseTerms
+components:
+  schemas:
+    github_com_storyprotocol_protocol-api_api_internal_models_protocolv1.DetailedIPLicenseTermsQueryOptions:
+      properties:
+        where:
+          properties:
+            ipIds:
+              items:
+                type: string
+              type: array
+          type: object
+      type: object
+    github_com_storyprotocol_protocol-api_api_internal_models_protocolv2.DetailedTermsDefaultResponse:
+      properties:
+        data:
+          $ref: '#/components/schemas/github_com_storyprotocol_protocol-api_api_internal_models_protocolv2.DetailedTerms'
+      type: object
+    github_com_storyprotocol_protocol-api_api_internal_models_protocolv1.IPLicenseTermsResponse:
+      properties:
+        data:
+          items:
+            $ref: '#/components/schemas/github_com_storyprotocol_protocol-api_api_internal_models_protocolv1.IPLicenseTerm'
+          type: array
+        next:
+          type: string
+        prev:
+          type: string
+      type: object
+    github_com_storyprotocol_protocol-api_api_internal_models_protocolv2.IPLicenseTermsQueryOptions:
+      properties:
+        orderBy:
+          type: string
+        orderDirection:
+          type: string
+        pagination:
+          properties:
+            after:
+              type: string
+            before:
+              type: string
+            limit:
+              type: integer
+          type: object
+        where:
+          properties:
+            blockNumber:
+              type: string
+            id:
+              type: string
+            ipId:
+              type: string
+          type: object
+      type: object
+    github_com_storyprotocol_protocol-api_api_internal_models_protocolv2.DetailedTerms:
+      properties:
+        disabled:
+          type: boolean
+        id:
+          type: string
+        ipId:
+          type: string
+        licenseTemplate:
+          $ref: '#/components/schemas/github_com_storyprotocol_protocol-api_api_internal_models_protocolv1.LicenseTemplate'
+        licenseTemplateId:
+          type: string
+        licensingConfig:
+          $ref: '#/components/schemas/github_com_storyprotocol_protocol-api_api_internal_models_protocolv1.LicensingConfig'
+        terms:
+          $ref: '#/components/schemas/github_com_storyprotocol_protocol-api_api_internal_models_protocolv1.Term'
+      type: object
+    github_com_storyprotocol_protocol-api_api_internal_models_protocolv1.DetailedIPLicenseTermsRequestBody:
+      properties:
+        options:
+          $ref: '#/components/schemas/github_com_storyprotocol_protocol-api_api_internal_models_protocolv1.DetailedIPLicenseTermsQueryOptions'
+      type: object
+    github_com_storyprotocol_protocol-api_api_internal_models_protocolv1.IPLicenseTerm:
+      properties:
+        blockNumber:
+          type: string
+        blockTime:
+          type: string
+        disabled:
+          type: boolean
+        id:
+          type: string
+        ipId:
+          type: string
+        licenseTemplate:
+          type: string
+        licenseTermsId:
+          type: string
+        licensingConfig:
+          $ref: '#/components/schemas/github_com_storyprotocol_protocol-api_api_internal_models_protocolv1.LicensingConfig'
+      type: object
+    github_com_storyprotocol_protocol-api_api_internal_models_protocolv1.LicensingConfig:
+      properties:
+        commercialRevShare:
+          type: integer
+        disabled:
+          type: boolean
+        expectGroupRewardPool:
+          type: string
+        expectMinimumGroupRewardShare:
+          type: integer
+        hookData:
+          type: string
+        isSet:
+          type: boolean
+        licensingHook:
+          type: string
+        mintingFee:
+          type: string
+      type: object
+    github_com_storyprotocol_protocol-api_api_internal_models_protocolv2.DetailedTermsResponse:
+      properties:
+        data:
+          items:
+            $ref: '#/components/schemas/github_com_storyprotocol_protocol-api_api_internal_models_protocolv2.DetailedTerms'
+          type: array
+      type: object
+    github_com_storyprotocol_protocol-api_api_internal_models_protocolv1.Term:
+      properties:
+        commercialAttribution:
+          type: boolean
+        commercialRevCeiling:
+          $ref: '#/components/schemas/big.Int'
+        commercialRevShare:
+          $ref: '#/components/schemas/big.Int'
+        commercialUse:
+          type: boolean
+        commercializerChecker:
+          type: string
+        commercializerCheckerData:
+          type: string
+        currency:
+          type: string
+        defaultMintingFee:
+          type: integer
+        derivativeRevCeiling:
+          $ref: '#/components/schemas/big.Int'
+        derivativesAllowed:
+          type: boolean
+        derivativesApproval:
+          type: boolean
+        derivativesAttribution:
+          type: boolean
+        derivativesReciprocal:
+          type: boolean
+        expiration:
+          $ref: '#/components/schemas/big.Int'
+        royaltyPolicy:
+          type: string
+        transferable:
+          type: boolean
+        uri:
+          type: string
+      type: object
+    big.Int:
+      type: object
+    github_com_storyprotocol_protocol-api_api_internal_models_protocolv1.LicenseTemplate:
+      properties:
+        blockNumber:
+          type: string
+        blockTime:
+          type: string
+        id:
+          type: string
+        metadataUri:
+          type: string
+        name:
+          type: string
+      type: object
+    github_com_storyprotocol_protocol-api_api_internal_models_protocolv2.IPLicenseTermsRequestBody:
+      properties:
+        options:
+          $ref: '#/components/schemas/github_com_storyprotocol_protocol-api_api_internal_models_protocolv2.IPLicenseTermsQueryOptions'
+      type: object
+  securitySchemes:
+    ApiKeyAuth:
+      in: header
+      name: X-Api-Key
+      type: apiKey

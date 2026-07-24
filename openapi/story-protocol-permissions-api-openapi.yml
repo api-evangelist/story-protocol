@@ -1,0 +1,153 @@
+openapi: 3.1.0
+info:
+  title: Story Protocol API Reference Collections Permissions API
+  version: v1
+  contact: {}
+servers:
+- url: https://api.storyapis.com
+  description: Production server
+tags:
+- name: Permissions
+paths:
+  /api/v3/permissions:
+    post:
+      description: Retrieve a paginated, filtered list of Permissions
+      parameters:
+      - description: API Key
+        in: header
+        name: X-Api-Key
+        required: true
+        type: string
+      - description: Chain Destination
+        in: header
+        name: X-Chain
+        required: true
+        type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/github_com_storyprotocol_protocol-api_api_internal_models_protocolv2.PermissionRequestBody'
+        description: Query Parameters must be wrapped in options object (though it can be left empty) ❗️ 👀. OrderBy must be blockNumber or empty.
+        required: true
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/github_com_storyprotocol_protocol-api_api_internal_models_protocolv1.PermissionsResponse'
+          description: OK
+      security:
+      - ApiKeyAuth: []
+      summary: List Permissions
+      tags:
+      - Permissions
+  /api/v3/permissions/{permissionId}:
+    get:
+      description: Retrieve a Permission
+      parameters:
+      - description: API Key
+        in: header
+        name: X-Api-Key
+        required: true
+        type: string
+      - description: Chain Destination
+        in: header
+        name: X-Chain
+        required: true
+        type: string
+      - description: Permission ID
+        in: path
+        name: permissionId
+        required: true
+        type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/github_com_storyprotocol_protocol-api_api_internal_models_protocolv1.PermissionResponse'
+          description: OK
+      security:
+      - ApiKeyAuth: []
+      summary: Get a Permission
+      tags:
+      - Permissions
+components:
+  schemas:
+    github_com_storyprotocol_protocol-api_api_internal_models_protocolv2.PermissionQueryOptions:
+      properties:
+        orderBy:
+          type: string
+        orderDirection:
+          type: string
+        pagination:
+          properties:
+            after:
+              type: string
+            before:
+              type: string
+            limit:
+              type: integer
+          type: object
+        where:
+          properties:
+            blockNumber:
+              type: string
+            id:
+              type: string
+            ipAccount:
+              type: string
+            ipAccountOwner:
+              type: string
+            to:
+              type: string
+            uuid:
+              type: string
+          type: object
+      type: object
+    github_com_storyprotocol_protocol-api_api_internal_models_protocolv1.PermissionsResponse:
+      properties:
+        data:
+          items:
+            $ref: '#/components/schemas/github_com_storyprotocol_protocol-api_api_internal_models_protocolv1.Permission'
+          type: array
+        next:
+          type: string
+        prev:
+          type: string
+      type: object
+    github_com_storyprotocol_protocol-api_api_internal_models_protocolv2.PermissionRequestBody:
+      properties:
+        options:
+          $ref: '#/components/schemas/github_com_storyprotocol_protocol-api_api_internal_models_protocolv2.PermissionQueryOptions'
+      type: object
+    github_com_storyprotocol_protocol-api_api_internal_models_protocolv1.Permission:
+      properties:
+        blockNumber:
+          type: string
+        blockTimestamp:
+          type: string
+        func:
+          type: string
+        id:
+          type: string
+        permission:
+          type: string
+        signer:
+          type: string
+        to:
+          type: string
+        uuid:
+          type: string
+      type: object
+    github_com_storyprotocol_protocol-api_api_internal_models_protocolv1.PermissionResponse:
+      properties:
+        data:
+          $ref: '#/components/schemas/github_com_storyprotocol_protocol-api_api_internal_models_protocolv1.Permission'
+      type: object
+  securitySchemes:
+    ApiKeyAuth:
+      in: header
+      name: X-Api-Key
+      type: apiKey

@@ -1,0 +1,348 @@
+openapi: 3.1.0
+info:
+  title: Story Protocol API Reference Collections IPAssets API
+  version: v1
+  contact: {}
+servers:
+- url: https://api.storyapis.com
+  description: Production server
+tags:
+- name: IPAssets
+paths:
+  /api/v3/assets:
+    post:
+      description: Retrieve a paginated, filtered list of IPAssets
+      parameters:
+      - description: API Key
+        in: header
+        name: X-Api-Key
+        required: true
+        type: string
+      - description: Chain Destination
+        in: header
+        name: X-Chain
+        required: true
+        type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/github_com_storyprotocol_protocol-api_api_internal_models_protocolv2.IpAssetRequestBody'
+        description: Query Parameters must be wrapped in options object (though it can be left empty) ❗️ 👀. OrderBy must be blockNumber, descendantCount or empty.
+        required: true
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/github_com_storyprotocol_protocol-api_api_internal_models_protocolv3.IPAssetsResponse'
+          description: OK
+      security:
+      - ApiKeyAuth: []
+      summary: List IPAssets
+      tags:
+      - IPAssets
+  /api/v3/assets/edges:
+    post:
+      description: Retrieve a paginated, filtered list of IP Edges
+      parameters:
+      - description: API Key
+        in: header
+        name: X-Api-Key
+        required: true
+        type: string
+      - description: Chain Destination
+        in: header
+        name: X-Chain
+        required: true
+        type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/github_com_storyprotocol_protocol-api_api_internal_models_protocolv2.IpAssetEdgeRequestBody'
+        description: Query Parameters must be wrapped in options object (though it can be left empty) ❗️ 👀. OrderBy must be blockNumber or empty.
+        required: true
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/github_com_storyprotocol_protocol-api_api_internal_models_protocolv1.IPAssetEdgeResponse'
+          description: OK
+      security:
+      - ApiKeyAuth: []
+      summary: List IP Edges
+      tags:
+      - IPAssets
+  /api/v3/assets/{assetId}:
+    get:
+      description: Retrieve an IPAsset
+      parameters:
+      - description: Asset ID
+        in: path
+        name: assetId
+        required: true
+        type: string
+      - description: API Key
+        in: header
+        name: X-Api-Key
+        required: true
+        type: string
+      - description: Chain Destination
+        in: header
+        name: X-Chain
+        required: true
+        type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/github_com_storyprotocol_protocol-api_api_internal_models_protocolv3.IPAssetResponse'
+          description: OK
+      security:
+      - ApiKeyAuth: []
+      summary: Get an IPAsset
+      tags:
+      - IPAssets
+  /api/v3/assets/{assetId}/metadata:
+    get:
+      description: Retrieve metadata for an IPAsset
+      parameters:
+      - description: Asset ID
+        in: path
+        name: assetId
+        required: true
+        type: string
+      - description: API Key
+        in: header
+        name: X-Api-Key
+        required: true
+        type: string
+      - description: Chain Destination
+        in: header
+        name: X-Chain
+        required: true
+        type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/github_com_storyprotocol_protocol-api_api_internal_models_protocolv1.IpAssetMetadata'
+          description: OK
+      security:
+      - ApiKeyAuth: []
+      summary: Get metadata for an IPAsset
+      tags:
+      - IPAssets
+components:
+  schemas:
+    github_com_storyprotocol_protocol-api_api_internal_models_protocolv3.IPAssetsResponse:
+      properties:
+        data:
+          items:
+            $ref: '#/components/schemas/github_com_storyprotocol_protocol-api_api_internal_models_protocolv3.IPAsset'
+          type: array
+        hasNextPage:
+          type: boolean
+        hasPreviousPage:
+          type: boolean
+        next:
+          type: string
+        prev:
+          type: string
+      type: object
+    github_com_storyprotocol_protocol-api_api_internal_models_protocolv3.IPAssetResponse:
+      properties:
+        data:
+          $ref: '#/components/schemas/github_com_storyprotocol_protocol-api_api_internal_models_protocolv3.IPAsset'
+      type: object
+    github_com_storyprotocol_protocol-api_api_internal_models_protocolv2.IpAssetEdgeQueryOptions:
+      properties:
+        orderBy:
+          type: string
+        orderDirection:
+          type: string
+        pagination:
+          properties:
+            after:
+              type: string
+            before:
+              type: string
+            limit:
+              type: integer
+          type: object
+        where:
+          properties:
+            blockNumber:
+              type: string
+            ipId:
+              type: string
+            licenseTermsId:
+              type: string
+            licenseTokenId:
+              type: string
+            parentIpId:
+              type: string
+            transactionHash:
+              type: string
+          type: object
+      type: object
+    github_com_storyprotocol_protocol-api_api_internal_models_protocolv3.NftMetadata:
+      properties:
+        chainId:
+          type: string
+        imageUrl:
+          type: string
+        name:
+          type: string
+        tokenContract:
+          type: string
+        tokenId:
+          type: string
+        tokenUri:
+          type: string
+      type: object
+    github_com_storyprotocol_protocol-api_api_internal_models_protocolv1.IpAssetMetadata:
+      properties:
+        id:
+          type: string
+        metadataHash:
+          type: string
+        metadataJson: {}
+        metadataUri:
+          type: string
+        nftMetadataHash:
+          type: string
+        nftTokenUri:
+          type: string
+        registrationDate:
+          type: string
+      type: object
+    github_com_storyprotocol_protocol-api_api_internal_models_protocolv2.IpAssetRequestBody:
+      properties:
+        options:
+          $ref: '#/components/schemas/github_com_storyprotocol_protocol-api_api_internal_models_protocolv2.IpAssetQueryOptions'
+      type: object
+    github_com_storyprotocol_protocol-api_api_internal_models_protocolv2.IpAssetEdgeRequestBody:
+      properties:
+        options:
+          $ref: '#/components/schemas/github_com_storyprotocol_protocol-api_api_internal_models_protocolv2.IpAssetEdgeQueryOptions'
+      type: object
+    github_com_storyprotocol_protocol-api_api_internal_models_protocolv3.IPAsset:
+      properties:
+        ancestorCount:
+          type: integer
+        blockNumber:
+          type: string
+        blockTimestamp:
+          type: string
+        childrenCount:
+          type: integer
+        descendantCount:
+          type: integer
+        id:
+          type: string
+        ipId:
+          type: string
+        isGroup:
+          type: boolean
+        latestArbitrationPolicy:
+          type: string
+        nftMetadata:
+          $ref: '#/components/schemas/github_com_storyprotocol_protocol-api_api_internal_models_protocolv3.NftMetadata'
+        parentCount:
+          type: integer
+        rootCount:
+          type: integer
+        rootIpIds:
+          items:
+            type: string
+          type: array
+        transactionHash:
+          type: string
+      type: object
+    github_com_storyprotocol_protocol-api_api_internal_models_protocolv1.IpAssetEdge:
+      properties:
+        blockNumber:
+          type: string
+        blockTime:
+          type: string
+        ipId:
+          type: string
+        licenseTemplate:
+          type: string
+        licenseTermsId:
+          type: string
+        licenseTokenId:
+          type: string
+        parentIpId:
+          type: string
+        transactionHash:
+          type: string
+        transactionIndex:
+          type: string
+      type: object
+    github_com_storyprotocol_protocol-api_api_internal_models_protocolv1.IPAssetEdgeResponse:
+      properties:
+        data:
+          items:
+            $ref: '#/components/schemas/github_com_storyprotocol_protocol-api_api_internal_models_protocolv1.IpAssetEdge'
+          type: array
+        next:
+          type: string
+        prev:
+          type: string
+      type: object
+    github_com_storyprotocol_protocol-api_api_internal_models_protocolv2.IpAssetQueryOptions:
+      properties:
+        ipAssetIds:
+          items:
+            type: string
+          type: array
+        orderBy:
+          type: string
+        orderDirection:
+          type: string
+        pagination:
+          properties:
+            after:
+              type: string
+            before:
+              type: string
+            limit:
+              type: integer
+          type: object
+        tokenContractIds:
+          items:
+            type: string
+          type: array
+        tokenIds:
+          items:
+            type: string
+          type: array
+        where:
+          properties:
+            blockNumber:
+              type: string
+            blockNumberGte:
+              type: string
+            blockNumberLte:
+              type: string
+            id:
+              type: string
+            ipId:
+              type: string
+            tokenContract:
+              type: string
+            tokenId:
+              type: string
+          type: object
+      type: object
+  securitySchemes:
+    ApiKeyAuth:
+      in: header
+      name: X-Api-Key
+      type: apiKey
