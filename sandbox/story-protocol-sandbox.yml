@@ -1,0 +1,31 @@
+generated: '2026-07-21'
+method: searched
+source: https://docs.story.foundation/api-reference/protocol/introduction
+summary: >-
+  Story Protocol publishes public, shared API keys for both mainnet and the
+  Aeneid testnet, plus a testnet faucet. The Aeneid testnet is the sandbox
+  environment for development; mainnet is production. Values below are published
+  verbatim by Story's docs.
+networks:
+- name: Story mainnet
+  chain_id: 1514
+  x_chain: mainnet
+  public_api_key: MhBsxkU1z9fG6TofE59KqiiWV-YlYE8Q4awlLQehF3U
+  environment: production
+- name: Aeneid testnet
+  chain_id: 1315
+  x_chain: aeneid
+  public_api_key: KOTbaGUSWQ6cUJWhiJYiOjPgB0kTRu1eCFFvQL0IWls
+  environment: sandbox
+  faucet: https://aeneid.faucet.story.foundation/
+rate_limit:
+  public_key_rps: 300
+  note: Public keys are limited to 300 requests/second; higher limits via the Builder Discord.
+headers:
+  X-Api-Key: one of the public keys above (or a higher-limit key)
+  X-Chain: selects the network (see x_chain per network)
+notes: >-
+  These are Story-published shared public keys intended for open access, not
+  secrets. No test-card / test-account fixtures apply (the API is a read-only
+  on-chain IP indexer). Test writes are performed against the Aeneid testnet via
+  the SDKs using faucet-funded wallets.

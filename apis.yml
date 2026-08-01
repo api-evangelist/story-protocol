@@ -1,7 +1,28 @@
 aid: story-protocol
+accessModel:
+  pricing: unknown
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Self-serve signup
+  confidence: medium
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/story-protocol.png
 name: Story Protocol
-description: Story Protocol is a company surfaced as a portfolio company of a16z and added to the API
-  Evangelist network as a stub for enrichment. This profile is a lead awaiting the enrichment pipeline.
+description: >-
+  Story Protocol is a purpose-built EVM Layer 1 blockchain for onchain
+  intellectual property (the "IP blockchain"), powered by Proof of Creativity,
+  built by Pip Labs and backed by a16z. Its public REST API (api.storyapis.com)
+  is a read-only indexer that exposes IP assets, collections, license terms,
+  license templates and tokens, minting fees, disputes, IP groups, royalties,
+  protocol modules, permissions, and transactions across Story mainnet (chain
+  1514) and the Aeneid testnet (chain 1315). Authentication is an X-Api-Key
+  header plus an X-Chain network selector; official TypeScript and Python SDKs
+  wrap both the API and the onchain protocol.
 url: https://raw.githubusercontent.com/api-evangelist/story-protocol/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
@@ -11,12 +32,200 @@ x-tier: stub
 x-tier-reason: portfolio-lead
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-21'
+x-enrichment:
+  date: '2026-07-21'
+  status: enriched
+  artifacts_added: 18
+  pass: local-v1
 tags:
 - Company
-apis: []
+- Blockchain
+- Intellectual Property
+- Licensing
+- Royalties
+- Web3
+- NFT
+- API
+- Developer Tools
+apis:
+- aid: story-protocol:story-protocol-collections-api
+  name: Story Protocol Collections API
+  description: The Collections API from Story Protocol — 2 operation(s) for collections.
+  humanURL: https://docs.story.foundation/api-reference/protocol/introduction
+  baseURL: https://api.storyapis.com
+  tags:
+  - Collections
+  properties:
+  - type: OpenAPI
+    url: openapi/story-protocol-collections-api-openapi.yml
+- aid: story-protocol:story-protocol-disputes-api
+  name: Story Protocol Disputes API
+  description: The Disputes API from Story Protocol — 2 operation(s) for disputes.
+  humanURL: https://docs.story.foundation/api-reference/protocol/introduction
+  baseURL: https://api.storyapis.com
+  tags:
+  - Disputes
+  properties:
+  - type: OpenAPI
+    url: openapi/story-protocol-disputes-api-openapi.yml
+- aid: story-protocol:story-protocol-ipassets-api
+  name: Story Protocol IPAssets API
+  description: The IPAssets API from Story Protocol — 4 operation(s) for ipassets.
+  humanURL: https://docs.story.foundation/api-reference/protocol/introduction
+  baseURL: https://api.storyapis.com
+  tags:
+  - IPAssets
+  properties:
+  - type: OpenAPI
+    url: openapi/story-protocol-ipassets-api-openapi.yml
+- aid: story-protocol:story-protocol-ipgroup-api
+  name: Story Protocol IPGroup API
+  description: The IPGroup API from Story Protocol — 2 operation(s) for ipgroup.
+  humanURL: https://docs.story.foundation/api-reference/protocol/introduction
+  baseURL: https://api.storyapis.com
+  tags:
+  - IPGroup
+  properties:
+  - type: OpenAPI
+    url: openapi/story-protocol-ipgroup-api-openapi.yml
+- aid: story-protocol:story-protocol-iplicenseterms-api
+  name: Story Protocol IPLicenseTerms API
+  description: The IPLicenseTerms API from Story Protocol — 4 operation(s) for iplicenseterms.
+  humanURL: https://docs.story.foundation/api-reference/protocol/introduction
+  baseURL: https://api.storyapis.com
+  tags:
+  - IPLicenseTerms
+  properties:
+  - type: OpenAPI
+    url: openapi/story-protocol-iplicenseterms-api-openapi.yml
+- aid: story-protocol:story-protocol-licenses-api
+  name: Story Protocol Licenses API
+  description: The Licenses API from Story Protocol — 4 operation(s) for licenses.
+  humanURL: https://docs.story.foundation/api-reference/protocol/introduction
+  baseURL: https://api.storyapis.com
+  tags:
+  - Licenses
+  properties:
+  - type: OpenAPI
+    url: openapi/story-protocol-licenses-api-openapi.yml
+- aid: story-protocol:story-protocol-licensetemplates-api
+  name: Story Protocol LicenseTemplates API
+  description: The LicenseTemplates API from Story Protocol — 2 operation(s) for licensetemplates.
+  humanURL: https://docs.story.foundation/api-reference/protocol/introduction
+  baseURL: https://api.storyapis.com
+  tags:
+  - LicenseTemplates
+  properties:
+  - type: OpenAPI
+    url: openapi/story-protocol-licensetemplates-api-openapi.yml
+- aid: story-protocol:story-protocol-licenseterms-api
+  name: Story Protocol LicenseTerms API
+  description: The LicenseTerms API from Story Protocol — 2 operation(s) for licenseterms.
+  humanURL: https://docs.story.foundation/api-reference/protocol/introduction
+  baseURL: https://api.storyapis.com
+  tags:
+  - LicenseTerms
+  properties:
+  - type: OpenAPI
+    url: openapi/story-protocol-licenseterms-api-openapi.yml
+- aid: story-protocol:story-protocol-licensetokens-api
+  name: Story Protocol LicenseTokens API
+  description: The LicenseTokens API from Story Protocol — 2 operation(s) for licensetokens.
+  humanURL: https://docs.story.foundation/api-reference/protocol/introduction
+  baseURL: https://api.storyapis.com
+  tags:
+  - LicenseTokens
+  properties:
+  - type: OpenAPI
+    url: openapi/story-protocol-licensetokens-api-openapi.yml
+- aid: story-protocol:story-protocol-modules-api
+  name: Story Protocol Modules API
+  description: The Modules API from Story Protocol — 2 operation(s) for modules.
+  humanURL: https://docs.story.foundation/api-reference/protocol/introduction
+  baseURL: https://api.storyapis.com
+  tags:
+  - Modules
+  properties:
+  - type: OpenAPI
+    url: openapi/story-protocol-modules-api-openapi.yml
+- aid: story-protocol:story-protocol-permissions-api
+  name: Story Protocol Permissions API
+  description: The Permissions API from Story Protocol — 2 operation(s) for permissions.
+  humanURL: https://docs.story.foundation/api-reference/protocol/introduction
+  baseURL: https://api.storyapis.com
+  tags:
+  - Permissions
+  properties:
+  - type: OpenAPI
+    url: openapi/story-protocol-permissions-api-openapi.yml
+- aid: story-protocol:story-protocol-royalties-api
+  name: Story Protocol Royalties API
+  description: The Royalties API from Story Protocol — 2 operation(s) for royalties.
+  humanURL: https://docs.story.foundation/api-reference/protocol/introduction
+  baseURL: https://api.storyapis.com
+  tags:
+  - Royalties
+  properties:
+  - type: OpenAPI
+    url: openapi/story-protocol-royalties-api-openapi.yml
+- aid: story-protocol:story-protocol-transactions-api
+  name: Story Protocol Transactions API
+  description: The Transactions API from Story Protocol — 3 operation(s) for transactions.
+  humanURL: https://docs.story.foundation/api-reference/protocol/introduction
+  baseURL: https://api.storyapis.com
+  tags:
+  - Transactions
+  properties:
+  - type: OpenAPI
+    url: openapi/story-protocol-transactions-api-openapi.yml
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
+common:
+- type: DeveloperPortal
+  url: https://docs.story.foundation/developers
+- type: Documentation
+  url: https://docs.story.foundation
+- type: APIReference
+  url: https://docs.story.foundation/api-reference/protocol/introduction
+- type: GettingStarted
+  url: https://docs.story.foundation/developers/typescript-sdk/setup
+- type: GitHubOrganization
+  url: https://github.com/storyprotocol
+- type: OpenAPI
+  url: openapi/story-protocol-openapi-original.json
+- type: Overlay
+  url: overlays/story-protocol-openapi-overlay.yaml
+- type: Authentication
+  url: authentication/story-protocol-authentication.yml
+- type: Packages
+  url: packages/story-protocol-packages.yml
+- type: SDKs
+  url: packages/story-protocol-packages.yml
+- type: MCPServer
+  url: mcp/story-protocol-mcp.yml
+- type: AgentSkill
+  url: skills/_index.yml
+- type: LLMsTxt
+  url: llms/story-protocol-llms.txt
+- type: Conventions
+  url: conventions/story-protocol-conventions.yml
+- type: Lifecycle
+  url: lifecycle/story-protocol-lifecycle.yml
+- type: Conformance
+  url: conformance/story-protocol-conformance.yml
+- type: DataModel
+  url: data-model/story-protocol-data-model.yml
+- type: ChangeLog
+  url: changelog/story-protocol-changelog.yml
+- type: Sandbox
+  url: sandbox/story-protocol-sandbox.yml
+- type: WellKnown
+  url: well-known/story-protocol-well-known.yml
+- type: AgenticAccess
+  url: agentic-access/story-protocol-agentic-access.yml
+- type: DomainSecurity
+  url: security/story-protocol-domain-security.yml

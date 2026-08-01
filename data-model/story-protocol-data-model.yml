@@ -1,0 +1,88 @@
+generated: '2026-07-21'
+method: derived
+source: openapi/story-protocol-openapi-original.json
+summary: >-
+  Entity-relationship graph derived from the Story Protocol API OpenAPI schemas
+  and their id-reference fields. Core entity is the IPAsset; licensing, disputes,
+  royalties and transactions all reference IP assets by id.
+entities:
+- name: IPAsset
+  id_field: ipId
+  key_fields: [ipId, isGroup, parentCount, childrenCount, rootIpIds, nftMetadata]
+  self_reference: parent/child IP graph (derivative lineage) via rootIpIds and parent/child counts
+- name: Collection
+  id_field: id
+  key_fields: [assetCount, licensesCount, raisedDisputeCount, resolvedDisputeCount]
+- name: LicenseTerm
+  id_field: id
+  key_fields: [licenseTemplate, licenseTerms, terms]
+- name: LicenseTemplate
+  id_field: licenseTemplateId
+- name: LicenseToken
+  id_field: id
+  key_fields: [licenseTemplate, licenseTermsId, licensorIpId, owner, transferable]
+- name: LicenseMintingFeePay
+  id_field: licenseMintingFeePaidId
+- name: Dispute
+  id_field: id
+  key_fields: [targetIpId, initiator, status, currentTag, arbitrationPolicy]
+- name: IPGroup
+  id_field: id
+- name: Module
+  id_field: id
+  key_fields: [module, moduleType, name]
+- name: Permission
+  id_field: id
+  key_fields: [signer, to, func, permission]
+- name: RoyaltyPay
+  id_field: id
+  key_fields: [payerIpId, receiverIpId, amount, token]
+- name: Transaction
+  id_field: id
+  key_fields: [ipId, actionType, resourceType, resourceId, txHash]
+relationships:
+- from: LicenseToken
+  to: IPAsset
+  type: belongs_to
+  via: licensorIpId
+- from: LicenseToken
+  to: LicenseTerm
+  type: belongs_to
+  via: licenseTermsId
+- from: LicenseToken
+  to: LicenseTemplate
+  type: belongs_to
+  via: licenseTemplate
+- from: LicenseTerm
+  to: LicenseTemplate
+  type: belongs_to
+  via: licenseTemplate
+- from: Dispute
+  to: IPAsset
+  type: belongs_to
+  via: targetIpId
+- from: RoyaltyPay
+  to: IPAsset
+  type: belongs_to
+  via: payerIpId
+- from: RoyaltyPay
+  to: IPAsset
+  type: belongs_to
+  via: receiverIpId
+- from: Transaction
+  to: IPAsset
+  type: belongs_to
+  via: ipId
+- from: IPAsset
+  to: IPAsset
+  type: has_many
+  via: rootIpIds
+  note: derivative/parent lineage
+- from: Collection
+  to: IPAsset
+  type: has_many
+  via: assetCount
+- from: IPGroup
+  to: IPAsset
+  type: has_many
+  via: ip-group-edges

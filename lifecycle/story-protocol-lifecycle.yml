@@ -1,0 +1,24 @@
+generated: '2026-07-21'
+method: derived
+source: openapi/story-protocol-openapi-original.json
+versioning:
+  scheme: uri-path
+  current: v3
+  observed: [v3, v4]
+  note: >-
+    Resources are served under /api/v3/*. A /api/v4/licenses/mintingfees pair is
+    published alongside its v3 equivalent, indicating incremental per-resource
+    versioning rather than a global version cut.
+deprecation:
+  policy_url: null
+  sunset_header: null
+  note: No published deprecation policy or RFC 8594 Sunset/Deprecation header support found.
+sla:
+  url: null
+  uptime_target: null
+status_page: null
+deprecated_operations: []
+notes: >-
+  No dedicated status page or deprecation policy was located during this pass;
+  StatusPage / Deprecation rating pointers are intentionally NOT emitted (the
+  underlying pages do not exist). Versioning is captured from the OpenAPI paths.

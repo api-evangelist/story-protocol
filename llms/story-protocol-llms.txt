@@ -1,0 +1,24 @@
+# Story Protocol
+
+> Story Protocol is a purpose-built EVM Layer 1 blockchain for onchain intellectual property ("the IP blockchain"), powered by Proof of Creativity. The Story Protocol API (api.storyapis.com) is a read-only indexer that exposes IP assets, collections, license terms and tokens, disputes, royalties, modules, permissions, and transactions across Story mainnet (chain 1514) and the Aeneid testnet (chain 1315). Authentication is an X-Api-Key header plus an X-Chain network selector. Backed by a16z.
+
+## APIs
+- [Story Protocol API (OpenAPI 3.1)](https://api.storyapis.com/openapi.json): 33 read-only operations over IP assets, licensing, royalties, disputes and transactions. Base URL https://api.storyapis.com.
+
+## Specs
+- [OpenAPI (original)](openapi/story-protocol-openapi-original.json)
+- [OpenAPI Overlay (AE enhancements)](overlays/story-protocol-openapi-overlay.yaml)
+- [Authentication profile](authentication/story-protocol-authentication.yml)
+- [API conventions](conventions/story-protocol-conventions.yml)
+- [Data model / ERD](data-model/story-protocol-data-model.yml)
+- [Lifecycle / versioning](lifecycle/story-protocol-lifecycle.yml)
+- [Conformance](conformance/story-protocol-conformance.yml)
+- [Sandbox / public keys](sandbox/story-protocol-sandbox.yml)
+- [MCP candidate tools](mcp/story-protocol-mcp.yml)
+
+## Docs
+- [Developer docs](https://docs.story.foundation)
+- [API reference](https://docs.story.foundation/api-reference/protocol/introduction)
+- [TypeScript SDK](https://github.com/storyprotocol/sdk)
+- [Python SDK](https://github.com/storyprotocol/python-sdk)
+- [GitHub organization](https://github.com/storyprotocol)

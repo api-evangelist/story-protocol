@@ -1,0 +1,32 @@
+generated: '2026-07-21'
+method: derived
+source: openapi/story-protocol-openapi-original.json
+standards:
+- id: openapi-3.1
+  conforms: true
+  evidence: spec is OpenAPI 3.1.0 (openapi/story-protocol-openapi-original.json)
+- id: apikey-auth
+  conforms: true
+  evidence: components.securitySchemes ApiKeyAuth (X-Api-Key header)
+- id: oauth2
+  conforms: false
+  evidence: no oauth2 security scheme declared
+- id: oidc
+  conforms: false
+- id: rfc9457-problem-details
+  conforms: false
+  evidence: no application/problem+json responses; only 200 responses documented
+- id: pagination
+  conforms: true
+  evidence: list endpoints accept *QueryOptions request bodies with pagination options
+- id: idempotency
+  conforms: false
+  evidence: read-only API, no idempotency-key contract
+- id: json-api
+  conforms: false
+- id: fhir-r4
+  conforms: false
+notes: >-
+  Derived from the OpenAPI. No published third-party compliance certifications
+  (SOC 2 / ISO 27001 / PCI / HIPAA / FedRAMP) were found for the API surface, so
+  no Compliance rating pointer is emitted.

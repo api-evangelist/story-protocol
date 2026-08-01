@@ -1,0 +1,48 @@
+generated: '2026-07-21'
+method: searched
+source: https://docs.story.foundation/api-reference/protocol/introduction
+summary: >-
+  Cross-cutting request/response semantics for the Story Protocol REST API
+  (api.storyapis.com). The API is a read-only indexer over on-chain Story
+  Protocol IP data; list endpoints are POST with a JSON query/pagination body,
+  single-resource endpoints are GET by id.
+authentication:
+  style: api-key
+  header: X-Api-Key
+  note: >-
+    Every request also requires an X-Chain header selecting the target network
+    (Story mainnet, chain id 1514; or Aeneid testnet, chain id 1315).
+  reference: authentication/story-protocol-authentication.yml
+versioning:
+  scheme: uri-path
+  current: v3
+  note: >-
+    Resources live under /api/v3/*. A newer /api/v4/licenses/mintingfees pair
+    exists alongside the v3 equivalent.
+  reference: lifecycle/story-protocol-lifecycle.yml
+pagination:
+  style: request-body-options
+  note: >-
+    List endpoints are POST and accept a query-options object in the request
+    body (each resource exposes a *QueryOptions schema with pagination and
+    filtering). Cursor/limit style pagination is expressed through that body
+    rather than URL query params.
+idempotency:
+  supported: false
+  note: >-
+    The published API surface is read-only (list + get); there are no
+    state-changing write operations, so no idempotency-key contract is defined.
+    On-chain writes are performed via the SDKs / smart contracts, not this API.
+request_tracing:
+  supported: null
+  note: No documented request-id / trace header on the indexer API.
+error_envelope:
+  note: >-
+    The OpenAPI documents only 200 responses; a structured error catalog is not
+    published. HTTP status codes convey auth (X-Api-Key) and rate-limit
+    outcomes.
+rate_limiting:
+  note: >-
+    Public API keys are rate limited to 300 requests/second on both mainnet and
+    the Aeneid testnet. Higher limits are available by request via the Builder
+    Discord.

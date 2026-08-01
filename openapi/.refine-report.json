@@ -1,0 +1,38 @@
+{
+  "provider": "story-protocol",
+  "sources": [
+    "story-protocol-collections-api-openapi.yml",
+    "story-protocol-disputes-api-openapi.yml",
+    "story-protocol-ipassets-api-openapi.yml",
+    "story-protocol-ipgroup-api-openapi.yml",
+    "story-protocol-iplicenseterms-api-openapi.yml",
+    "story-protocol-licenses-api-openapi.yml",
+    "story-protocol-licensetemplates-api-openapi.yml",
+    "story-protocol-licenseterms-api-openapi.yml",
+    "story-protocol-licensetokens-api-openapi.yml",
+    "story-protocol-modules-api-openapi.yml",
+    "story-protocol-permissions-api-openapi.yml",
+    "story-protocol-royalties-api-openapi.yml",
+    "story-protocol-transactions-api-openapi.yml"
+  ],
+  "outputs": [
+    "story-protocol-collections-api-openapi.yml",
+    "story-protocol-disputes-api-openapi.yml",
+    "story-protocol-ipassets-api-openapi.yml",
+    "story-protocol-ipgroup-api-openapi.yml",
+    "story-protocol-iplicenseterms-api-openapi.yml",
+    "story-protocol-licenses-api-openapi.yml",
+    "story-protocol-licensetemplates-api-openapi.yml",
+    "story-protocol-licenseterms-api-openapi.yml",
+    "story-protocol-licensetokens-api-openapi.yml",
+    "story-protocol-modules-api-openapi.yml",
+    "story-protocol-permissions-api-openapi.yml",
+    "story-protocol-royalties-api-openapi.yml",
+    "story-protocol-transactions-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}

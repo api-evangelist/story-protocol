@@ -1,0 +1,22 @@
+generated: '2026-07-21'
+method: generated
+source: openapi/story-protocol-openapi-original.json
+note: >-
+  The Story Protocol OpenAPI declares no operationIds; skill steps are grounded
+  on real HTTP method+path pairs verified against the spec.
+skills:
+- file: story-protocol-inspect-ip-asset.md
+  name: Inspect an IP asset and its licensing
+  api: openapi/story-protocol-openapi-original.json
+  operations:
+  - "GET /api/v3/assets/{assetId}"
+  - "GET /api/v3/assets/{assetId}/metadata"
+  - "GET /api/v3/licenses/ip/terms/{ipId}"
+  - "POST /api/v3/licenses/tokens"
+- file: story-protocol-trace-royalties-and-disputes.md
+  name: Trace royalties and disputes for an IP asset
+  api: openapi/story-protocol-openapi-original.json
+  operations:
+  - "POST /api/v3/royalties/payments"
+  - "POST /api/v3/disputes"
+  - "GET /api/v3/disputes/{disputeId}"

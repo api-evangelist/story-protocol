@@ -1,0 +1,21 @@
+generated: '2026-07-21'
+method: searched
+source: live probes of api.storyapis.com and story.foundation hosts
+host: https://api.storyapis.com
+documents:
+- path: /.well-known/security.txt
+  status: 404
+- path: /.well-known/openid-configuration
+  status: 404
+- path: /.well-known/oauth-authorization-server
+  status: 404
+- path: /.well-known/api-catalog
+  status: 404
+- path: /.well-known/ai-plugin.json
+  status: 404
+notes: >-
+  No /.well-known/ discovery documents are published on api.storyapis.com. The
+  Story Protocol API authenticates with a static X-Api-Key header (no OAuth /
+  OIDC discovery). docs.story.foundation and story.foundation did not serve a
+  security.txt (story.foundation 308-redirects to datafdn.org). Absence recorded
+  as expected data.

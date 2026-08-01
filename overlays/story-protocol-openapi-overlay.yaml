@@ -1,0 +1,18 @@
+overlay: 1.0.0
+info:
+  title: API Evangelist enhancements for Story Protocol API
+  version: 1.0.0
+extends: openapi/story-protocol-openapi-original.json
+actions:
+- target: $.info
+  update:
+    x-apievangelist-provider: story-protocol
+    x-apievangelist-network: mainnet-1514-testnet-aeneid-1315
+    x-apievangelist-auth: X-Api-Key header plus X-Chain network selector
+    x-apievangelist-note: >-
+      Read-only indexer API over on-chain Story Protocol IP data. Public rate
+      limit 300 req/s. Spec declares no operationIds; operations are identified
+      by method+path.
+- target: $.servers
+  update:
+    x-apievangelist-base-url: https://api.storyapis.com

@@ -1,0 +1,22 @@
+generated: '2026-07-21'
+method: searched
+source: openapi/story-protocol-openapi-original.json
+docs: https://docs.story.foundation/api-reference/protocol/introduction
+notes: >-
+  Authentication is a static API key in the X-Api-Key header. Every request also
+  requires an X-Chain header selecting the network (mainnet = Story chain 1514,
+  aeneid = testnet chain 1315). Story publishes shared public keys (see
+  sandbox/story-protocol-sandbox.yml); higher rate limits are granted via the
+  Builder Discord. No OAuth/OIDC.
+summary:
+  types:
+  - apiKey
+  api_key_in:
+  - header
+schemes:
+- name: ApiKeyAuth
+  type: apiKey
+  in: header
+  parameter: X-Api-Key
+  sources:
+  - openapi/story-protocol-openapi-original.json
