@@ -196,7 +196,7 @@ common:
 - type: GitHubOrganization
   url: https://github.com/storyprotocol
 - type: OpenAPI
-  url: openapi/story-protocol-openapi-original.json
+  url: openapi/_original/story-protocol-openapi-original.json
 - type: Overlay
   url: overlays/story-protocol-openapi-overlay.yaml
 - type: Authentication
