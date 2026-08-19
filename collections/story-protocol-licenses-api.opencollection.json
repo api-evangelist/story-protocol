@@ -1,0 +1,150 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Story Protocol API Reference Collections Licenses API",
+    "version": "v1"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Licenses",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List LicenseMintingFeePays",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.storyapis.com/api/v3/licenses/mintingfees",
+            "headers": [
+              {
+                "name": "X-Api-Key",
+                "value": ""
+              },
+              {
+                "name": "X-Chain",
+                "value": ""
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "apikey",
+              "key": "X-Api-Key",
+              "value": "{{X-Api-Key}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Retrieve a paginated, filtered list of LicenseMintingFeePaids"
+        },
+        {
+          "info": {
+            "name": "Get a LicenseMintingFeePay",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.storyapis.com/api/v3/licenses/mintingfees/:licenseMintingFeePaidId",
+            "headers": [
+              {
+                "name": "X-Api-Key",
+                "value": ""
+              },
+              {
+                "name": "X-Chain",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "licenseMintingFeePaidId",
+                "value": "",
+                "type": "path",
+                "description": "LicenseMintingFeePay ID"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "X-Api-Key",
+              "value": "{{X-Api-Key}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Retrieve a LicenseMintingFeePay"
+        },
+        {
+          "info": {
+            "name": "List LicenseMintingFeePays",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.storyapis.com/api/v4/licenses/mintingfees",
+            "headers": [
+              {
+                "name": "X-Api-Key",
+                "value": ""
+              },
+              {
+                "name": "X-Chain",
+                "value": ""
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "apikey",
+              "key": "X-Api-Key",
+              "value": "{{X-Api-Key}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Retrieve a paginated, filtered list of LicenseMintingFeePaids"
+        },
+        {
+          "info": {
+            "name": "Get a LicenseMintingFeePay",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.storyapis.com/api/v4/licenses/mintingfees/:licenseMintingFeePaidId",
+            "headers": [
+              {
+                "name": "X-Api-Key",
+                "value": ""
+              },
+              {
+                "name": "X-Chain",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "licenseMintingFeePaidId",
+                "value": "",
+                "type": "path",
+                "description": "LicenseMintingFeePay ID"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "X-Api-Key",
+              "value": "{{X-Api-Key}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Retrieve a LicenseMintingFeePay"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

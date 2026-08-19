@@ -1,0 +1,84 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Story Protocol API Reference Collections LicenseTerms API",
+    "version": "v1"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "LicenseTerms",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List LicenseTerms",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.storyapis.com/api/v3/licenses/terms",
+            "headers": [
+              {
+                "name": "X-Api-Key",
+                "value": ""
+              },
+              {
+                "name": "X-Chain",
+                "value": ""
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "apikey",
+              "key": "X-Api-Key",
+              "value": "{{X-Api-Key}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Retrieve a paginated, filtered list of LicenseTerms"
+        },
+        {
+          "info": {
+            "name": "Get a LicenseTerm",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.storyapis.com/api/v3/licenses/terms/:licenseTermId",
+            "headers": [
+              {
+                "name": "X-Api-Key",
+                "value": ""
+              },
+              {
+                "name": "X-Chain",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "licenseTermId",
+                "value": "",
+                "type": "path",
+                "description": "LicenseTerm ID"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "X-Api-Key",
+              "value": "{{X-Api-Key}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Retrieve a LicenseTerm"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

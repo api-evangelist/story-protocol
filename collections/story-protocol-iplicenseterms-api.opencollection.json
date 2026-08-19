@@ -1,0 +1,142 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Story Protocol API Reference Collections IPLicenseTerms API",
+    "version": "v1"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "IPLicenseTerms",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List detailed ip license term",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.storyapis.com/api/v3/detailed-ip-license-terms",
+            "headers": [
+              {
+                "name": "X-Api-Key",
+                "value": ""
+              },
+              {
+                "name": "X-Chain",
+                "value": ""
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "apikey",
+              "key": "X-Api-Key",
+              "value": "{{X-Api-Key}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Retrieve detailed IP License Terms associated with list of IP ID"
+        },
+        {
+          "info": {
+            "name": "List IPLicenseTerms",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.storyapis.com/api/v3/licenses/ip/terms",
+            "headers": [
+              {
+                "name": "X-Api-Key",
+                "value": ""
+              },
+              {
+                "name": "X-Chain",
+                "value": ""
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "apikey",
+              "key": "X-Api-Key",
+              "value": "{{X-Api-Key}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Retrieve a paginated, filtered list of IPLicenseTerms"
+        },
+        {
+          "info": {
+            "name": "Get IP License Terms for an IP",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.storyapis.com/api/v3/licenses/ip/terms/:ipId",
+            "headers": [
+              {
+                "name": "X-Api-Key",
+                "value": ""
+              },
+              {
+                "name": "X-Chain",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "ipId",
+                "value": "",
+                "type": "path",
+                "description": "IP ID"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "X-Api-Key",
+              "value": "{{X-Api-Key}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Retrieve IP License Terms associated with an IP ID"
+        },
+        {
+          "info": {
+            "name": "Get default license term",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.storyapis.com/api/v3/licenses/terms/default",
+            "headers": [
+              {
+                "name": "X-Api-Key",
+                "value": ""
+              },
+              {
+                "name": "X-Chain",
+                "value": ""
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "X-Api-Key",
+              "value": "{{X-Api-Key}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Retrieve default license term"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

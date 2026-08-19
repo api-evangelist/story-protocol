@@ -1,0 +1,318 @@
+{
+  "item": [
+    {
+      "id": "32814f69-8b31-4334-a090-98210688956d",
+      "name": "IPGroup",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "bb95720e-0ad3-4648-91fd-330c265cc7a1",
+          "name": "List a IPGroup's edges",
+          "request": {
+            "name": "List a IPGroup's edges",
+            "description": {
+              "content": "Retrieve an IPGroup edges",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v3",
+                "ip-group-edges"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) API Key",
+                "key": "X-Api-Key",
+                "value": ""
+              },
+              {
+                "disabled": false,
+                "description": "(Required) Chain Destination",
+                "key": "X-Chain",
+                "value": ""
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "X-Api-Key"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"options\": {\n    \"ipIds\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"orderBy\": \"<string>\",\n    \"orderDirection\": \"<string>\",\n    \"pagination\": {\n      \"after\": \"<string>\",\n      \"before\": \"<string>\",\n      \"limit\": \"<integer>\"\n    },\n    \"tokenContractIds\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"tokenIds\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"where\": {\n      \"blockNumber\": \"<string>\",\n      \"groupId\": \"<string>\"\n    }\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "91cf76ba-7a6d-4b5e-ac04-64120f671b2d",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v3",
+                    "ip-group-edges"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Api-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) API Key",
+                    "key": "X-Api-Key",
+                    "value": ""
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Chain Destination",
+                    "key": "X-Chain",
+                    "value": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"options\": {\n    \"ipIds\": [\n      \"string\",\n      \"string\"\n    ],\n    \"orderBy\": \"string\",\n    \"orderDirection\": \"string\",\n    \"pagination\": {\n      \"after\": \"string\",\n      \"before\": \"string\",\n      \"limit\": 4000\n    },\n    \"tokenContractIds\": [\n      \"string\",\n      \"string\"\n    ],\n    \"tokenIds\": [\n      \"string\",\n      \"string\"\n    ],\n    \"where\": {\n      \"blockNumber\": \"string\",\n      \"groupId\": \"string\"\n    }\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": [\n    {\n      \"block_number\": \"string\",\n      \"block_time\": \"string\",\n      \"group_id\": \"string\",\n      \"ip_id\": \"string\",\n      \"transaction_hash\": \"string\"\n    },\n    {\n      \"block_number\": \"string\",\n      \"block_time\": \"string\",\n      \"group_id\": \"string\",\n      \"ip_id\": \"string\",\n      \"transaction_hash\": \"string\"\n    }\n  ],\n  \"hasNextPage\": true,\n  \"hasPreviousPage\": true,\n  \"next\": \"string\",\n  \"prev\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "d3b5e705-411d-445a-aa11-49ee045ea834",
+          "name": "List IP groups",
+          "request": {
+            "name": "List IP groups",
+            "description": {
+              "content": "Retrieve an IPGroup",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v3",
+                "ip-groups"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) API Key",
+                "key": "X-Api-Key",
+                "value": ""
+              },
+              {
+                "disabled": false,
+                "description": "(Required) Chain Destination",
+                "key": "X-Chain",
+                "value": ""
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "X-Api-Key"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"options\": {\n    \"ipAssetIds\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"orderBy\": \"<string>\",\n    \"orderDirection\": \"<string>\",\n    \"pagination\": {\n      \"after\": \"<string>\",\n      \"before\": \"<string>\",\n      \"limit\": \"<integer>\"\n    },\n    \"tokenContractIds\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"tokenIds\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"where\": {\n      \"groupId\": \"<string>\"\n    }\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "e0246036-6660-4de2-884d-623ed414808f",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v3",
+                    "ip-groups"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Api-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) API Key",
+                    "key": "X-Api-Key",
+                    "value": ""
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Chain Destination",
+                    "key": "X-Chain",
+                    "value": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"options\": {\n    \"ipAssetIds\": [\n      \"string\",\n      \"string\"\n    ],\n    \"orderBy\": \"string\",\n    \"orderDirection\": \"string\",\n    \"pagination\": {\n      \"after\": \"string\",\n      \"before\": \"string\",\n      \"limit\": 5848\n    },\n    \"tokenContractIds\": [\n      \"string\",\n      \"string\"\n    ],\n    \"tokenIds\": [\n      \"string\",\n      \"string\"\n    ],\n    \"where\": {\n      \"groupId\": \"string\"\n    }\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": [\n    {\n      \"group_id\": \"string\",\n      \"ip_count\": 4814\n    },\n    {\n      \"group_id\": \"string\",\n      \"ip_count\": 2403\n    }\n  ],\n  \"next\": \"string\",\n  \"prev\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.storyapis.com",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "cd0722e5-a55d-4c3e-91b0-a3288d038cc2",
+    "name": "Story Protocol API Reference Collections IPGroup API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "",
+      "type": "text/plain"
+    }
+  }
+}

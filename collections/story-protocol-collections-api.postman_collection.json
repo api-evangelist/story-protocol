@@ -1,0 +1,315 @@
+{
+  "item": [
+    {
+      "id": "5fd2bd20-35d5-4227-8c3e-40867ff9fc53",
+      "name": "Collections",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "69365266-ac2c-4169-9d52-17856f978ad1",
+          "name": "List Collections",
+          "request": {
+            "name": "List Collections",
+            "description": {
+              "content": "Retrieve a paginated, filtered list of Collections",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v3",
+                "collections"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) API Key",
+                "key": "X-Api-Key",
+                "value": ""
+              },
+              {
+                "disabled": false,
+                "description": "(Required) Chain Destination",
+                "key": "X-Chain",
+                "value": ""
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "X-Api-Key"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"options\": {\n    \"orderBy\": \"<string>\",\n    \"orderDirection\": \"<string>\",\n    \"pagination\": {\n      \"after\": \"<string>\",\n      \"before\": \"<string>\",\n      \"limit\": \"<integer>\"\n    },\n    \"where\": {\n      \"blockNumberLte\": \"<string>\"\n    }\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "f58644bb-9fdb-47d4-9e16-cb418080c101",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v3",
+                    "collections"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Api-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) API Key",
+                    "key": "X-Api-Key",
+                    "value": ""
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Chain Destination",
+                    "key": "X-Chain",
+                    "value": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"options\": {\n    \"orderBy\": \"string\",\n    \"orderDirection\": \"string\",\n    \"pagination\": {\n      \"after\": \"string\",\n      \"before\": \"string\",\n      \"limit\": 5202\n    },\n    \"where\": {\n      \"blockNumberLte\": \"string\"\n    }\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": [\n    {\n      \"assetCount\": \"string\",\n      \"blockNumber\": \"string\",\n      \"blockTimestamp\": \"string\",\n      \"cancelledDisputeCount\": \"string\",\n      \"id\": \"string\",\n      \"judgedDisputeCount\": \"string\",\n      \"licensesCount\": \"string\",\n      \"raisedDisputeCount\": \"string\",\n      \"resolvedDisputeCount\": \"string\"\n    },\n    {\n      \"assetCount\": \"string\",\n      \"blockNumber\": \"string\",\n      \"blockTimestamp\": \"string\",\n      \"cancelledDisputeCount\": \"string\",\n      \"id\": \"string\",\n      \"judgedDisputeCount\": \"string\",\n      \"licensesCount\": \"string\",\n      \"raisedDisputeCount\": \"string\",\n      \"resolvedDisputeCount\": \"string\"\n    }\n  ],\n  \"hasNextPage\": true,\n  \"hasPreviousPage\": true,\n  \"next\": \"string\",\n  \"prev\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "008036bb-6f1e-4e00-ad44-90a9c30aa82e",
+          "name": "Get an Collection",
+          "request": {
+            "name": "Get an Collection",
+            "description": {
+              "content": "Retrieve a Collection",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v3",
+                "collections",
+                ":collectionId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "",
+                  "key": "collectionId",
+                  "description": "(Required) Collection ID"
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) API Key",
+                "key": "X-Api-Key",
+                "value": ""
+              },
+              {
+                "disabled": false,
+                "description": "(Required) Chain Destination",
+                "key": "X-Chain",
+                "value": ""
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "X-Api-Key"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "d472f486-63de-414e-8996-ce4b7f80cf9f",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v3",
+                    "collections",
+                    ":collectionId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "",
+                      "key": "collectionId",
+                      "description": "(Required) Collection ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Api-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) API Key",
+                    "key": "X-Api-Key",
+                    "value": ""
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Chain Destination",
+                    "key": "X-Chain",
+                    "value": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": {\n    \"assetCount\": \"string\",\n    \"blockNumber\": \"string\",\n    \"blockTimestamp\": \"string\",\n    \"cancelledDisputeCount\": \"string\",\n    \"id\": \"string\",\n    \"judgedDisputeCount\": \"string\",\n    \"licensesCount\": \"string\",\n    \"raisedDisputeCount\": \"string\",\n    \"resolvedDisputeCount\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.storyapis.com",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "add75a27-55a0-48e0-abdb-51d65554af95",
+    "name": "Story Protocol API Reference Collections API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "",
+      "type": "text/plain"
+    }
+  }
+}

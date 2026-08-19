@@ -1,0 +1,84 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Story Protocol API Reference Collections Royalties API",
+    "version": "v1"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Royalties",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List RoyaltyPays",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.storyapis.com/api/v3/royalties/payments",
+            "headers": [
+              {
+                "name": "X-Api-Key",
+                "value": ""
+              },
+              {
+                "name": "X-Chain",
+                "value": ""
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "apikey",
+              "key": "X-Api-Key",
+              "value": "{{X-Api-Key}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Retrieve a paginated, filtered list of RoyaltyPays"
+        },
+        {
+          "info": {
+            "name": "Get a RoyaltyPay",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.storyapis.com/api/v3/royalties/payments/:royaltyPayId",
+            "headers": [
+              {
+                "name": "X-Api-Key",
+                "value": ""
+              },
+              {
+                "name": "X-Chain",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "royaltyPayId",
+                "value": "",
+                "type": "path",
+                "description": "RoyaltyPay ID"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "X-Api-Key",
+              "value": "{{X-Api-Key}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Retrieve a RoyaltyPay"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

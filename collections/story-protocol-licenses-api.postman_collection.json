@@ -1,0 +1,606 @@
+{
+  "item": [
+    {
+      "id": "10bc7d12-9e52-4858-864d-4864d50abda5",
+      "name": "Licenses",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "7b29402d-5c6c-4c3a-9a91-a63b9e3fdd1d",
+          "name": "List LicenseMintingFeePays",
+          "request": {
+            "name": "List LicenseMintingFeePays",
+            "description": {
+              "content": "Retrieve a paginated, filtered list of LicenseMintingFeePaids",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v3",
+                "licenses",
+                "mintingfees"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) API Key",
+                "key": "X-Api-Key",
+                "value": ""
+              },
+              {
+                "disabled": false,
+                "description": "(Required) Chain Destination",
+                "key": "X-Chain",
+                "value": ""
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "X-Api-Key"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"options\": {\n    \"orderBy\": \"<string>\",\n    \"orderDirection\": \"<string>\",\n    \"pagination\": {\n      \"after\": \"<string>\",\n      \"before\": \"<string>\",\n      \"limit\": \"<integer>\"\n    },\n    \"where\": {\n      \"blockNumber\": \"<string>\",\n      \"id\": \"<string>\",\n      \"receiverIpId\": \"<string>\"\n    }\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "bf820e3f-935b-4776-a076-8ef214ba483e",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v3",
+                    "licenses",
+                    "mintingfees"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Api-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) API Key",
+                    "key": "X-Api-Key",
+                    "value": ""
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Chain Destination",
+                    "key": "X-Chain",
+                    "value": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"options\": {\n    \"orderBy\": \"string\",\n    \"orderDirection\": \"string\",\n    \"pagination\": {\n      \"after\": \"string\",\n      \"before\": \"string\",\n      \"limit\": 4017\n    },\n    \"where\": {\n      \"blockNumber\": \"string\",\n      \"id\": \"string\",\n      \"receiverIpId\": \"string\"\n    }\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": [\n    {\n      \"amount\": \"string\",\n      \"blockNumber\": \"string\",\n      \"blockTimestamp\": \"string\",\n      \"id\": \"string\",\n      \"payer\": \"string\",\n      \"receiverIpId\": \"string\",\n      \"token\": \"string\"\n    },\n    {\n      \"amount\": \"string\",\n      \"blockNumber\": \"string\",\n      \"blockTimestamp\": \"string\",\n      \"id\": \"string\",\n      \"payer\": \"string\",\n      \"receiverIpId\": \"string\",\n      \"token\": \"string\"\n    }\n  ],\n  \"next\": \"string\",\n  \"prev\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "c7ab1f01-4fce-4785-b304-2dad6ab4c7f0",
+          "name": "Get a LicenseMintingFeePay",
+          "request": {
+            "name": "Get a LicenseMintingFeePay",
+            "description": {
+              "content": "Retrieve a LicenseMintingFeePay",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v3",
+                "licenses",
+                "mintingfees",
+                ":licenseMintingFeePaidId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "",
+                  "key": "licenseMintingFeePaidId",
+                  "description": "(Required) LicenseMintingFeePay ID"
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) API Key",
+                "key": "X-Api-Key",
+                "value": ""
+              },
+              {
+                "disabled": false,
+                "description": "(Required) Chain Destination",
+                "key": "X-Chain",
+                "value": ""
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "X-Api-Key"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "898d9d0e-257f-4d45-a72b-25a7ea1aa472",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v3",
+                    "licenses",
+                    "mintingfees",
+                    ":licenseMintingFeePaidId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "",
+                      "key": "licenseMintingFeePaidId",
+                      "description": "(Required) LicenseMintingFeePay ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Api-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) API Key",
+                    "key": "X-Api-Key",
+                    "value": ""
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Chain Destination",
+                    "key": "X-Chain",
+                    "value": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": {\n    \"amount\": \"string\",\n    \"blockNumber\": \"string\",\n    \"blockTimestamp\": \"string\",\n    \"id\": \"string\",\n    \"payer\": \"string\",\n    \"receiverIpId\": \"string\",\n    \"token\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "6cd89684-cf98-4ac2-b368-75b173af7825",
+          "name": "List LicenseMintingFeePays",
+          "request": {
+            "name": "List LicenseMintingFeePays",
+            "description": {
+              "content": "Retrieve a paginated, filtered list of LicenseMintingFeePaids",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v4",
+                "licenses",
+                "mintingfees"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) API Key",
+                "key": "X-Api-Key",
+                "value": ""
+              },
+              {
+                "disabled": false,
+                "description": "(Required) Chain Destination",
+                "key": "X-Chain",
+                "value": ""
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "X-Api-Key"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"options\": {\n    \"orderBy\": \"<string>\",\n    \"orderDirection\": \"<string>\",\n    \"pagination\": {\n      \"after\": \"<string>\",\n      \"before\": \"<string>\",\n      \"limit\": \"<integer>\"\n    },\n    \"where\": {\n      \"blockNumber\": \"<string>\",\n      \"id\": \"<string>\",\n      \"receiverIpId\": \"<string>\"\n    }\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "0e9cc65d-04c4-482a-8a80-bad8763499fa",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v4",
+                    "licenses",
+                    "mintingfees"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Api-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) API Key",
+                    "key": "X-Api-Key",
+                    "value": ""
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Chain Destination",
+                    "key": "X-Chain",
+                    "value": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"options\": {\n    \"orderBy\": \"string\",\n    \"orderDirection\": \"string\",\n    \"pagination\": {\n      \"after\": \"string\",\n      \"before\": \"string\",\n      \"limit\": 4017\n    },\n    \"where\": {\n      \"blockNumber\": \"string\",\n      \"id\": \"string\",\n      \"receiverIpId\": \"string\"\n    }\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": [\n    {\n      \"amount\": \"string\",\n      \"blockNumber\": \"string\",\n      \"blockTimestamp\": \"string\",\n      \"id\": \"string\",\n      \"payer\": \"string\",\n      \"receiverIpId\": \"string\",\n      \"token\": \"string\"\n    },\n    {\n      \"amount\": \"string\",\n      \"blockNumber\": \"string\",\n      \"blockTimestamp\": \"string\",\n      \"id\": \"string\",\n      \"payer\": \"string\",\n      \"receiverIpId\": \"string\",\n      \"token\": \"string\"\n    }\n  ],\n  \"next\": \"string\",\n  \"prev\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "74a52042-bffc-41e4-87c7-3552a3a8afe5",
+          "name": "Get a LicenseMintingFeePay",
+          "request": {
+            "name": "Get a LicenseMintingFeePay",
+            "description": {
+              "content": "Retrieve a LicenseMintingFeePay",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v4",
+                "licenses",
+                "mintingfees",
+                ":licenseMintingFeePaidId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "",
+                  "key": "licenseMintingFeePaidId",
+                  "description": "(Required) LicenseMintingFeePay ID"
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) API Key",
+                "key": "X-Api-Key",
+                "value": ""
+              },
+              {
+                "disabled": false,
+                "description": "(Required) Chain Destination",
+                "key": "X-Chain",
+                "value": ""
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "X-Api-Key"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "ce965528-ceab-47f8-9454-5d38ea595b06",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v4",
+                    "licenses",
+                    "mintingfees",
+                    ":licenseMintingFeePaidId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "",
+                      "key": "licenseMintingFeePaidId",
+                      "description": "(Required) LicenseMintingFeePay ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Api-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) API Key",
+                    "key": "X-Api-Key",
+                    "value": ""
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Chain Destination",
+                    "key": "X-Chain",
+                    "value": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": {\n    \"amount\": \"string\",\n    \"blockNumber\": \"string\",\n    \"blockTimestamp\": \"string\",\n    \"id\": \"string\",\n    \"payer\": \"string\",\n    \"receiverIpId\": \"string\",\n    \"token\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.storyapis.com",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "fa33b7ff-0662-49d5-9a85-cc62ecb68cd5",
+    "name": "Story Protocol API Reference Collections Licenses API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "",
+      "type": "text/plain"
+    }
+  }
+}

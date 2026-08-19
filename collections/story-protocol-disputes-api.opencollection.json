@@ -1,0 +1,84 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Story Protocol API Reference Collections Disputes API",
+    "version": "v1"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Disputes",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List Disputes",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.storyapis.com/api/v3/disputes",
+            "headers": [
+              {
+                "name": "X-Api-Key",
+                "value": ""
+              },
+              {
+                "name": "X-Chain",
+                "value": ""
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "apikey",
+              "key": "X-Api-Key",
+              "value": "{{X-Api-Key}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Retrieve a paginated, filtered list of Disputes"
+        },
+        {
+          "info": {
+            "name": "Get a Dispute",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.storyapis.com/api/v3/disputes/:disputeId",
+            "headers": [
+              {
+                "name": "X-Api-Key",
+                "value": ""
+              },
+              {
+                "name": "X-Chain",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "disputeId",
+                "value": "",
+                "type": "path",
+                "description": "Dispute ID"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "X-Api-Key",
+              "value": "{{X-Api-Key}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Retrieve a Dispute"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

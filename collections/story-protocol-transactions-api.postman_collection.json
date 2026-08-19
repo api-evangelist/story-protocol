@@ -1,0 +1,460 @@
+{
+  "item": [
+    {
+      "id": "7ae6b088-7b6d-46c9-ba44-796ca789cc02",
+      "name": "Transactions",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "6b23e4f3-a9dc-4f5d-a726-44a9845c0793",
+          "name": "List Transactions",
+          "request": {
+            "name": "List Transactions",
+            "description": {
+              "content": "Retrieve a paginated, filtered list of Transactions",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v3",
+                "transactions"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) API Key",
+                "key": "X-Api-Key",
+                "value": ""
+              },
+              {
+                "disabled": false,
+                "description": "(Required) Chain Destination",
+                "key": "X-Chain",
+                "value": ""
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "X-Api-Key"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"options\": {\n    \"orderBy\": \"<string>\",\n    \"orderDirection\": \"<string>\",\n    \"pagination\": {\n      \"after\": \"<string>\",\n      \"before\": \"<string>\",\n      \"limit\": \"<integer>\"\n    },\n    \"where\": {\n      \"blockNumber\": \"<string>\",\n      \"id\": \"<string>\",\n      \"ipId\": \"<string>\",\n      \"resourceType\": \"<string>\",\n      \"transactionHash\": \"<string>\"\n    }\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "20427272-a67e-4deb-b40a-a2305b737f9a",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v3",
+                    "transactions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Api-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) API Key",
+                    "key": "X-Api-Key",
+                    "value": ""
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Chain Destination",
+                    "key": "X-Chain",
+                    "value": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"options\": {\n    \"orderBy\": \"resourceType\",\n    \"orderDirection\": \"desc\",\n    \"pagination\": {\n      \"after\": \"string\",\n      \"before\": \"string\",\n      \"limit\": 7843\n    },\n    \"where\": {\n      \"blockNumber\": \"string\",\n      \"id\": \"string\",\n      \"ipId\": \"string\",\n      \"resourceType\": \"string\",\n      \"transactionHash\": \"string\"\n    }\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": [\n    {\n      \"actionType\": \"string\",\n      \"blockNumber\": \"string\",\n      \"blockTimestamp\": \"string\",\n      \"createdAt\": \"string\",\n      \"id\": \"string\",\n      \"initiator\": \"string\",\n      \"ipId\": \"string\",\n      \"logIndex\": \"string\",\n      \"resourceId\": \"string\",\n      \"resourceType\": \"string\",\n      \"transactionIndex\": \"string\",\n      \"txHash\": \"string\"\n    },\n    {\n      \"actionType\": \"string\",\n      \"blockNumber\": \"string\",\n      \"blockTimestamp\": \"string\",\n      \"createdAt\": \"string\",\n      \"id\": \"string\",\n      \"initiator\": \"string\",\n      \"ipId\": \"string\",\n      \"logIndex\": \"string\",\n      \"resourceId\": \"string\",\n      \"resourceType\": \"string\",\n      \"transactionIndex\": \"string\",\n      \"txHash\": \"string\"\n    }\n  ],\n  \"hasNextPage\": true,\n  \"hasPreviousPage\": true,\n  \"next\": \"string\",\n  \"prev\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "f075325f-ac1d-44ed-964e-3dd9591a2568",
+          "name": "List Latest Transactions",
+          "request": {
+            "name": "List Latest Transactions",
+            "description": {
+              "content": "Retrieve a paginated, filtered list of Latest Transactions",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v3",
+                "transactions",
+                "latest"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) API Key",
+                "key": "X-Api-Key",
+                "value": ""
+              },
+              {
+                "disabled": false,
+                "description": "(Required) Chain Destination",
+                "key": "X-Chain",
+                "value": ""
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "X-Api-Key"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"options\": {\n    \"orderBy\": \"<string>\",\n    \"orderDirection\": \"<string>\",\n    \"pagination\": {\n      \"after\": \"<string>\",\n      \"before\": \"<string>\",\n      \"limit\": \"<integer>\"\n    },\n    \"where\": {\n      \"blockNumber\": \"<string>\",\n      \"id\": \"<string>\",\n      \"ipId\": \"<string>\",\n      \"resourceType\": \"<string>\",\n      \"transactionHash\": \"<string>\"\n    }\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "a75f047f-2347-4a18-b111-fd5e7d51921e",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v3",
+                    "transactions",
+                    "latest"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Api-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) API Key",
+                    "key": "X-Api-Key",
+                    "value": ""
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Chain Destination",
+                    "key": "X-Chain",
+                    "value": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"options\": {\n    \"orderBy\": \"resourceType\",\n    \"orderDirection\": \"desc\",\n    \"pagination\": {\n      \"after\": \"string\",\n      \"before\": \"string\",\n      \"limit\": 7843\n    },\n    \"where\": {\n      \"blockNumber\": \"string\",\n      \"id\": \"string\",\n      \"ipId\": \"string\",\n      \"resourceType\": \"string\",\n      \"transactionHash\": \"string\"\n    }\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": [\n    {\n      \"actionType\": \"string\",\n      \"blockNumber\": \"string\",\n      \"blockTimestamp\": \"string\",\n      \"createdAt\": \"string\",\n      \"id\": \"string\",\n      \"initiator\": \"string\",\n      \"ipId\": \"string\",\n      \"logIndex\": \"string\",\n      \"resourceId\": \"string\",\n      \"resourceType\": \"string\",\n      \"transactionIndex\": \"string\",\n      \"txHash\": \"string\"\n    },\n    {\n      \"actionType\": \"string\",\n      \"blockNumber\": \"string\",\n      \"blockTimestamp\": \"string\",\n      \"createdAt\": \"string\",\n      \"id\": \"string\",\n      \"initiator\": \"string\",\n      \"ipId\": \"string\",\n      \"logIndex\": \"string\",\n      \"resourceId\": \"string\",\n      \"resourceType\": \"string\",\n      \"transactionIndex\": \"string\",\n      \"txHash\": \"string\"\n    }\n  ],\n  \"hasNextPage\": true,\n  \"hasPreviousPage\": true,\n  \"next\": \"string\",\n  \"prev\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "8df0afaf-61da-401f-803b-29bf42001a84",
+          "name": "Get a Transaction",
+          "request": {
+            "name": "Get a Transaction",
+            "description": {
+              "content": "Retrieve a Transaction",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v3",
+                "transactions",
+                ":trxId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "",
+                  "key": "trxId",
+                  "description": "(Required) Transaction ID"
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) API Key",
+                "key": "X-Api-Key",
+                "value": ""
+              },
+              {
+                "disabled": false,
+                "description": "(Required) Chain Destination",
+                "key": "X-Chain",
+                "value": ""
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "X-Api-Key"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "7710a17d-8542-4cfc-a513-486b9aac082d",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v3",
+                    "transactions",
+                    ":trxId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "",
+                      "key": "trxId",
+                      "description": "(Required) Transaction ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Api-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) API Key",
+                    "key": "X-Api-Key",
+                    "value": ""
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Chain Destination",
+                    "key": "X-Chain",
+                    "value": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": [\n    {\n      \"actionType\": \"string\",\n      \"blockNumber\": \"string\",\n      \"blockTimestamp\": \"string\",\n      \"createdAt\": \"string\",\n      \"id\": \"string\",\n      \"initiator\": \"string\",\n      \"ipId\": \"string\",\n      \"logIndex\": \"string\",\n      \"resourceId\": \"string\",\n      \"resourceType\": \"string\",\n      \"transactionIndex\": \"string\",\n      \"txHash\": \"string\"\n    },\n    {\n      \"actionType\": \"string\",\n      \"blockNumber\": \"string\",\n      \"blockTimestamp\": \"string\",\n      \"createdAt\": \"string\",\n      \"id\": \"string\",\n      \"initiator\": \"string\",\n      \"ipId\": \"string\",\n      \"logIndex\": \"string\",\n      \"resourceId\": \"string\",\n      \"resourceType\": \"string\",\n      \"transactionIndex\": \"string\",\n      \"txHash\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.storyapis.com",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "12134f94-0574-41bc-8dbd-b77541abf486",
+    "name": "Story Protocol API Reference Collections Transactions API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "",
+      "type": "text/plain"
+    }
+  }
+}

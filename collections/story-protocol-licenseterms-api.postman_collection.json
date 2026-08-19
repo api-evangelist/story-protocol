@@ -1,0 +1,319 @@
+{
+  "item": [
+    {
+      "id": "fa23a24c-998f-4beb-868d-d935344f910c",
+      "name": "LicenseTerms",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "153af675-daf0-4546-9ba5-e542a745abaf",
+          "name": "List LicenseTerms",
+          "request": {
+            "name": "List LicenseTerms",
+            "description": {
+              "content": "Retrieve a paginated, filtered list of LicenseTerms",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v3",
+                "licenses",
+                "terms"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) API Key",
+                "key": "X-Api-Key",
+                "value": ""
+              },
+              {
+                "disabled": false,
+                "description": "(Required) Chain Destination",
+                "key": "X-Chain",
+                "value": ""
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "X-Api-Key"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"options\": {\n    \"orderBy\": \"<string>\",\n    \"orderDirection\": \"<string>\",\n    \"pagination\": {\n      \"after\": \"<string>\",\n      \"before\": \"<string>\",\n      \"limit\": \"<integer>\"\n    },\n    \"where\": {\n      \"blockNumber\": \"<string>\",\n      \"id\": \"<string>\"\n    }\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "44054704-0a29-4a42-98a2-792597269d29",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v3",
+                    "licenses",
+                    "terms"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Api-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) API Key",
+                    "key": "X-Api-Key",
+                    "value": ""
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Chain Destination",
+                    "key": "X-Chain",
+                    "value": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"options\": {\n    \"orderBy\": \"string\",\n    \"orderDirection\": \"string\",\n    \"pagination\": {\n      \"after\": \"string\",\n      \"before\": \"string\",\n      \"limit\": 4863\n    },\n    \"where\": {\n      \"blockNumber\": \"string\",\n      \"id\": \"string\"\n    }\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": [\n    {\n      \"blockNumber\": \"string\",\n      \"blockTime\": \"string\",\n      \"id\": \"string\",\n      \"licenseTemplate\": \"string\",\n      \"licenseTerms\": [\n        {\n          \"key_0\": {}\n        },\n        {\n          \"key_0\": {},\n          \"key_1\": {},\n          \"key_2\": {}\n        }\n      ],\n      \"terms\": {\n        \"commercialAttribution\": false,\n        \"commercialRevCeiling\": {},\n        \"commercialRevShare\": {},\n        \"commercialUse\": true,\n        \"commercializerChecker\": \"string\",\n        \"commercializerCheckerData\": \"string\",\n        \"currency\": \"string\",\n        \"defaultMintingFee\": 9855,\n        \"derivativeRevCeiling\": {},\n        \"derivativesAllowed\": false,\n        \"derivativesApproval\": false,\n        \"derivativesAttribution\": false,\n        \"derivativesReciprocal\": true,\n        \"expiration\": {},\n        \"royaltyPolicy\": \"string\",\n        \"transferable\": false,\n        \"uri\": \"string\"\n      }\n    },\n    {\n      \"blockNumber\": \"string\",\n      \"blockTime\": \"string\",\n      \"id\": \"string\",\n      \"licenseTemplate\": \"string\",\n      \"licenseTerms\": [\n        {\n          \"key_0\": {}\n        },\n        {\n          \"key_0\": {},\n          \"key_1\": {}\n        }\n      ],\n      \"terms\": {\n        \"commercialAttribution\": false,\n        \"commercialRevCeiling\": {},\n        \"commercialRevShare\": {},\n        \"commercialUse\": true,\n        \"commercializerChecker\": \"string\",\n        \"commercializerCheckerData\": \"string\",\n        \"currency\": \"string\",\n        \"defaultMintingFee\": 2739,\n        \"derivativeRevCeiling\": {},\n        \"derivativesAllowed\": false,\n        \"derivativesApproval\": false,\n        \"derivativesAttribution\": true,\n        \"derivativesReciprocal\": true,\n        \"expiration\": {},\n        \"royaltyPolicy\": \"string\",\n        \"transferable\": false,\n        \"uri\": \"string\"\n      }\n    }\n  ],\n  \"next\": \"string\",\n  \"prev\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "7c9d8ea8-efed-4935-a19f-72d84bf31483",
+          "name": "Get a LicenseTerm",
+          "request": {
+            "name": "Get a LicenseTerm",
+            "description": {
+              "content": "Retrieve a LicenseTerm",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v3",
+                "licenses",
+                "terms",
+                ":licenseTermId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "",
+                  "key": "licenseTermId",
+                  "description": "(Required) LicenseTerm ID"
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) API Key",
+                "key": "X-Api-Key",
+                "value": ""
+              },
+              {
+                "disabled": false,
+                "description": "(Required) Chain Destination",
+                "key": "X-Chain",
+                "value": ""
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "X-Api-Key"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "6ab92d0b-516b-4a33-9afe-e03482278104",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v3",
+                    "licenses",
+                    "terms",
+                    ":licenseTermId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "",
+                      "key": "licenseTermId",
+                      "description": "(Required) LicenseTerm ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Api-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) API Key",
+                    "key": "X-Api-Key",
+                    "value": ""
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Chain Destination",
+                    "key": "X-Chain",
+                    "value": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": {\n    \"blockNumber\": \"string\",\n    \"blockTime\": \"string\",\n    \"id\": \"string\",\n    \"licenseTemplate\": \"string\",\n    \"licenseTerms\": [\n      {\n        \"key_0\": {},\n        \"key_1\": {}\n      },\n      {\n        \"key_0\": {},\n        \"key_1\": {}\n      }\n    ],\n    \"terms\": {\n      \"commercialAttribution\": true,\n      \"commercialRevCeiling\": {},\n      \"commercialRevShare\": {},\n      \"commercialUse\": false,\n      \"commercializerChecker\": \"string\",\n      \"commercializerCheckerData\": \"string\",\n      \"currency\": \"string\",\n      \"defaultMintingFee\": 191,\n      \"derivativeRevCeiling\": {},\n      \"derivativesAllowed\": true,\n      \"derivativesApproval\": false,\n      \"derivativesAttribution\": true,\n      \"derivativesReciprocal\": false,\n      \"expiration\": {},\n      \"royaltyPolicy\": \"string\",\n      \"transferable\": true,\n      \"uri\": \"string\"\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.storyapis.com",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "d5709a79-483f-4018-adf2-3dc97b39df87",
+    "name": "Story Protocol API Reference Collections LicenseTerms API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "",
+      "type": "text/plain"
+    }
+  }
+}

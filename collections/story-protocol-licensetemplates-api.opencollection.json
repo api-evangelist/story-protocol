@@ -1,0 +1,84 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Story Protocol API Reference Collections LicenseTemplates API",
+    "version": "v1"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "LicenseTemplates",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List LicenseTemplates",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.storyapis.com/api/v3/licenses/templates",
+            "headers": [
+              {
+                "name": "X-Api-Key",
+                "value": ""
+              },
+              {
+                "name": "X-Chain",
+                "value": ""
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "apikey",
+              "key": "X-Api-Key",
+              "value": "{{X-Api-Key}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Retrieve a paginated, filtered list of LicenseTemplates"
+        },
+        {
+          "info": {
+            "name": "Get a LicenseTemplate",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.storyapis.com/api/v3/licenses/templates/:licenseTemplateId",
+            "headers": [
+              {
+                "name": "X-Api-Key",
+                "value": ""
+              },
+              {
+                "name": "X-Chain",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "licenseTemplateId",
+                "value": "",
+                "type": "path",
+                "description": "LicenseTemplate ID"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "X-Api-Key",
+              "value": "{{X-Api-Key}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Retrieve a LicenseTemplate"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,602 @@
+{
+  "item": [
+    {
+      "id": "92bb9ef6-8b71-4c3e-8c50-cbaf3871e0ab",
+      "name": "IPAssets",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "27e9afd8-b42e-462e-a2bc-e44e61ac5a94",
+          "name": "List IPAssets",
+          "request": {
+            "name": "List IPAssets",
+            "description": {
+              "content": "Retrieve a paginated, filtered list of IPAssets",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v3",
+                "assets"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) API Key",
+                "key": "X-Api-Key",
+                "value": ""
+              },
+              {
+                "disabled": false,
+                "description": "(Required) Chain Destination",
+                "key": "X-Chain",
+                "value": ""
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "X-Api-Key"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"options\": {\n    \"ipAssetIds\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"orderBy\": \"<string>\",\n    \"orderDirection\": \"<string>\",\n    \"pagination\": {\n      \"after\": \"<string>\",\n      \"before\": \"<string>\",\n      \"limit\": \"<integer>\"\n    },\n    \"tokenContractIds\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"tokenIds\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"where\": {\n      \"blockNumber\": \"<string>\",\n      \"blockNumberGte\": \"<string>\",\n      \"blockNumberLte\": \"<string>\",\n      \"id\": \"<string>\",\n      \"ipId\": \"<string>\",\n      \"tokenContract\": \"<string>\",\n      \"tokenId\": \"<string>\"\n    }\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "1590d8d0-339a-4962-9dec-6fdba3ef9f76",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v3",
+                    "assets"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Api-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) API Key",
+                    "key": "X-Api-Key",
+                    "value": ""
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Chain Destination",
+                    "key": "X-Chain",
+                    "value": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"options\": {\n    \"ipAssetIds\": [\n      \"string\",\n      \"string\"\n    ],\n    \"orderBy\": \"string\",\n    \"orderDirection\": \"string\",\n    \"pagination\": {\n      \"after\": \"string\",\n      \"before\": \"string\",\n      \"limit\": 6115\n    },\n    \"tokenContractIds\": [\n      \"string\",\n      \"string\"\n    ],\n    \"tokenIds\": [\n      \"string\",\n      \"string\"\n    ],\n    \"where\": {\n      \"blockNumber\": \"string\",\n      \"blockNumberGte\": \"string\",\n      \"blockNumberLte\": \"string\",\n      \"id\": \"string\",\n      \"ipId\": \"string\",\n      \"tokenContract\": \"string\",\n      \"tokenId\": \"string\"\n    }\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": [\n    {\n      \"ancestorCount\": 5467,\n      \"blockNumber\": \"string\",\n      \"blockTimestamp\": \"string\",\n      \"childrenCount\": 3912,\n      \"descendantCount\": 673,\n      \"id\": \"string\",\n      \"ipId\": \"string\",\n      \"isGroup\": false,\n      \"latestArbitrationPolicy\": \"string\",\n      \"nftMetadata\": {\n        \"chainId\": \"string\",\n        \"imageUrl\": \"string\",\n        \"name\": \"string\",\n        \"tokenContract\": \"string\",\n        \"tokenId\": \"string\",\n        \"tokenUri\": \"string\"\n      },\n      \"parentCount\": 5360,\n      \"rootCount\": 1724,\n      \"rootIpIds\": [\n        \"string\",\n        \"string\"\n      ],\n      \"transactionHash\": \"string\"\n    },\n    {\n      \"ancestorCount\": 8461,\n      \"blockNumber\": \"string\",\n      \"blockTimestamp\": \"string\",\n      \"childrenCount\": 9990,\n      \"descendantCount\": 5563,\n      \"id\": \"string\",\n      \"ipId\": \"string\",\n      \"isGroup\": false,\n      \"latestArbitrationPolicy\": \"string\",\n      \"nftMetadata\": {\n        \"chainId\": \"string\",\n        \"imageUrl\": \"string\",\n        \"name\": \"string\",\n        \"tokenContract\": \"string\",\n        \"tokenId\": \"string\",\n        \"tokenUri\": \"string\"\n      },\n      \"parentCount\": 5504,\n      \"rootCount\": 7758,\n      \"rootIpIds\": [\n        \"string\",\n        \"string\"\n      ],\n      \"transactionHash\": \"string\"\n    }\n  ],\n  \"hasNextPage\": true,\n  \"hasPreviousPage\": true,\n  \"next\": \"string\",\n  \"prev\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "c8152acc-ed2a-4e99-9752-5f35a5ccad7f",
+          "name": "List IP Edges",
+          "request": {
+            "name": "List IP Edges",
+            "description": {
+              "content": "Retrieve a paginated, filtered list of IP Edges",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v3",
+                "assets",
+                "edges"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) API Key",
+                "key": "X-Api-Key",
+                "value": ""
+              },
+              {
+                "disabled": false,
+                "description": "(Required) Chain Destination",
+                "key": "X-Chain",
+                "value": ""
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "X-Api-Key"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"options\": {\n    \"orderBy\": \"<string>\",\n    \"orderDirection\": \"<string>\",\n    \"pagination\": {\n      \"after\": \"<string>\",\n      \"before\": \"<string>\",\n      \"limit\": \"<integer>\"\n    },\n    \"where\": {\n      \"blockNumber\": \"<string>\",\n      \"ipId\": \"<string>\",\n      \"licenseTermsId\": \"<string>\",\n      \"licenseTokenId\": \"<string>\",\n      \"parentIpId\": \"<string>\",\n      \"transactionHash\": \"<string>\"\n    }\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "68dc2d03-8cf5-48e0-be76-22281566873a",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v3",
+                    "assets",
+                    "edges"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Api-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) API Key",
+                    "key": "X-Api-Key",
+                    "value": ""
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Chain Destination",
+                    "key": "X-Chain",
+                    "value": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"options\": {\n    \"orderBy\": \"string\",\n    \"orderDirection\": \"string\",\n    \"pagination\": {\n      \"after\": \"string\",\n      \"before\": \"string\",\n      \"limit\": 3195\n    },\n    \"where\": {\n      \"blockNumber\": \"string\",\n      \"ipId\": \"string\",\n      \"licenseTermsId\": \"string\",\n      \"licenseTokenId\": \"string\",\n      \"parentIpId\": \"string\",\n      \"transactionHash\": \"string\"\n    }\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": [\n    {\n      \"blockNumber\": \"string\",\n      \"blockTime\": \"string\",\n      \"ipId\": \"string\",\n      \"licenseTemplate\": \"string\",\n      \"licenseTermsId\": \"string\",\n      \"licenseTokenId\": \"string\",\n      \"parentIpId\": \"string\",\n      \"transactionHash\": \"string\",\n      \"transactionIndex\": \"string\"\n    },\n    {\n      \"blockNumber\": \"string\",\n      \"blockTime\": \"string\",\n      \"ipId\": \"string\",\n      \"licenseTemplate\": \"string\",\n      \"licenseTermsId\": \"string\",\n      \"licenseTokenId\": \"string\",\n      \"parentIpId\": \"string\",\n      \"transactionHash\": \"string\",\n      \"transactionIndex\": \"string\"\n    }\n  ],\n  \"next\": \"string\",\n  \"prev\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "7345043d-10c6-4c42-8694-3fbffe07a7d6",
+          "name": "Get an IPAsset",
+          "request": {
+            "name": "Get an IPAsset",
+            "description": {
+              "content": "Retrieve an IPAsset",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v3",
+                "assets",
+                ":assetId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "",
+                  "key": "assetId",
+                  "description": "(Required) Asset ID"
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) API Key",
+                "key": "X-Api-Key",
+                "value": ""
+              },
+              {
+                "disabled": false,
+                "description": "(Required) Chain Destination",
+                "key": "X-Chain",
+                "value": ""
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "X-Api-Key"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "78bd99b9-d7d3-481b-b770-ff3c613aad2d",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v3",
+                    "assets",
+                    ":assetId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "",
+                      "key": "assetId",
+                      "description": "(Required) Asset ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Api-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) API Key",
+                    "key": "X-Api-Key",
+                    "value": ""
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Chain Destination",
+                    "key": "X-Chain",
+                    "value": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": {\n    \"ancestorCount\": 5766,\n    \"blockNumber\": \"string\",\n    \"blockTimestamp\": \"string\",\n    \"childrenCount\": 8086,\n    \"descendantCount\": 68,\n    \"id\": \"string\",\n    \"ipId\": \"string\",\n    \"isGroup\": false,\n    \"latestArbitrationPolicy\": \"string\",\n    \"nftMetadata\": {\n      \"chainId\": \"string\",\n      \"imageUrl\": \"string\",\n      \"name\": \"string\",\n      \"tokenContract\": \"string\",\n      \"tokenId\": \"string\",\n      \"tokenUri\": \"string\"\n    },\n    \"parentCount\": 3237,\n    \"rootCount\": 9215,\n    \"rootIpIds\": [\n      \"string\",\n      \"string\"\n    ],\n    \"transactionHash\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "efcfae13-19f6-4672-b687-f97ae7f79153",
+          "name": "Get metadata for an IPAsset",
+          "request": {
+            "name": "Get metadata for an IPAsset",
+            "description": {
+              "content": "Retrieve metadata for an IPAsset",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v3",
+                "assets",
+                ":assetId",
+                "metadata"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "",
+                  "key": "assetId",
+                  "description": "(Required) Asset ID"
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) API Key",
+                "key": "X-Api-Key",
+                "value": ""
+              },
+              {
+                "disabled": false,
+                "description": "(Required) Chain Destination",
+                "key": "X-Chain",
+                "value": ""
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "X-Api-Key"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "e0e276c2-a194-4d51-880e-8892599c284d",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v3",
+                    "assets",
+                    ":assetId",
+                    "metadata"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "",
+                      "key": "assetId",
+                      "description": "(Required) Asset ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Api-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) API Key",
+                    "key": "X-Api-Key",
+                    "value": ""
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Chain Destination",
+                    "key": "X-Chain",
+                    "value": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"string\",\n  \"metadataHash\": \"string\",\n  \"metadataJson\": \"\",\n  \"metadataUri\": \"string\",\n  \"nftMetadataHash\": \"string\",\n  \"nftTokenUri\": \"string\",\n  \"registrationDate\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.storyapis.com",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "c382cab1-fe9c-49d8-a28d-a7e46a62611b",
+    "name": "Story Protocol API Reference Collections IPAssets API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "",
+      "type": "text/plain"
+    }
+  }
+}

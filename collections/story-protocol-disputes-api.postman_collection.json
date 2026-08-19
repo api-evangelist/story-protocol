@@ -1,0 +1,315 @@
+{
+  "item": [
+    {
+      "id": "e5b5f507-8922-4349-b5f0-b839ad366e57",
+      "name": "Disputes",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "a1e3fbc2-fb61-4fbf-a5c4-b7175d72e9d0",
+          "name": "List Disputes",
+          "request": {
+            "name": "List Disputes",
+            "description": {
+              "content": "Retrieve a paginated, filtered list of Disputes",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v3",
+                "disputes"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) API Key",
+                "key": "X-Api-Key",
+                "value": ""
+              },
+              {
+                "disabled": false,
+                "description": "(Required) Chain Destination",
+                "key": "X-Chain",
+                "value": ""
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "X-Api-Key"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"options\": {\n    \"orderBy\": \"<string>\",\n    \"orderDirection\": \"<string>\",\n    \"pagination\": {\n      \"limit\": \"<integer>\"\n    },\n    \"where\": {\n      \"blockNumber\": \"<string>\",\n      \"blockNumberLte\": \"<string>\",\n      \"id\": \"<string>\",\n      \"initiator\": \"<string>\",\n      \"targetIpId\": \"<string>\"\n    }\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "c506fbc9-0bb7-4b96-a860-0fc82c00641f",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v3",
+                    "disputes"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Api-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) API Key",
+                    "key": "X-Api-Key",
+                    "value": ""
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Chain Destination",
+                    "key": "X-Chain",
+                    "value": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"options\": {\n    \"orderBy\": \"string\",\n    \"orderDirection\": \"string\",\n    \"pagination\": {\n      \"limit\": 9983\n    },\n    \"where\": {\n      \"blockNumber\": \"string\",\n      \"blockNumberLte\": \"string\",\n      \"id\": \"string\",\n      \"initiator\": \"string\",\n      \"targetIpId\": \"string\"\n    }\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": [\n    {\n      \"arbitrationPolicy\": \"string\",\n      \"blockNumber\": {},\n      \"blockTimestamp\": {},\n      \"counterEvidenceHash\": \"string\",\n      \"currentTag\": \"string\",\n      \"data\": \"string\",\n      \"deletedAt\": {},\n      \"disputeTimestamp\": {},\n      \"evidenceHash\": \"string\",\n      \"id\": {},\n      \"initiator\": \"string\",\n      \"liveness\": {},\n      \"logIndex\": {},\n      \"status\": \"string\",\n      \"targetIpId\": \"string\",\n      \"targetTag\": \"string\",\n      \"transactionHash\": \"string\",\n      \"umaLink\": \"string\"\n    },\n    {\n      \"arbitrationPolicy\": \"string\",\n      \"blockNumber\": {},\n      \"blockTimestamp\": {},\n      \"counterEvidenceHash\": \"string\",\n      \"currentTag\": \"string\",\n      \"data\": \"string\",\n      \"deletedAt\": {},\n      \"disputeTimestamp\": {},\n      \"evidenceHash\": \"string\",\n      \"id\": {},\n      \"initiator\": \"string\",\n      \"liveness\": {},\n      \"logIndex\": {},\n      \"status\": \"string\",\n      \"targetIpId\": \"string\",\n      \"targetTag\": \"string\",\n      \"transactionHash\": \"string\",\n      \"umaLink\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "47821e26-17dc-4b9b-b754-e24a81daa64b",
+          "name": "Get a Dispute",
+          "request": {
+            "name": "Get a Dispute",
+            "description": {
+              "content": "Retrieve a Dispute",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v3",
+                "disputes",
+                ":disputeId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "",
+                  "key": "disputeId",
+                  "description": "(Required) Dispute ID"
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) API Key",
+                "key": "X-Api-Key",
+                "value": ""
+              },
+              {
+                "disabled": false,
+                "description": "(Required) Chain Destination",
+                "key": "X-Chain",
+                "value": ""
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "X-Api-Key"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "8f55a44c-cc44-4f24-bbda-e5290e7d9634",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v3",
+                    "disputes",
+                    ":disputeId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "",
+                      "key": "disputeId",
+                      "description": "(Required) Dispute ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Api-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) API Key",
+                    "key": "X-Api-Key",
+                    "value": ""
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Chain Destination",
+                    "key": "X-Chain",
+                    "value": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": {\n    \"arbitrationPolicy\": \"string\",\n    \"blockNumber\": {},\n    \"blockTimestamp\": {},\n    \"counterEvidenceHash\": \"string\",\n    \"currentTag\": \"string\",\n    \"data\": \"string\",\n    \"deletedAt\": {},\n    \"disputeTimestamp\": {},\n    \"evidenceHash\": \"string\",\n    \"id\": {},\n    \"initiator\": \"string\",\n    \"liveness\": {},\n    \"logIndex\": {},\n    \"status\": \"string\",\n    \"targetIpId\": \"string\",\n    \"targetTag\": \"string\",\n    \"transactionHash\": \"string\",\n    \"umaLink\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.storyapis.com",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "83ce43e6-bb32-4121-8e92-fb75c94d7511",
+    "name": "Story Protocol API Reference Collections Disputes API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "",
+      "type": "text/plain"
+    }
+  }
+}

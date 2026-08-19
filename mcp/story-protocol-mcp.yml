@@ -2,113 +2,117 @@ generated: '2026-07-21'
 method: derived
 status: candidate
 source: openapi/story-protocol-openapi-original.json
-notes: >-
-  No official hosted/remote MCP server was found for Story Protocol as of this
-  pass. This is a candidate tool list derived one-per-operation from the
-  Story Protocol API OpenAPI. Every tool maps to a real HTTP method+path (the
-  spec declares no operationIds). All operations are read-only and require the
-  X-Api-Key and X-Chain headers.
+notes: No official hosted/remote MCP server was found for Story Protocol as of this pass. This is a candidate
+  tool list derived one-per-operation from the Story Protocol API OpenAPI. Every tool maps to a real HTTP
+  method+path (the spec declares no operationIds). All operations are read-only and require the X-Api-Key
+  and X-Chain headers.
 server:
   name: story-protocol
   transport: http
   base_url: https://api.storyapis.com
 tools:
 - name: list_assets
-  description: "Retrieve a paginated, filtered list of IPAssets"
-  source_operation: "POST /api/v3/assets"
+  description: Retrieve a paginated, filtered list of IPAssets
+  source_operation: POST /api/v3/assets
 - name: list_assets_edges
-  description: "Retrieve a paginated, filtered list of IP Edges"
-  source_operation: "POST /api/v3/assets/edges"
+  description: Retrieve a paginated, filtered list of IP Edges
+  source_operation: POST /api/v3/assets/edges
 - name: get_assets
-  description: "Retrieve an IPAsset"
-  source_operation: "GET /api/v3/assets/{assetId}"
+  description: Retrieve an IPAsset
+  source_operation: GET /api/v3/assets/{assetId}
 - name: get_assets_metadata
-  description: "Retrieve metadata for an IPAsset"
-  source_operation: "GET /api/v3/assets/{assetId}/metadata"
+  description: Retrieve metadata for an IPAsset
+  source_operation: GET /api/v3/assets/{assetId}/metadata
 - name: list_collections
-  description: "Retrieve a paginated, filtered list of Collections"
-  source_operation: "POST /api/v3/collections"
+  description: Retrieve a paginated, filtered list of Collections
+  source_operation: POST /api/v3/collections
 - name: get_collections
-  description: "Retrieve a Collection"
-  source_operation: "GET /api/v3/collections/{collectionId}"
+  description: Retrieve a Collection
+  source_operation: GET /api/v3/collections/{collectionId}
 - name: list_detailed_ip_license_terms
-  description: "Retrieve detailed IP License Terms associated with list of IP ID"
-  source_operation: "POST /api/v3/detailed-ip-license-terms"
+  description: Retrieve detailed IP License Terms associated with list of IP ID
+  source_operation: POST /api/v3/detailed-ip-license-terms
 - name: list_disputes
-  description: "Retrieve a paginated, filtered list of Disputes"
-  source_operation: "POST /api/v3/disputes"
+  description: Retrieve a paginated, filtered list of Disputes
+  source_operation: POST /api/v3/disputes
 - name: get_disputes
-  description: "Retrieve a Dispute"
-  source_operation: "GET /api/v3/disputes/{disputeId}"
+  description: Retrieve a Dispute
+  source_operation: GET /api/v3/disputes/{disputeId}
 - name: list_ip_group_edges
-  description: "Retrieve an IPGroup edges"
-  source_operation: "POST /api/v3/ip-group-edges"
+  description: Retrieve an IPGroup edges
+  source_operation: POST /api/v3/ip-group-edges
 - name: list_ip_groups
-  description: "Retrieve an IPGroup"
-  source_operation: "POST /api/v3/ip-groups"
+  description: Retrieve an IPGroup
+  source_operation: POST /api/v3/ip-groups
 - name: list_licenses_ip_terms
-  description: "Retrieve a paginated, filtered list of IPLicenseTerms"
-  source_operation: "POST /api/v3/licenses/ip/terms"
+  description: Retrieve a paginated, filtered list of IPLicenseTerms
+  source_operation: POST /api/v3/licenses/ip/terms
 - name: get_licenses_ip_terms
-  description: "Retrieve IP License Terms associated with an IP ID"
-  source_operation: "GET /api/v3/licenses/ip/terms/{ipId}"
+  description: Retrieve IP License Terms associated with an IP ID
+  source_operation: GET /api/v3/licenses/ip/terms/{ipId}
 - name: list_licenses_mintingfees
-  description: "Retrieve a paginated, filtered list of LicenseMintingFeePaids"
-  source_operation: "POST /api/v3/licenses/mintingfees"
+  description: Retrieve a paginated, filtered list of LicenseMintingFeePaids
+  source_operation: POST /api/v3/licenses/mintingfees
 - name: get_licenses_mintingfees
-  description: "Retrieve a LicenseMintingFeePay"
-  source_operation: "GET /api/v3/licenses/mintingfees/{licenseMintingFeePaidId}"
+  description: Retrieve a LicenseMintingFeePay
+  source_operation: GET /api/v3/licenses/mintingfees/{licenseMintingFeePaidId}
 - name: list_licenses_templates
-  description: "Retrieve a paginated, filtered list of LicenseTemplates"
-  source_operation: "POST /api/v3/licenses/templates"
+  description: Retrieve a paginated, filtered list of LicenseTemplates
+  source_operation: POST /api/v3/licenses/templates
 - name: get_licenses_templates
-  description: "Retrieve a LicenseTemplate"
-  source_operation: "GET /api/v3/licenses/templates/{licenseTemplateId}"
+  description: Retrieve a LicenseTemplate
+  source_operation: GET /api/v3/licenses/templates/{licenseTemplateId}
 - name: list_licenses_terms
-  description: "Retrieve a paginated, filtered list of LicenseTerms"
-  source_operation: "POST /api/v3/licenses/terms"
+  description: Retrieve a paginated, filtered list of LicenseTerms
+  source_operation: POST /api/v3/licenses/terms
 - name: get_licenses_terms_default
-  description: "Retrieve default license term"
-  source_operation: "GET /api/v3/licenses/terms/default"
+  description: Retrieve default license term
+  source_operation: GET /api/v3/licenses/terms/default
 - name: get_licenses_terms
-  description: "Retrieve a LicenseTerm"
-  source_operation: "GET /api/v3/licenses/terms/{licenseTermId}"
+  description: Retrieve a LicenseTerm
+  source_operation: GET /api/v3/licenses/terms/{licenseTermId}
 - name: list_licenses_tokens
-  description: "Retrieve a paginated, filtered list of LicenseTokens"
-  source_operation: "POST /api/v3/licenses/tokens"
+  description: Retrieve a paginated, filtered list of LicenseTokens
+  source_operation: POST /api/v3/licenses/tokens
 - name: get_licenses_tokens
-  description: "Retrieve a LicenseToken"
-  source_operation: "GET /api/v3/licenses/tokens/{licenseTokenId}"
+  description: Retrieve a LicenseToken
+  source_operation: GET /api/v3/licenses/tokens/{licenseTokenId}
 - name: list_modules
-  description: "Retrieve a paginated, filtered list of Modules"
-  source_operation: "POST /api/v3/modules"
+  description: Retrieve a paginated, filtered list of Modules
+  source_operation: POST /api/v3/modules
 - name: get_modules
-  description: "Retrieve a Module"
-  source_operation: "GET /api/v3/modules/{moduleId}"
+  description: Retrieve a Module
+  source_operation: GET /api/v3/modules/{moduleId}
 - name: list_permissions
-  description: "Retrieve a paginated, filtered list of Permissions"
-  source_operation: "POST /api/v3/permissions"
+  description: Retrieve a paginated, filtered list of Permissions
+  source_operation: POST /api/v3/permissions
 - name: get_permissions
-  description: "Retrieve a Permission"
-  source_operation: "GET /api/v3/permissions/{permissionId}"
+  description: Retrieve a Permission
+  source_operation: GET /api/v3/permissions/{permissionId}
 - name: list_royalties_payments
-  description: "Retrieve a paginated, filtered list of RoyaltyPays"
-  source_operation: "POST /api/v3/royalties/payments"
+  description: Retrieve a paginated, filtered list of RoyaltyPays
+  source_operation: POST /api/v3/royalties/payments
 - name: get_royalties_payments
-  description: "Retrieve a RoyaltyPay"
-  source_operation: "GET /api/v3/royalties/payments/{royaltyPayId}"
+  description: Retrieve a RoyaltyPay
+  source_operation: GET /api/v3/royalties/payments/{royaltyPayId}
 - name: list_transactions
-  description: "Retrieve a paginated, filtered list of Transactions"
-  source_operation: "POST /api/v3/transactions"
+  description: Retrieve a paginated, filtered list of Transactions
+  source_operation: POST /api/v3/transactions
 - name: list_transactions_latest
-  description: "Retrieve a paginated, filtered list of Latest Transactions"
-  source_operation: "POST /api/v3/transactions/latest"
+  description: Retrieve a paginated, filtered list of Latest Transactions
+  source_operation: POST /api/v3/transactions/latest
 - name: get_transactions
-  description: "Retrieve a Transaction"
-  source_operation: "GET /api/v3/transactions/{trxId}"
+  description: Retrieve a Transaction
+  source_operation: GET /api/v3/transactions/{trxId}
 - name: list_licenses_mintingfees_v4
-  description: "Retrieve a paginated, filtered list of LicenseMintingFeePaids"
-  source_operation: "POST /api/v4/licenses/mintingfees"
+  description: Retrieve a paginated, filtered list of LicenseMintingFeePaids
+  source_operation: POST /api/v4/licenses/mintingfees
 - name: get_licenses_mintingfees_v4
-  description: "Retrieve a LicenseMintingFeePay"
-  source_operation: "GET /api/v4/licenses/mintingfees/{licenseMintingFeePaidId}"
+  description: Retrieve a LicenseMintingFeePay
+  source_operation: GET /api/v4/licenses/mintingfees/{licenseMintingFeePaidId}
+deployment:
+  mode: none
+  verified: derived
+  tools: 33
+  checked: '2026-08-12'
+  source: catalog MCP census
