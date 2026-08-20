@@ -46,6 +46,15 @@ tags:
 - Royalties
 - Web3
 - NFT
+- Developer Tools
+tags_raw:
+- Company
+- Blockchain
+- Intellectual Property
+- Licensing
+- Royalties
+- Web3
+- NFT
 - API
 - Developer Tools
 apis:
@@ -55,6 +64,8 @@ apis:
   humanURL: https://docs.story.foundation/api-reference/protocol/introduction
   baseURL: https://api.storyapis.com
   tags:
+  - Collection
+  tags_raw:
   - Collections
   properties:
   - type: OpenAPI
@@ -175,6 +186,8 @@ apis:
   humanURL: https://docs.story.foundation/api-reference/protocol/introduction
   baseURL: https://api.storyapis.com
   tags:
+  - Transaction
+  tags_raw:
   - Transactions
   properties:
   - type: OpenAPI
