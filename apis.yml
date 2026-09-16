@@ -26,16 +26,13 @@ accessModel:
   method: derived
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/story-protocol.png
 name: Story Protocol
-description: >-
-  Story Protocol is a purpose-built EVM Layer 1 blockchain for onchain
-  intellectual property (the "IP blockchain"), powered by Proof of Creativity,
-  built by Pip Labs and backed by a16z. Its public REST API (api.storyapis.com)
-  is a read-only indexer that exposes IP assets, collections, license terms,
-  license templates and tokens, minting fees, disputes, IP groups, royalties,
-  protocol modules, permissions, and transactions across Story mainnet (chain
-  1514) and the Aeneid testnet (chain 1315). Authentication is an X-Api-Key
-  header plus an X-Chain network selector; official TypeScript and Python SDKs
-  wrap both the API and the onchain protocol.
+description: Story Protocol is a purpose-built EVM Layer 1 blockchain for onchain intellectual property
+  (the "IP blockchain"), powered by Proof of Creativity, built by Pip Labs and backed by a16z. Its public
+  REST API (api.storyapis.com) is a read-only indexer that exposes IP assets, collections, license terms,
+  license templates and tokens, minting fees, disputes, IP groups, royalties, protocol modules, permissions,
+  and transactions across Story mainnet (chain 1514) and the Aeneid testnet (chain 1315). Authentication
+  is an X-Api-Key header plus an X-Chain network selector; official TypeScript and Python SDKs wrap both
+  the API and the onchain protocol.
 url: https://raw.githubusercontent.com/api-evangelist/story-protocol/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
@@ -45,7 +42,7 @@ x-tier: stub
 x-tier-reason: portfolio-lead
 specificationVersion: '0.23'
 created: '2026-07-17'
-modified: '2026-07-21'
+modified: '2026-09-16'
 x-enrichment:
   date: '2026-07-21'
   status: enriched
@@ -211,6 +208,8 @@ maintainers:
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: Website
+  url: https://story.foundation
 - type: DeveloperPortal
   url: https://docs.story.foundation/developers
 - type: Documentation
@@ -233,7 +232,10 @@ common:
   url: packages/story-protocol-packages.yml
 - type: X-MCPServerCandidate
   url: mcp/story-protocol-mcp.yml
-  note: 'Renamed from MCPServer 2026-09-03 (roadmap#247): the manifest self-describes as status: candidate — a tool list derived from the published API contracts, not an existing server. The scorer already read the manifest and reported mcp_server correctly; the MCPServer type was crediting the artifact-type surfaces with a server that does not exist.'
+  note: 'Renamed from MCPServer 2026-09-03 (roadmap#247): the manifest self-describes as status: candidate
+    — a tool list derived from the published API contracts, not an existing server. The scorer already
+    read the manifest and reported mcp_server correctly; the MCPServer type was crediting the artifact-type
+    surfaces with a server that does not exist.'
 - type: AgentSkill
   url: skills/_index.yml
 - type: LLMsTxt
