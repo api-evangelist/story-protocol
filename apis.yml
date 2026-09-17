@@ -100,16 +100,6 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/story-protocol-ipassets-api-openapi.yml
-- aid: story-protocol:story-protocol-ipgroup-api
-  name: Story Protocol IPGroup API
-  description: The IPGroup API from Story Protocol — 2 operation(s) for ipgroup.
-  humanURL: https://docs.story.foundation/api-reference/protocol/introduction
-  baseURL: https://api.storyapis.com
-  tags:
-  - IPGroup
-  properties:
-  - type: OpenAPI
-    url: openapi/story-protocol-ipgroup-api-openapi.yml
 - aid: story-protocol:story-protocol-iplicenseterms-api
   name: Story Protocol IPLicenseTerms API
   description: The IPLicenseTerms API from Story Protocol — 4 operation(s) for iplicenseterms.
@@ -202,6 +192,16 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/story-protocol-transactions-api-openapi.yml
+- aid: story-protocol:story-protocol-ip-group-api
+  name: Story Protocol IP Group API
+  description: The IP Group API from Story Protocol — 2 operation(s) for ip group.
+  humanURL: https://docs.story.foundation/api-reference/protocol/introduction
+  baseURL: https://api.storyapis.com
+  tags:
+  - IP Group
+  properties:
+  - type: OpenAPI
+    url: openapi/story-protocol-ip-group-api-openapi.yml
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
