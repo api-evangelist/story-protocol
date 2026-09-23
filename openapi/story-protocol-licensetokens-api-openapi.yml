@@ -1,6 +1,6 @@
-openapi: 3.1.0
+openapi: 3.2.0
 info:
-  title: Story Protocol API Reference Collections LicenseTokens API
+  title: Story Protocol API Reference License Tokens API
   version: v1
   contact: {}
 servers:
@@ -42,6 +42,8 @@ paths:
       summary: List LicenseTokens
       tags:
       - LicenseTokens
+      operationId: postApiV3LicensesTokens
+      x-operation-id-source: derived
   /api/v3/licenses/tokens/{licenseTokenId}:
     get:
       description: Retrieve a LicenseToken
@@ -73,8 +75,52 @@ paths:
       summary: Get an LicenseToken
       tags:
       - LicenseTokens
+      operationId: getApiV3LicensesTokensByLicenseTokenId
+      x-operation-id-source: derived
 components:
   schemas:
+    github_com_storyprotocol_protocol-api_api_internal_models_protocolv1.LicenseToken:
+      properties:
+        blockNumber:
+          type: string
+        blockTime:
+          type: string
+        burntAt:
+          type: string
+        id:
+          type: string
+        licenseTemplate:
+          type: string
+        licenseTermsId:
+          type: string
+        licensorIpId:
+          type: string
+        owner:
+          type: string
+        transferable:
+          type: string
+      type: object
+    github_com_storyprotocol_protocol-api_api_internal_models_protocolv1.LicenseTokensResponse:
+      properties:
+        data:
+          items:
+            $ref: '#/components/schemas/github_com_storyprotocol_protocol-api_api_internal_models_protocolv1.LicenseToken'
+          type: array
+        next:
+          type: string
+        prev:
+          type: string
+      type: object
+    github_com_storyprotocol_protocol-api_api_internal_models_protocolv2.LicenseTokenRequestBody:
+      properties:
+        options:
+          $ref: '#/components/schemas/github_com_storyprotocol_protocol-api_api_internal_models_protocolv2.LicenseTokenQueryOptions'
+      type: object
+    github_com_storyprotocol_protocol-api_api_internal_models_protocolv1.LicenseTokenResponse:
+      properties:
+        data:
+          $ref: '#/components/schemas/github_com_storyprotocol_protocol-api_api_internal_models_protocolv1.LicenseToken'
+      type: object
     github_com_storyprotocol_protocol-api_api_internal_models_protocolv2.LicenseTokenQueryOptions:
       properties:
         orderBy:
@@ -101,48 +147,6 @@ components:
             licensorIpId:
               type: string
           type: object
-      type: object
-    github_com_storyprotocol_protocol-api_api_internal_models_protocolv1.LicenseTokenResponse:
-      properties:
-        data:
-          $ref: '#/components/schemas/github_com_storyprotocol_protocol-api_api_internal_models_protocolv1.LicenseToken'
-      type: object
-    github_com_storyprotocol_protocol-api_api_internal_models_protocolv1.LicenseToken:
-      properties:
-        blockNumber:
-          type: string
-        blockTime:
-          type: string
-        burntAt:
-          type: string
-        id:
-          type: string
-        licenseTemplate:
-          type: string
-        licenseTermsId:
-          type: string
-        licensorIpId:
-          type: string
-        owner:
-          type: string
-        transferable:
-          type: string
-      type: object
-    github_com_storyprotocol_protocol-api_api_internal_models_protocolv2.LicenseTokenRequestBody:
-      properties:
-        options:
-          $ref: '#/components/schemas/github_com_storyprotocol_protocol-api_api_internal_models_protocolv2.LicenseTokenQueryOptions'
-      type: object
-    github_com_storyprotocol_protocol-api_api_internal_models_protocolv1.LicenseTokensResponse:
-      properties:
-        data:
-          items:
-            $ref: '#/components/schemas/github_com_storyprotocol_protocol-api_api_internal_models_protocolv1.LicenseToken'
-          type: array
-        next:
-          type: string
-        prev:
-          type: string
       type: object
   securitySchemes:
     ApiKeyAuth:

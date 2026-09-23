@@ -1,6 +1,6 @@
-openapi: 3.1.0
+openapi: 3.2.0
 info:
-  title: Story Protocol API Reference Collections IPLicenseTerms API
+  title: Story Protocol API Reference IP License Terms API
   version: v1
   contact: {}
 servers:
@@ -42,6 +42,8 @@ paths:
       summary: List detailed ip license term
       tags:
       - IPLicenseTerms
+      operationId: postApiV3DetailedIpLicenseTerms
+      x-operation-id-source: derived
   /api/v3/licenses/ip/terms:
     post:
       description: Retrieve a paginated, filtered list of IPLicenseTerms
@@ -75,6 +77,8 @@ paths:
       summary: List IPLicenseTerms
       tags:
       - IPLicenseTerms
+      operationId: postApiV3LicensesIpTerms
+      x-operation-id-source: derived
   /api/v3/licenses/ip/terms/{ipId}:
     get:
       description: Retrieve IP License Terms associated with an IP ID
@@ -106,6 +110,8 @@ paths:
       summary: Get IP License Terms for an IP
       tags:
       - IPLicenseTerms
+      operationId: getApiV3LicensesIpTermsByIpId
+      x-operation-id-source: derived
   /api/v3/licenses/terms/default:
     get:
       description: Retrieve default license term
@@ -132,80 +138,11 @@ paths:
       summary: Get default license term
       tags:
       - IPLicenseTerms
+      operationId: getApiV3LicensesTermsDefault
+      x-operation-id-source: derived
 components:
   schemas:
-    github_com_storyprotocol_protocol-api_api_internal_models_protocolv1.DetailedIPLicenseTermsQueryOptions:
-      properties:
-        where:
-          properties:
-            ipIds:
-              items:
-                type: string
-              type: array
-          type: object
-      type: object
-    github_com_storyprotocol_protocol-api_api_internal_models_protocolv2.DetailedTermsDefaultResponse:
-      properties:
-        data:
-          $ref: '#/components/schemas/github_com_storyprotocol_protocol-api_api_internal_models_protocolv2.DetailedTerms'
-      type: object
-    github_com_storyprotocol_protocol-api_api_internal_models_protocolv1.IPLicenseTermsResponse:
-      properties:
-        data:
-          items:
-            $ref: '#/components/schemas/github_com_storyprotocol_protocol-api_api_internal_models_protocolv1.IPLicenseTerm'
-          type: array
-        next:
-          type: string
-        prev:
-          type: string
-      type: object
-    github_com_storyprotocol_protocol-api_api_internal_models_protocolv2.IPLicenseTermsQueryOptions:
-      properties:
-        orderBy:
-          type: string
-        orderDirection:
-          type: string
-        pagination:
-          properties:
-            after:
-              type: string
-            before:
-              type: string
-            limit:
-              type: integer
-          type: object
-        where:
-          properties:
-            blockNumber:
-              type: string
-            id:
-              type: string
-            ipId:
-              type: string
-          type: object
-      type: object
-    github_com_storyprotocol_protocol-api_api_internal_models_protocolv2.DetailedTerms:
-      properties:
-        disabled:
-          type: boolean
-        id:
-          type: string
-        ipId:
-          type: string
-        licenseTemplate:
-          $ref: '#/components/schemas/github_com_storyprotocol_protocol-api_api_internal_models_protocolv1.LicenseTemplate'
-        licenseTemplateId:
-          type: string
-        licensingConfig:
-          $ref: '#/components/schemas/github_com_storyprotocol_protocol-api_api_internal_models_protocolv1.LicensingConfig'
-        terms:
-          $ref: '#/components/schemas/github_com_storyprotocol_protocol-api_api_internal_models_protocolv1.Term'
-      type: object
-    github_com_storyprotocol_protocol-api_api_internal_models_protocolv1.DetailedIPLicenseTermsRequestBody:
-      properties:
-        options:
-          $ref: '#/components/schemas/github_com_storyprotocol_protocol-api_api_internal_models_protocolv1.DetailedIPLicenseTermsQueryOptions'
+    big.Int:
       type: object
     github_com_storyprotocol_protocol-api_api_internal_models_protocolv1.IPLicenseTerm:
       properties:
@@ -226,31 +163,10 @@ components:
         licensingConfig:
           $ref: '#/components/schemas/github_com_storyprotocol_protocol-api_api_internal_models_protocolv1.LicensingConfig'
       type: object
-    github_com_storyprotocol_protocol-api_api_internal_models_protocolv1.LicensingConfig:
-      properties:
-        commercialRevShare:
-          type: integer
-        disabled:
-          type: boolean
-        expectGroupRewardPool:
-          type: string
-        expectMinimumGroupRewardShare:
-          type: integer
-        hookData:
-          type: string
-        isSet:
-          type: boolean
-        licensingHook:
-          type: string
-        mintingFee:
-          type: string
-      type: object
-    github_com_storyprotocol_protocol-api_api_internal_models_protocolv2.DetailedTermsResponse:
+    github_com_storyprotocol_protocol-api_api_internal_models_protocolv2.DetailedTermsDefaultResponse:
       properties:
         data:
-          items:
-            $ref: '#/components/schemas/github_com_storyprotocol_protocol-api_api_internal_models_protocolv2.DetailedTerms'
-          type: array
+          $ref: '#/components/schemas/github_com_storyprotocol_protocol-api_api_internal_models_protocolv2.DetailedTerms'
       type: object
     github_com_storyprotocol_protocol-api_api_internal_models_protocolv1.Term:
       properties:
@@ -289,7 +205,56 @@ components:
         uri:
           type: string
       type: object
-    big.Int:
+    github_com_storyprotocol_protocol-api_api_internal_models_protocolv2.IPLicenseTermsRequestBody:
+      properties:
+        options:
+          $ref: '#/components/schemas/github_com_storyprotocol_protocol-api_api_internal_models_protocolv2.IPLicenseTermsQueryOptions'
+      type: object
+    github_com_storyprotocol_protocol-api_api_internal_models_protocolv2.IPLicenseTermsQueryOptions:
+      properties:
+        orderBy:
+          type: string
+        orderDirection:
+          type: string
+        pagination:
+          properties:
+            after:
+              type: string
+            before:
+              type: string
+            limit:
+              type: integer
+          type: object
+        where:
+          properties:
+            blockNumber:
+              type: string
+            id:
+              type: string
+            ipId:
+              type: string
+          type: object
+      type: object
+    github_com_storyprotocol_protocol-api_api_internal_models_protocolv1.IPLicenseTermsResponse:
+      properties:
+        data:
+          items:
+            $ref: '#/components/schemas/github_com_storyprotocol_protocol-api_api_internal_models_protocolv1.IPLicenseTerm'
+          type: array
+        next:
+          type: string
+        prev:
+          type: string
+      type: object
+    github_com_storyprotocol_protocol-api_api_internal_models_protocolv1.DetailedIPLicenseTermsQueryOptions:
+      properties:
+        where:
+          properties:
+            ipIds:
+              items:
+                type: string
+              type: array
+          type: object
       type: object
     github_com_storyprotocol_protocol-api_api_internal_models_protocolv1.LicenseTemplate:
       properties:
@@ -304,10 +269,53 @@ components:
         name:
           type: string
       type: object
-    github_com_storyprotocol_protocol-api_api_internal_models_protocolv2.IPLicenseTermsRequestBody:
+    github_com_storyprotocol_protocol-api_api_internal_models_protocolv1.LicensingConfig:
+      properties:
+        commercialRevShare:
+          type: integer
+        disabled:
+          type: boolean
+        expectGroupRewardPool:
+          type: string
+        expectMinimumGroupRewardShare:
+          type: integer
+        hookData:
+          type: string
+        isSet:
+          type: boolean
+        licensingHook:
+          type: string
+        mintingFee:
+          type: string
+      type: object
+    github_com_storyprotocol_protocol-api_api_internal_models_protocolv2.DetailedTermsResponse:
+      properties:
+        data:
+          items:
+            $ref: '#/components/schemas/github_com_storyprotocol_protocol-api_api_internal_models_protocolv2.DetailedTerms'
+          type: array
+      type: object
+    github_com_storyprotocol_protocol-api_api_internal_models_protocolv2.DetailedTerms:
+      properties:
+        disabled:
+          type: boolean
+        id:
+          type: string
+        ipId:
+          type: string
+        licenseTemplate:
+          $ref: '#/components/schemas/github_com_storyprotocol_protocol-api_api_internal_models_protocolv1.LicenseTemplate'
+        licenseTemplateId:
+          type: string
+        licensingConfig:
+          $ref: '#/components/schemas/github_com_storyprotocol_protocol-api_api_internal_models_protocolv1.LicensingConfig'
+        terms:
+          $ref: '#/components/schemas/github_com_storyprotocol_protocol-api_api_internal_models_protocolv1.Term'
+      type: object
+    github_com_storyprotocol_protocol-api_api_internal_models_protocolv1.DetailedIPLicenseTermsRequestBody:
       properties:
         options:
-          $ref: '#/components/schemas/github_com_storyprotocol_protocol-api_api_internal_models_protocolv2.IPLicenseTermsQueryOptions'
+          $ref: '#/components/schemas/github_com_storyprotocol_protocol-api_api_internal_models_protocolv1.DetailedIPLicenseTermsQueryOptions'
       type: object
   securitySchemes:
     ApiKeyAuth:

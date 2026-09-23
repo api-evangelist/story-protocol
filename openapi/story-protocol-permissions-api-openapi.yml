@@ -1,6 +1,6 @@
-openapi: 3.1.0
+openapi: 3.2.0
 info:
-  title: Story Protocol API Reference Collections Permissions API
+  title: Story Protocol API Reference Permissions API
   version: v1
   contact: {}
 servers:
@@ -42,6 +42,8 @@ paths:
       summary: List Permissions
       tags:
       - Permissions
+      operationId: postApiV3Permissions
+      x-operation-id-source: derived
   /api/v3/permissions/{permissionId}:
     get:
       description: Retrieve a Permission
@@ -73,8 +75,15 @@ paths:
       summary: Get a Permission
       tags:
       - Permissions
+      operationId: getApiV3PermissionsByPermissionId
+      x-operation-id-source: derived
 components:
   schemas:
+    github_com_storyprotocol_protocol-api_api_internal_models_protocolv2.PermissionRequestBody:
+      properties:
+        options:
+          $ref: '#/components/schemas/github_com_storyprotocol_protocol-api_api_internal_models_protocolv2.PermissionQueryOptions'
+      type: object
     github_com_storyprotocol_protocol-api_api_internal_models_protocolv2.PermissionQueryOptions:
       properties:
         orderBy:
@@ -106,22 +115,6 @@ components:
               type: string
           type: object
       type: object
-    github_com_storyprotocol_protocol-api_api_internal_models_protocolv1.PermissionsResponse:
-      properties:
-        data:
-          items:
-            $ref: '#/components/schemas/github_com_storyprotocol_protocol-api_api_internal_models_protocolv1.Permission'
-          type: array
-        next:
-          type: string
-        prev:
-          type: string
-      type: object
-    github_com_storyprotocol_protocol-api_api_internal_models_protocolv2.PermissionRequestBody:
-      properties:
-        options:
-          $ref: '#/components/schemas/github_com_storyprotocol_protocol-api_api_internal_models_protocolv2.PermissionQueryOptions'
-      type: object
     github_com_storyprotocol_protocol-api_api_internal_models_protocolv1.Permission:
       properties:
         blockNumber:
@@ -139,6 +132,17 @@ components:
         to:
           type: string
         uuid:
+          type: string
+      type: object
+    github_com_storyprotocol_protocol-api_api_internal_models_protocolv1.PermissionsResponse:
+      properties:
+        data:
+          items:
+            $ref: '#/components/schemas/github_com_storyprotocol_protocol-api_api_internal_models_protocolv1.Permission'
+          type: array
+        next:
+          type: string
+        prev:
           type: string
       type: object
     github_com_storyprotocol_protocol-api_api_internal_models_protocolv1.PermissionResponse:

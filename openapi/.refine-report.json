@@ -1,19 +1,7 @@
 {
   "provider": "story-protocol",
   "sources": [
-    "story-protocol-collections-api-openapi.yml",
-    "story-protocol-disputes-api-openapi.yml",
-    "story-protocol-ipassets-api-openapi.yml",
-    "story-protocol-ipgroup-api-openapi.yml",
-    "story-protocol-iplicenseterms-api-openapi.yml",
-    "story-protocol-licenses-api-openapi.yml",
-    "story-protocol-licensetemplates-api-openapi.yml",
-    "story-protocol-licenseterms-api-openapi.yml",
-    "story-protocol-licensetokens-api-openapi.yml",
-    "story-protocol-modules-api-openapi.yml",
-    "story-protocol-permissions-api-openapi.yml",
-    "story-protocol-royalties-api-openapi.yml",
-    "story-protocol-transactions-api-openapi.yml"
+    "_original/story-protocol-openapi-original.json"
   ],
   "outputs": [
     "story-protocol-collections-api-openapi.yml",
@@ -21,18 +9,52 @@
     "story-protocol-ipassets-api-openapi.yml",
     "story-protocol-ipgroup-api-openapi.yml",
     "story-protocol-iplicenseterms-api-openapi.yml",
-    "story-protocol-licenses-api-openapi.yml",
     "story-protocol-licensetemplates-api-openapi.yml",
     "story-protocol-licenseterms-api-openapi.yml",
     "story-protocol-licensetokens-api-openapi.yml",
+    "story-protocol-licenses-api-openapi.yml",
     "story-protocol-modules-api-openapi.yml",
     "story-protocol-permissions-api-openapi.yml",
     "story-protocol-royalties-api-openapi.yml",
     "story-protocol-transactions-api-openapi.yml"
   ],
-  "archived": [],
+  "archived": [
+    "deleted 1 superseded output(s) from the previous generation"
+  ],
   "errors": [],
   "warnings": [],
-  "notes": [],
-  "skipped": []
+  "notes": [
+    "sourced from openapi/_original/ (1 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "story-protocol-openapi-original.json: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
+    "story-protocol-openapi-original.json: declared missing tag: Collections",
+    "story-protocol-openapi-original.json: declared missing tag: Disputes",
+    "story-protocol-openapi-original.json: declared missing tag: IPAssets",
+    "story-protocol-openapi-original.json: declared missing tag: IPGroup",
+    "story-protocol-openapi-original.json: declared missing tag: IPLicenseTerms",
+    "story-protocol-openapi-original.json: declared missing tag: LicenseTemplates",
+    "story-protocol-openapi-original.json: declared missing tag: LicenseTerms",
+    "story-protocol-openapi-original.json: declared missing tag: LicenseTokens",
+    "story-protocol-openapi-original.json: declared missing tag: Licenses",
+    "story-protocol-openapi-original.json: declared missing tag: Modules",
+    "story-protocol-openapi-original.json: declared missing tag: Permissions",
+    "story-protocol-openapi-original.json: declared missing tag: Royalties",
+    "story-protocol-openapi-original.json: declared missing tag: Transactions",
+    "superseded outputs removed: story-protocol-ip-group-api-openapi.yml",
+    "apis.yml register: written (+1 apis, 13 total)"
+  ],
+  "skipped": [
+    "story-protocol-collections-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "story-protocol-disputes-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "story-protocol-ip-group-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "story-protocol-ipassets-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "story-protocol-iplicenseterms-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "story-protocol-licenses-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "story-protocol-licensetemplates-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "story-protocol-licenseterms-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "story-protocol-licensetokens-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "story-protocol-modules-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "story-protocol-permissions-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "story-protocol-royalties-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "story-protocol-transactions-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }

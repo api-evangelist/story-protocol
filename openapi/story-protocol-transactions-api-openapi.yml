@@ -1,6 +1,6 @@
-openapi: 3.1.0
+openapi: 3.2.0
 info:
-  title: Story Protocol API Reference Collections Transactions API
+  title: Story Protocol API Reference Transactions API
   version: v1
   contact: {}
 servers:
@@ -42,6 +42,8 @@ paths:
       summary: List Transactions
       tags:
       - Transactions
+      operationId: postApiV3Transactions
+      x-operation-id-source: derived
   /api/v3/transactions/latest:
     post:
       description: Retrieve a paginated, filtered list of Latest Transactions
@@ -75,6 +77,8 @@ paths:
       summary: List Latest Transactions
       tags:
       - Transactions
+      operationId: postApiV3TransactionsLatest
+      x-operation-id-source: derived
   /api/v3/transactions/{trxId}:
     get:
       description: Retrieve a Transaction
@@ -106,6 +110,8 @@ paths:
       summary: Get a Transaction
       tags:
       - Transactions
+      operationId: getApiV3TransactionsByTrxId
+      x-operation-id-source: derived
 components:
   schemas:
     github_com_storyprotocol_protocol-api_api_internal_models_protocolv1.TransactionsResponse:
@@ -129,38 +135,6 @@ components:
           items:
             $ref: '#/components/schemas/github_com_storyprotocol_protocol-api_api_internal_models_protocolv1.Transaction'
           type: array
-      type: object
-    github_com_storyprotocol_protocol-api_api_internal_models_protocolv1.Transaction:
-      properties:
-        actionType:
-          type: string
-        blockNumber:
-          type: string
-        blockTimestamp:
-          type: string
-        createdAt:
-          type: string
-        id:
-          type: string
-        initiator:
-          type: string
-        ipId:
-          type: string
-        logIndex:
-          type: string
-        resourceId:
-          type: string
-        resourceType:
-          type: string
-        transactionIndex:
-          type: string
-        txHash:
-          type: string
-      type: object
-    github_com_storyprotocol_protocol-api_api_internal_models_protocolv2.TransactionRequestBody:
-      properties:
-        options:
-          $ref: '#/components/schemas/github_com_storyprotocol_protocol-api_api_internal_models_protocolv2.TrxQueryOptions'
       type: object
     github_com_storyprotocol_protocol-api_api_internal_models_protocolv2.TrxQueryOptions:
       properties:
@@ -198,6 +172,38 @@ components:
             transactionHash:
               type: string
           type: object
+      type: object
+    github_com_storyprotocol_protocol-api_api_internal_models_protocolv1.Transaction:
+      properties:
+        actionType:
+          type: string
+        blockNumber:
+          type: string
+        blockTimestamp:
+          type: string
+        createdAt:
+          type: string
+        id:
+          type: string
+        initiator:
+          type: string
+        ipId:
+          type: string
+        logIndex:
+          type: string
+        resourceId:
+          type: string
+        resourceType:
+          type: string
+        transactionIndex:
+          type: string
+        txHash:
+          type: string
+      type: object
+    github_com_storyprotocol_protocol-api_api_internal_models_protocolv2.TransactionRequestBody:
+      properties:
+        options:
+          $ref: '#/components/schemas/github_com_storyprotocol_protocol-api_api_internal_models_protocolv2.TrxQueryOptions'
       type: object
   securitySchemes:
     ApiKeyAuth:

@@ -1,6 +1,6 @@
-openapi: 3.1.0
+openapi: 3.2.0
 info:
-  title: Story Protocol API Reference Collections IPAssets API
+  title: Story Protocol API Reference IP Assets API
   version: v1
   contact: {}
 servers:
@@ -42,6 +42,8 @@ paths:
       summary: List IPAssets
       tags:
       - IPAssets
+      operationId: postApiV3Assets
+      x-operation-id-source: derived
   /api/v3/assets/edges:
     post:
       description: Retrieve a paginated, filtered list of IP Edges
@@ -75,6 +77,8 @@ paths:
       summary: List IP Edges
       tags:
       - IPAssets
+      operationId: postApiV3AssetsEdges
+      x-operation-id-source: derived
   /api/v3/assets/{assetId}:
     get:
       description: Retrieve an IPAsset
@@ -106,6 +110,8 @@ paths:
       summary: Get an IPAsset
       tags:
       - IPAssets
+      operationId: getApiV3AssetsByAssetId
+      x-operation-id-source: derived
   /api/v3/assets/{assetId}/metadata:
     get:
       description: Retrieve metadata for an IPAsset
@@ -137,58 +143,20 @@ paths:
       summary: Get metadata for an IPAsset
       tags:
       - IPAssets
+      operationId: getApiV3AssetsByAssetIdMetadata
+      x-operation-id-source: derived
 components:
   schemas:
-    github_com_storyprotocol_protocol-api_api_internal_models_protocolv3.IPAssetsResponse:
+    github_com_storyprotocol_protocol-api_api_internal_models_protocolv1.IPAssetEdgeResponse:
       properties:
         data:
           items:
-            $ref: '#/components/schemas/github_com_storyprotocol_protocol-api_api_internal_models_protocolv3.IPAsset'
+            $ref: '#/components/schemas/github_com_storyprotocol_protocol-api_api_internal_models_protocolv1.IpAssetEdge'
           type: array
-        hasNextPage:
-          type: boolean
-        hasPreviousPage:
-          type: boolean
         next:
           type: string
         prev:
           type: string
-      type: object
-    github_com_storyprotocol_protocol-api_api_internal_models_protocolv3.IPAssetResponse:
-      properties:
-        data:
-          $ref: '#/components/schemas/github_com_storyprotocol_protocol-api_api_internal_models_protocolv3.IPAsset'
-      type: object
-    github_com_storyprotocol_protocol-api_api_internal_models_protocolv2.IpAssetEdgeQueryOptions:
-      properties:
-        orderBy:
-          type: string
-        orderDirection:
-          type: string
-        pagination:
-          properties:
-            after:
-              type: string
-            before:
-              type: string
-            limit:
-              type: integer
-          type: object
-        where:
-          properties:
-            blockNumber:
-              type: string
-            ipId:
-              type: string
-            licenseTermsId:
-              type: string
-            licenseTokenId:
-              type: string
-            parentIpId:
-              type: string
-            transactionHash:
-              type: string
-          type: object
       type: object
     github_com_storyprotocol_protocol-api_api_internal_models_protocolv3.NftMetadata:
       properties:
@@ -205,6 +173,26 @@ components:
         tokenUri:
           type: string
       type: object
+    github_com_storyprotocol_protocol-api_api_internal_models_protocolv3.IPAssetsResponse:
+      properties:
+        data:
+          items:
+            $ref: '#/components/schemas/github_com_storyprotocol_protocol-api_api_internal_models_protocolv3.IPAsset'
+          type: array
+        hasNextPage:
+          type: boolean
+        hasPreviousPage:
+          type: boolean
+        next:
+          type: string
+        prev:
+          type: string
+      type: object
+    github_com_storyprotocol_protocol-api_api_internal_models_protocolv2.IpAssetEdgeRequestBody:
+      properties:
+        options:
+          $ref: '#/components/schemas/github_com_storyprotocol_protocol-api_api_internal_models_protocolv2.IpAssetEdgeQueryOptions'
+      type: object
     github_com_storyprotocol_protocol-api_api_internal_models_protocolv1.IpAssetMetadata:
       properties:
         id:
@@ -220,16 +208,6 @@ components:
           type: string
         registrationDate:
           type: string
-      type: object
-    github_com_storyprotocol_protocol-api_api_internal_models_protocolv2.IpAssetRequestBody:
-      properties:
-        options:
-          $ref: '#/components/schemas/github_com_storyprotocol_protocol-api_api_internal_models_protocolv2.IpAssetQueryOptions'
-      type: object
-    github_com_storyprotocol_protocol-api_api_internal_models_protocolv2.IpAssetEdgeRequestBody:
-      properties:
-        options:
-          $ref: '#/components/schemas/github_com_storyprotocol_protocol-api_api_internal_models_protocolv2.IpAssetEdgeQueryOptions'
       type: object
     github_com_storyprotocol_protocol-api_api_internal_models_protocolv3.IPAsset:
       properties:
@@ -264,6 +242,47 @@ components:
         transactionHash:
           type: string
       type: object
+    github_com_storyprotocol_protocol-api_api_internal_models_protocolv3.IPAssetResponse:
+      properties:
+        data:
+          $ref: '#/components/schemas/github_com_storyprotocol_protocol-api_api_internal_models_protocolv3.IPAsset'
+      type: object
+    github_com_storyprotocol_protocol-api_api_internal_models_protocolv2.IpAssetRequestBody:
+      properties:
+        options:
+          $ref: '#/components/schemas/github_com_storyprotocol_protocol-api_api_internal_models_protocolv2.IpAssetQueryOptions'
+      type: object
+    github_com_storyprotocol_protocol-api_api_internal_models_protocolv2.IpAssetEdgeQueryOptions:
+      properties:
+        orderBy:
+          type: string
+        orderDirection:
+          type: string
+        pagination:
+          properties:
+            after:
+              type: string
+            before:
+              type: string
+            limit:
+              type: integer
+          type: object
+        where:
+          properties:
+            blockNumber:
+              type: string
+            ipId:
+              type: string
+            licenseTermsId:
+              type: string
+            licenseTokenId:
+              type: string
+            parentIpId:
+              type: string
+            transactionHash:
+              type: string
+          type: object
+      type: object
     github_com_storyprotocol_protocol-api_api_internal_models_protocolv1.IpAssetEdge:
       properties:
         blockNumber:
@@ -283,17 +302,6 @@ components:
         transactionHash:
           type: string
         transactionIndex:
-          type: string
-      type: object
-    github_com_storyprotocol_protocol-api_api_internal_models_protocolv1.IPAssetEdgeResponse:
-      properties:
-        data:
-          items:
-            $ref: '#/components/schemas/github_com_storyprotocol_protocol-api_api_internal_models_protocolv1.IpAssetEdge'
-          type: array
-        next:
-          type: string
-        prev:
           type: string
       type: object
     github_com_storyprotocol_protocol-api_api_internal_models_protocolv2.IpAssetQueryOptions:

@@ -1,6 +1,6 @@
-openapi: 3.1.0
+openapi: 3.2.0
 info:
-  title: Story Protocol API Reference Collections Royalties API
+  title: Story Protocol API Reference Royalties API
   version: v1
   contact: {}
 servers:
@@ -42,6 +42,8 @@ paths:
       summary: List RoyaltyPays
       tags:
       - Royalties
+      operationId: postApiV3RoyaltiesPayments
+      x-operation-id-source: derived
   /api/v3/royalties/payments/{royaltyPayId}:
     get:
       description: Retrieve a RoyaltyPay
@@ -73,48 +75,10 @@ paths:
       summary: Get a RoyaltyPay
       tags:
       - Royalties
+      operationId: getApiV3RoyaltiesPaymentsByRoyaltyPayId
+      x-operation-id-source: derived
 components:
   schemas:
-    github_com_storyprotocol_protocol-api_api_internal_models_protocolv2.RoyaltyPayRequestBody:
-      properties:
-        options:
-          $ref: '#/components/schemas/github_com_storyprotocol_protocol-api_api_internal_models_protocolv2.RoyaltyPayQueryOptions'
-      type: object
-    github_com_storyprotocol_protocol-api_api_internal_models_protocolv1.RoyaltyPaysResponse:
-      properties:
-        data:
-          items:
-            $ref: '#/components/schemas/github_com_storyprotocol_protocol-api_api_internal_models_protocolv1.RoyaltyPay'
-          type: array
-        next:
-          type: string
-        prev:
-          type: string
-      type: object
-    github_com_storyprotocol_protocol-api_api_internal_models_protocolv1.RoyaltyPay:
-      properties:
-        amount:
-          type: string
-        blockNumber:
-          type: string
-        blockTimestamp:
-          type: string
-        id:
-          type: string
-        payerIpId:
-          type: string
-        receiverIpId:
-          type: string
-        sender:
-          type: string
-        token:
-          type: string
-      type: object
-    github_com_storyprotocol_protocol-api_api_internal_models_protocolv1.RoyaltyPayResponse:
-      properties:
-        data:
-          $ref: '#/components/schemas/github_com_storyprotocol_protocol-api_api_internal_models_protocolv1.RoyaltyPay'
-      type: object
     github_com_storyprotocol_protocol-api_api_internal_models_protocolv2.RoyaltyPayQueryOptions:
       properties:
         orderBy:
@@ -141,6 +105,46 @@ components:
             receiverIpId:
               type: string
           type: object
+      type: object
+    github_com_storyprotocol_protocol-api_api_internal_models_protocolv1.RoyaltyPay:
+      properties:
+        amount:
+          type: string
+        blockNumber:
+          type: string
+        blockTimestamp:
+          type: string
+        id:
+          type: string
+        payerIpId:
+          type: string
+        receiverIpId:
+          type: string
+        sender:
+          type: string
+        token:
+          type: string
+      type: object
+    github_com_storyprotocol_protocol-api_api_internal_models_protocolv1.RoyaltyPayResponse:
+      properties:
+        data:
+          $ref: '#/components/schemas/github_com_storyprotocol_protocol-api_api_internal_models_protocolv1.RoyaltyPay'
+      type: object
+    github_com_storyprotocol_protocol-api_api_internal_models_protocolv1.RoyaltyPaysResponse:
+      properties:
+        data:
+          items:
+            $ref: '#/components/schemas/github_com_storyprotocol_protocol-api_api_internal_models_protocolv1.RoyaltyPay'
+          type: array
+        next:
+          type: string
+        prev:
+          type: string
+      type: object
+    github_com_storyprotocol_protocol-api_api_internal_models_protocolv2.RoyaltyPayRequestBody:
+      properties:
+        options:
+          $ref: '#/components/schemas/github_com_storyprotocol_protocol-api_api_internal_models_protocolv2.RoyaltyPayQueryOptions'
       type: object
   securitySchemes:
     ApiKeyAuth:
