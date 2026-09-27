@@ -79,27 +79,6 @@ paths:
       x-operation-id-source: derived
 components:
   schemas:
-    github_com_storyprotocol_protocol-api_api_internal_models_protocolv1.Collection:
-      properties:
-        assetCount:
-          type: string
-        blockNumber:
-          type: string
-        blockTimestamp:
-          type: string
-        cancelledDisputeCount:
-          type: string
-        id:
-          type: string
-        judgedDisputeCount:
-          type: string
-        licensesCount:
-          type: string
-        raisedDisputeCount:
-          type: string
-        resolvedDisputeCount:
-          type: string
-      type: object
     github_com_storyprotocol_protocol-api_api_internal_models_protocolv1.CollectionQueryOptions:
       properties:
         orderBy:
@@ -121,6 +100,32 @@ components:
               type: string
           type: object
       type: object
+    github_com_storyprotocol_protocol-api_api_internal_models_protocolv1.Collection:
+      properties:
+        assetCount:
+          type: string
+        blockNumber:
+          type: string
+        blockTimestamp:
+          type: string
+        cancelledDisputeCount:
+          type: string
+        id:
+          type: string
+        judgedDisputeCount:
+          type: string
+        licensesCount:
+          type: string
+        raisedDisputeCount:
+          type: string
+        resolvedDisputeCount:
+          type: string
+      type: object
+    github_com_storyprotocol_protocol-api_api_internal_models_protocolv1.CollectionResponse:
+      properties:
+        data:
+          $ref: '#/components/schemas/github_com_storyprotocol_protocol-api_api_internal_models_protocolv1.Collection'
+      type: object
     github_com_storyprotocol_protocol-api_api_internal_models_protocolv1.CollectionsResponse:
       properties:
         data:
@@ -135,11 +140,6 @@ components:
           type: string
         prev:
           type: string
-      type: object
-    github_com_storyprotocol_protocol-api_api_internal_models_protocolv1.CollectionResponse:
-      properties:
-        data:
-          $ref: '#/components/schemas/github_com_storyprotocol_protocol-api_api_internal_models_protocolv1.Collection'
       type: object
     github_com_storyprotocol_protocol-api_api_internal_models_protocolv1.CollectionsRequestBody:
       properties:

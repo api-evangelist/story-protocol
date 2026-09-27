@@ -79,6 +79,41 @@ paths:
       x-operation-id-source: derived
 components:
   schemas:
+    github_com_storyprotocol_protocol-api_api_internal_models_protocolv1.PermissionsResponse:
+      properties:
+        data:
+          items:
+            $ref: '#/components/schemas/github_com_storyprotocol_protocol-api_api_internal_models_protocolv1.Permission'
+          type: array
+        next:
+          type: string
+        prev:
+          type: string
+      type: object
+    github_com_storyprotocol_protocol-api_api_internal_models_protocolv1.PermissionResponse:
+      properties:
+        data:
+          $ref: '#/components/schemas/github_com_storyprotocol_protocol-api_api_internal_models_protocolv1.Permission'
+      type: object
+    github_com_storyprotocol_protocol-api_api_internal_models_protocolv1.Permission:
+      properties:
+        blockNumber:
+          type: string
+        blockTimestamp:
+          type: string
+        func:
+          type: string
+        id:
+          type: string
+        permission:
+          type: string
+        signer:
+          type: string
+        to:
+          type: string
+        uuid:
+          type: string
+      type: object
     github_com_storyprotocol_protocol-api_api_internal_models_protocolv2.PermissionRequestBody:
       properties:
         options:
@@ -114,41 +149,6 @@ components:
             uuid:
               type: string
           type: object
-      type: object
-    github_com_storyprotocol_protocol-api_api_internal_models_protocolv1.Permission:
-      properties:
-        blockNumber:
-          type: string
-        blockTimestamp:
-          type: string
-        func:
-          type: string
-        id:
-          type: string
-        permission:
-          type: string
-        signer:
-          type: string
-        to:
-          type: string
-        uuid:
-          type: string
-      type: object
-    github_com_storyprotocol_protocol-api_api_internal_models_protocolv1.PermissionsResponse:
-      properties:
-        data:
-          items:
-            $ref: '#/components/schemas/github_com_storyprotocol_protocol-api_api_internal_models_protocolv1.Permission'
-          type: array
-        next:
-          type: string
-        prev:
-          type: string
-      type: object
-    github_com_storyprotocol_protocol-api_api_internal_models_protocolv1.PermissionResponse:
-      properties:
-        data:
-          $ref: '#/components/schemas/github_com_storyprotocol_protocol-api_api_internal_models_protocolv1.Permission'
       type: object
   securitySchemes:
     ApiKeyAuth:

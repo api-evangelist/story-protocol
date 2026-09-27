@@ -157,6 +157,17 @@ components:
         data:
           $ref: '#/components/schemas/github_com_storyprotocol_protocol-api_api_internal_models_protocolv1.LicenseMintingFeePaid'
       type: object
+    github_com_storyprotocol_protocol-api_api_internal_models_protocolv1.LicenseMintingFeePaidsResponse:
+      properties:
+        data:
+          items:
+            $ref: '#/components/schemas/github_com_storyprotocol_protocol-api_api_internal_models_protocolv1.LicenseMintingFeePaid'
+          type: array
+        next:
+          type: string
+        prev:
+          type: string
+      type: object
     github_com_storyprotocol_protocol-api_api_internal_models_protocolv2.LicenseMintingFeePaidQueryOptions:
       properties:
         orderBy:
@@ -181,17 +192,6 @@ components:
             receiverIpId:
               type: string
           type: object
-      type: object
-    github_com_storyprotocol_protocol-api_api_internal_models_protocolv1.LicenseMintingFeePaidsResponse:
-      properties:
-        data:
-          items:
-            $ref: '#/components/schemas/github_com_storyprotocol_protocol-api_api_internal_models_protocolv1.LicenseMintingFeePaid'
-          type: array
-        next:
-          type: string
-        prev:
-          type: string
       type: object
     github_com_storyprotocol_protocol-api_api_internal_models_protocolv1.LicenseMintingFeePaid:
       properties:

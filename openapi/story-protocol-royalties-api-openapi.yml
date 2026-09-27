@@ -79,6 +79,41 @@ paths:
       x-operation-id-source: derived
 components:
   schemas:
+    github_com_storyprotocol_protocol-api_api_internal_models_protocolv1.RoyaltyPaysResponse:
+      properties:
+        data:
+          items:
+            $ref: '#/components/schemas/github_com_storyprotocol_protocol-api_api_internal_models_protocolv1.RoyaltyPay'
+          type: array
+        next:
+          type: string
+        prev:
+          type: string
+      type: object
+    github_com_storyprotocol_protocol-api_api_internal_models_protocolv1.RoyaltyPayResponse:
+      properties:
+        data:
+          $ref: '#/components/schemas/github_com_storyprotocol_protocol-api_api_internal_models_protocolv1.RoyaltyPay'
+      type: object
+    github_com_storyprotocol_protocol-api_api_internal_models_protocolv1.RoyaltyPay:
+      properties:
+        amount:
+          type: string
+        blockNumber:
+          type: string
+        blockTimestamp:
+          type: string
+        id:
+          type: string
+        payerIpId:
+          type: string
+        receiverIpId:
+          type: string
+        sender:
+          type: string
+        token:
+          type: string
+      type: object
     github_com_storyprotocol_protocol-api_api_internal_models_protocolv2.RoyaltyPayQueryOptions:
       properties:
         orderBy:
@@ -105,41 +140,6 @@ components:
             receiverIpId:
               type: string
           type: object
-      type: object
-    github_com_storyprotocol_protocol-api_api_internal_models_protocolv1.RoyaltyPay:
-      properties:
-        amount:
-          type: string
-        blockNumber:
-          type: string
-        blockTimestamp:
-          type: string
-        id:
-          type: string
-        payerIpId:
-          type: string
-        receiverIpId:
-          type: string
-        sender:
-          type: string
-        token:
-          type: string
-      type: object
-    github_com_storyprotocol_protocol-api_api_internal_models_protocolv1.RoyaltyPayResponse:
-      properties:
-        data:
-          $ref: '#/components/schemas/github_com_storyprotocol_protocol-api_api_internal_models_protocolv1.RoyaltyPay'
-      type: object
-    github_com_storyprotocol_protocol-api_api_internal_models_protocolv1.RoyaltyPaysResponse:
-      properties:
-        data:
-          items:
-            $ref: '#/components/schemas/github_com_storyprotocol_protocol-api_api_internal_models_protocolv1.RoyaltyPay'
-          type: array
-        next:
-          type: string
-        prev:
-          type: string
       type: object
     github_com_storyprotocol_protocol-api_api_internal_models_protocolv2.RoyaltyPayRequestBody:
       properties:

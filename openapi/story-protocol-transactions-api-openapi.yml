@@ -114,27 +114,32 @@ paths:
       x-operation-id-source: derived
 components:
   schemas:
-    github_com_storyprotocol_protocol-api_api_internal_models_protocolv1.TransactionsResponse:
+    github_com_storyprotocol_protocol-api_api_internal_models_protocolv1.Transaction:
       properties:
-        data:
-          items:
-            $ref: '#/components/schemas/github_com_storyprotocol_protocol-api_api_internal_models_protocolv1.Transaction'
-          type: array
-        hasNextPage:
-          type: boolean
-        hasPreviousPage:
-          type: boolean
-        next:
+        actionType:
           type: string
-        prev:
+        blockNumber:
           type: string
-      type: object
-    github_com_storyprotocol_protocol-api_api_internal_models_protocolv1.TransactionResponse:
-      properties:
-        data:
-          items:
-            $ref: '#/components/schemas/github_com_storyprotocol_protocol-api_api_internal_models_protocolv1.Transaction'
-          type: array
+        blockTimestamp:
+          type: string
+        createdAt:
+          type: string
+        id:
+          type: string
+        initiator:
+          type: string
+        ipId:
+          type: string
+        logIndex:
+          type: string
+        resourceId:
+          type: string
+        resourceType:
+          type: string
+        transactionIndex:
+          type: string
+        txHash:
+          type: string
       type: object
     github_com_storyprotocol_protocol-api_api_internal_models_protocolv2.TrxQueryOptions:
       properties:
@@ -173,37 +178,32 @@ components:
               type: string
           type: object
       type: object
-    github_com_storyprotocol_protocol-api_api_internal_models_protocolv1.Transaction:
+    github_com_storyprotocol_protocol-api_api_internal_models_protocolv1.TransactionResponse:
       properties:
-        actionType:
-          type: string
-        blockNumber:
-          type: string
-        blockTimestamp:
-          type: string
-        createdAt:
-          type: string
-        id:
-          type: string
-        initiator:
-          type: string
-        ipId:
-          type: string
-        logIndex:
-          type: string
-        resourceId:
-          type: string
-        resourceType:
-          type: string
-        transactionIndex:
-          type: string
-        txHash:
-          type: string
+        data:
+          items:
+            $ref: '#/components/schemas/github_com_storyprotocol_protocol-api_api_internal_models_protocolv1.Transaction'
+          type: array
       type: object
     github_com_storyprotocol_protocol-api_api_internal_models_protocolv2.TransactionRequestBody:
       properties:
         options:
           $ref: '#/components/schemas/github_com_storyprotocol_protocol-api_api_internal_models_protocolv2.TrxQueryOptions'
+      type: object
+    github_com_storyprotocol_protocol-api_api_internal_models_protocolv1.TransactionsResponse:
+      properties:
+        data:
+          items:
+            $ref: '#/components/schemas/github_com_storyprotocol_protocol-api_api_internal_models_protocolv1.Transaction'
+          type: array
+        hasNextPage:
+          type: boolean
+        hasPreviousPage:
+          type: boolean
+        next:
+          type: string
+        prev:
+          type: string
       type: object
   securitySchemes:
     ApiKeyAuth:

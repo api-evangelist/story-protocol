@@ -79,10 +79,10 @@ paths:
       x-operation-id-source: derived
 components:
   schemas:
-    github_com_storyprotocol_protocol-api_api_internal_models_protocolv2.LicenseTemplatesRequestBody:
+    github_com_storyprotocol_protocol-api_api_internal_models_protocolv1.LicenseTemplateResponse:
       properties:
-        options:
-          $ref: '#/components/schemas/github_com_storyprotocol_protocol-api_api_internal_models_protocolv2.LicenseTemplatesQueryOptions'
+        data:
+          $ref: '#/components/schemas/github_com_storyprotocol_protocol-api_api_internal_models_protocolv1.LicenseTemplate'
       type: object
     github_com_storyprotocol_protocol-api_api_internal_models_protocolv2.LicenseTemplatesQueryOptions:
       properties:
@@ -107,22 +107,6 @@ components:
               type: string
           type: object
       type: object
-    github_com_storyprotocol_protocol-api_api_internal_models_protocolv1.LicenseTemplatesResponse:
-      properties:
-        data:
-          items:
-            $ref: '#/components/schemas/github_com_storyprotocol_protocol-api_api_internal_models_protocolv1.LicenseTemplate'
-          type: array
-        next:
-          type: string
-        prev:
-          type: string
-      type: object
-    github_com_storyprotocol_protocol-api_api_internal_models_protocolv1.LicenseTemplateResponse:
-      properties:
-        data:
-          $ref: '#/components/schemas/github_com_storyprotocol_protocol-api_api_internal_models_protocolv1.LicenseTemplate'
-      type: object
     github_com_storyprotocol_protocol-api_api_internal_models_protocolv1.LicenseTemplate:
       properties:
         blockNumber:
@@ -134,6 +118,22 @@ components:
         metadataUri:
           type: string
         name:
+          type: string
+      type: object
+    github_com_storyprotocol_protocol-api_api_internal_models_protocolv2.LicenseTemplatesRequestBody:
+      properties:
+        options:
+          $ref: '#/components/schemas/github_com_storyprotocol_protocol-api_api_internal_models_protocolv2.LicenseTemplatesQueryOptions'
+      type: object
+    github_com_storyprotocol_protocol-api_api_internal_models_protocolv1.LicenseTemplatesResponse:
+      properties:
+        data:
+          items:
+            $ref: '#/components/schemas/github_com_storyprotocol_protocol-api_api_internal_models_protocolv1.LicenseTemplate'
+          type: array
+        next:
+          type: string
+        prev:
           type: string
       type: object
   securitySchemes:
