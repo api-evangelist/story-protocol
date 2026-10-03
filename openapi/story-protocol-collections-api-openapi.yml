@@ -79,27 +79,6 @@ paths:
       x-operation-id-source: derived
 components:
   schemas:
-    github_com_storyprotocol_protocol-api_api_internal_models_protocolv1.CollectionQueryOptions:
-      properties:
-        orderBy:
-          type: string
-        orderDirection:
-          type: string
-        pagination:
-          properties:
-            after:
-              type: string
-            before:
-              type: string
-            limit:
-              type: integer
-          type: object
-        where:
-          properties:
-            blockNumberLte:
-              type: string
-          type: object
-      type: object
     github_com_storyprotocol_protocol-api_api_internal_models_protocolv1.Collection:
       properties:
         assetCount:
@@ -121,11 +100,6 @@ components:
         resolvedDisputeCount:
           type: string
       type: object
-    github_com_storyprotocol_protocol-api_api_internal_models_protocolv1.CollectionResponse:
-      properties:
-        data:
-          $ref: '#/components/schemas/github_com_storyprotocol_protocol-api_api_internal_models_protocolv1.Collection'
-      type: object
     github_com_storyprotocol_protocol-api_api_internal_models_protocolv1.CollectionsResponse:
       properties:
         data:
@@ -141,10 +115,36 @@ components:
         prev:
           type: string
       type: object
+    github_com_storyprotocol_protocol-api_api_internal_models_protocolv1.CollectionResponse:
+      properties:
+        data:
+          $ref: '#/components/schemas/github_com_storyprotocol_protocol-api_api_internal_models_protocolv1.Collection'
+      type: object
     github_com_storyprotocol_protocol-api_api_internal_models_protocolv1.CollectionsRequestBody:
       properties:
         options:
           $ref: '#/components/schemas/github_com_storyprotocol_protocol-api_api_internal_models_protocolv1.CollectionQueryOptions'
+      type: object
+    github_com_storyprotocol_protocol-api_api_internal_models_protocolv1.CollectionQueryOptions:
+      properties:
+        orderBy:
+          type: string
+        orderDirection:
+          type: string
+        pagination:
+          properties:
+            after:
+              type: string
+            before:
+              type: string
+            limit:
+              type: integer
+          type: object
+        where:
+          properties:
+            blockNumberLte:
+              type: string
+          type: object
       type: object
   securitySchemes:
     ApiKeyAuth:

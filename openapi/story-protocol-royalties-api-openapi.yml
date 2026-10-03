@@ -90,10 +90,10 @@ components:
         prev:
           type: string
       type: object
-    github_com_storyprotocol_protocol-api_api_internal_models_protocolv1.RoyaltyPayResponse:
+    github_com_storyprotocol_protocol-api_api_internal_models_protocolv2.RoyaltyPayRequestBody:
       properties:
-        data:
-          $ref: '#/components/schemas/github_com_storyprotocol_protocol-api_api_internal_models_protocolv1.RoyaltyPay'
+        options:
+          $ref: '#/components/schemas/github_com_storyprotocol_protocol-api_api_internal_models_protocolv2.RoyaltyPayQueryOptions'
       type: object
     github_com_storyprotocol_protocol-api_api_internal_models_protocolv1.RoyaltyPay:
       properties:
@@ -141,10 +141,10 @@ components:
               type: string
           type: object
       type: object
-    github_com_storyprotocol_protocol-api_api_internal_models_protocolv2.RoyaltyPayRequestBody:
+    github_com_storyprotocol_protocol-api_api_internal_models_protocolv1.RoyaltyPayResponse:
       properties:
-        options:
-          $ref: '#/components/schemas/github_com_storyprotocol_protocol-api_api_internal_models_protocolv2.RoyaltyPayQueryOptions'
+        data:
+          $ref: '#/components/schemas/github_com_storyprotocol_protocol-api_api_internal_models_protocolv1.RoyaltyPay'
       type: object
   securitySchemes:
     ApiKeyAuth:

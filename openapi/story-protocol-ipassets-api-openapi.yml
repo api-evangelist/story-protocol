@@ -147,77 +147,48 @@ paths:
       x-operation-id-source: derived
 components:
   schemas:
+    github_com_storyprotocol_protocol-api_api_internal_models_protocolv2.IpAssetEdgeRequestBody:
+      properties:
+        options:
+          $ref: '#/components/schemas/github_com_storyprotocol_protocol-api_api_internal_models_protocolv2.IpAssetEdgeQueryOptions'
+      type: object
     github_com_storyprotocol_protocol-api_api_internal_models_protocolv2.IpAssetRequestBody:
       properties:
         options:
           $ref: '#/components/schemas/github_com_storyprotocol_protocol-api_api_internal_models_protocolv2.IpAssetQueryOptions'
       type: object
-    github_com_storyprotocol_protocol-api_api_internal_models_protocolv2.IpAssetEdgeQueryOptions:
+    github_com_storyprotocol_protocol-api_api_internal_models_protocolv3.IPAsset:
       properties:
-        orderBy:
+        ancestorCount:
+          type: integer
+        blockNumber:
           type: string
-        orderDirection:
+        blockTimestamp:
           type: string
-        pagination:
-          properties:
-            after:
-              type: string
-            before:
-              type: string
-            limit:
-              type: integer
-          type: object
-        where:
-          properties:
-            blockNumber:
-              type: string
-            ipId:
-              type: string
-            licenseTermsId:
-              type: string
-            licenseTokenId:
-              type: string
-            parentIpId:
-              type: string
-            transactionHash:
-              type: string
-          type: object
-      type: object
-    github_com_storyprotocol_protocol-api_api_internal_models_protocolv1.IPAssetEdgeResponse:
-      properties:
-        data:
+        childrenCount:
+          type: integer
+        descendantCount:
+          type: integer
+        id:
+          type: string
+        ipId:
+          type: string
+        isGroup:
+          type: boolean
+        latestArbitrationPolicy:
+          type: string
+        nftMetadata:
+          $ref: '#/components/schemas/github_com_storyprotocol_protocol-api_api_internal_models_protocolv3.NftMetadata'
+        parentCount:
+          type: integer
+        rootCount:
+          type: integer
+        rootIpIds:
           items:
-            $ref: '#/components/schemas/github_com_storyprotocol_protocol-api_api_internal_models_protocolv1.IpAssetEdge'
+            type: string
           type: array
-        next:
+        transactionHash:
           type: string
-        prev:
-          type: string
-      type: object
-    github_com_storyprotocol_protocol-api_api_internal_models_protocolv3.IPAssetResponse:
-      properties:
-        data:
-          $ref: '#/components/schemas/github_com_storyprotocol_protocol-api_api_internal_models_protocolv3.IPAsset'
-      type: object
-    github_com_storyprotocol_protocol-api_api_internal_models_protocolv3.NftMetadata:
-      properties:
-        chainId:
-          type: string
-        imageUrl:
-          type: string
-        name:
-          type: string
-        tokenContract:
-          type: string
-        tokenId:
-          type: string
-        tokenUri:
-          type: string
-      type: object
-    github_com_storyprotocol_protocol-api_api_internal_models_protocolv2.IpAssetEdgeRequestBody:
-      properties:
-        options:
-          $ref: '#/components/schemas/github_com_storyprotocol_protocol-api_api_internal_models_protocolv2.IpAssetEdgeQueryOptions'
       type: object
     github_com_storyprotocol_protocol-api_api_internal_models_protocolv2.IpAssetQueryOptions:
       properties:
@@ -264,26 +235,36 @@ components:
               type: string
           type: object
       type: object
-    github_com_storyprotocol_protocol-api_api_internal_models_protocolv1.IpAssetEdge:
+    github_com_storyprotocol_protocol-api_api_internal_models_protocolv3.NftMetadata:
       properties:
-        blockNumber:
+        chainId:
           type: string
-        blockTime:
+        imageUrl:
           type: string
-        ipId:
+        name:
           type: string
-        licenseTemplate:
+        tokenContract:
           type: string
-        licenseTermsId:
+        tokenId:
           type: string
-        licenseTokenId:
+        tokenUri:
           type: string
-        parentIpId:
+      type: object
+    github_com_storyprotocol_protocol-api_api_internal_models_protocolv1.IPAssetEdgeResponse:
+      properties:
+        data:
+          items:
+            $ref: '#/components/schemas/github_com_storyprotocol_protocol-api_api_internal_models_protocolv1.IpAssetEdge'
+          type: array
+        next:
           type: string
-        transactionHash:
+        prev:
           type: string
-        transactionIndex:
-          type: string
+      type: object
+    github_com_storyprotocol_protocol-api_api_internal_models_protocolv3.IPAssetResponse:
+      properties:
+        data:
+          $ref: '#/components/schemas/github_com_storyprotocol_protocol-api_api_internal_models_protocolv3.IPAsset'
       type: object
     github_com_storyprotocol_protocol-api_api_internal_models_protocolv1.IpAssetMetadata:
       properties:
@@ -316,37 +297,56 @@ components:
         prev:
           type: string
       type: object
-    github_com_storyprotocol_protocol-api_api_internal_models_protocolv3.IPAsset:
+    github_com_storyprotocol_protocol-api_api_internal_models_protocolv2.IpAssetEdgeQueryOptions:
       properties:
-        ancestorCount:
-          type: integer
+        orderBy:
+          type: string
+        orderDirection:
+          type: string
+        pagination:
+          properties:
+            after:
+              type: string
+            before:
+              type: string
+            limit:
+              type: integer
+          type: object
+        where:
+          properties:
+            blockNumber:
+              type: string
+            ipId:
+              type: string
+            licenseTermsId:
+              type: string
+            licenseTokenId:
+              type: string
+            parentIpId:
+              type: string
+            transactionHash:
+              type: string
+          type: object
+      type: object
+    github_com_storyprotocol_protocol-api_api_internal_models_protocolv1.IpAssetEdge:
+      properties:
         blockNumber:
           type: string
-        blockTimestamp:
-          type: string
-        childrenCount:
-          type: integer
-        descendantCount:
-          type: integer
-        id:
+        blockTime:
           type: string
         ipId:
           type: string
-        isGroup:
-          type: boolean
-        latestArbitrationPolicy:
+        licenseTemplate:
           type: string
-        nftMetadata:
-          $ref: '#/components/schemas/github_com_storyprotocol_protocol-api_api_internal_models_protocolv3.NftMetadata'
-        parentCount:
-          type: integer
-        rootCount:
-          type: integer
-        rootIpIds:
-          items:
-            type: string
-          type: array
+        licenseTermsId:
+          type: string
+        licenseTokenId:
+          type: string
+        parentIpId:
+          type: string
         transactionHash:
+          type: string
+        transactionIndex:
           type: string
       type: object
   securitySchemes:

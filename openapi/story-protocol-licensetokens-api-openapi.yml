@@ -79,6 +79,22 @@ paths:
       x-operation-id-source: derived
 components:
   schemas:
+    github_com_storyprotocol_protocol-api_api_internal_models_protocolv1.LicenseTokenResponse:
+      properties:
+        data:
+          $ref: '#/components/schemas/github_com_storyprotocol_protocol-api_api_internal_models_protocolv1.LicenseToken'
+      type: object
+    github_com_storyprotocol_protocol-api_api_internal_models_protocolv1.LicenseTokensResponse:
+      properties:
+        data:
+          items:
+            $ref: '#/components/schemas/github_com_storyprotocol_protocol-api_api_internal_models_protocolv1.LicenseToken'
+          type: array
+        next:
+          type: string
+        prev:
+          type: string
+      type: object
     github_com_storyprotocol_protocol-api_api_internal_models_protocolv2.LicenseTokenQueryOptions:
       properties:
         orderBy:
@@ -106,6 +122,11 @@ components:
               type: string
           type: object
       type: object
+    github_com_storyprotocol_protocol-api_api_internal_models_protocolv2.LicenseTokenRequestBody:
+      properties:
+        options:
+          $ref: '#/components/schemas/github_com_storyprotocol_protocol-api_api_internal_models_protocolv2.LicenseTokenQueryOptions'
+      type: object
     github_com_storyprotocol_protocol-api_api_internal_models_protocolv1.LicenseToken:
       properties:
         blockNumber:
@@ -126,27 +147,6 @@ components:
           type: string
         transferable:
           type: string
-      type: object
-    github_com_storyprotocol_protocol-api_api_internal_models_protocolv1.LicenseTokensResponse:
-      properties:
-        data:
-          items:
-            $ref: '#/components/schemas/github_com_storyprotocol_protocol-api_api_internal_models_protocolv1.LicenseToken'
-          type: array
-        next:
-          type: string
-        prev:
-          type: string
-      type: object
-    github_com_storyprotocol_protocol-api_api_internal_models_protocolv2.LicenseTokenRequestBody:
-      properties:
-        options:
-          $ref: '#/components/schemas/github_com_storyprotocol_protocol-api_api_internal_models_protocolv2.LicenseTokenQueryOptions'
-      type: object
-    github_com_storyprotocol_protocol-api_api_internal_models_protocolv1.LicenseTokenResponse:
-      properties:
-        data:
-          $ref: '#/components/schemas/github_com_storyprotocol_protocol-api_api_internal_models_protocolv1.LicenseToken'
       type: object
   securitySchemes:
     ApiKeyAuth:

@@ -79,52 +79,6 @@ paths:
       x-operation-id-source: derived
 components:
   schemas:
-    github_com_storyprotocol_protocol-api_api_internal_models_protocolv1.LicenseTermResponse:
-      properties:
-        data:
-          $ref: '#/components/schemas/github_com_storyprotocol_protocol-api_api_internal_models_protocolv1.LicenseTerm'
-      type: object
-    github_com_storyprotocol_protocol-api_api_internal_models_protocolv2.LicenseTermsQueryOptions:
-      properties:
-        orderBy:
-          type: string
-        orderDirection:
-          type: string
-        pagination:
-          properties:
-            after:
-              type: string
-            before:
-              type: string
-            limit:
-              type: integer
-          type: object
-        where:
-          properties:
-            blockNumber:
-              type: string
-            id:
-              type: string
-          type: object
-      type: object
-    github_com_storyprotocol_protocol-api_api_internal_models_protocolv1.LicenseTerm:
-      properties:
-        blockNumber:
-          type: string
-        blockTime:
-          type: string
-        id:
-          type: string
-        licenseTemplate:
-          type: string
-        licenseTerms:
-          items:
-            additionalProperties: {}
-            type: object
-          type: array
-        terms:
-          $ref: '#/components/schemas/github_com_storyprotocol_protocol-api_api_internal_models_protocolv1.Term'
-      type: object
     github_com_storyprotocol_protocol-api_api_internal_models_protocolv1.LicenseTermsResponse:
       properties:
         data:
@@ -140,8 +94,6 @@ components:
       properties:
         options:
           $ref: '#/components/schemas/github_com_storyprotocol_protocol-api_api_internal_models_protocolv2.LicenseTermsQueryOptions'
-      type: object
-    big.Int:
       type: object
     github_com_storyprotocol_protocol-api_api_internal_models_protocolv1.Term:
       properties:
@@ -179,6 +131,54 @@ components:
           type: boolean
         uri:
           type: string
+      type: object
+    github_com_storyprotocol_protocol-api_api_internal_models_protocolv1.LicenseTermResponse:
+      properties:
+        data:
+          $ref: '#/components/schemas/github_com_storyprotocol_protocol-api_api_internal_models_protocolv1.LicenseTerm'
+      type: object
+    github_com_storyprotocol_protocol-api_api_internal_models_protocolv1.LicenseTerm:
+      properties:
+        blockNumber:
+          type: string
+        blockTime:
+          type: string
+        id:
+          type: string
+        licenseTemplate:
+          type: string
+        licenseTerms:
+          items:
+            additionalProperties: {}
+            type: object
+          type: array
+        terms:
+          $ref: '#/components/schemas/github_com_storyprotocol_protocol-api_api_internal_models_protocolv1.Term'
+      type: object
+    big.Int:
+      type: object
+    github_com_storyprotocol_protocol-api_api_internal_models_protocolv2.LicenseTermsQueryOptions:
+      properties:
+        orderBy:
+          type: string
+        orderDirection:
+          type: string
+        pagination:
+          properties:
+            after:
+              type: string
+            before:
+              type: string
+            limit:
+              type: integer
+          type: object
+        where:
+          properties:
+            blockNumber:
+              type: string
+            id:
+              type: string
+          type: object
       type: object
   securitySchemes:
     ApiKeyAuth:
