@@ -84,15 +84,25 @@ components:
         data:
           $ref: '#/components/schemas/github_com_storyprotocol_protocol-api_api_internal_models_protocolv1.LicenseToken'
       type: object
-    github_com_storyprotocol_protocol-api_api_internal_models_protocolv1.LicenseTokensResponse:
+    github_com_storyprotocol_protocol-api_api_internal_models_protocolv1.LicenseToken:
       properties:
-        data:
-          items:
-            $ref: '#/components/schemas/github_com_storyprotocol_protocol-api_api_internal_models_protocolv1.LicenseToken'
-          type: array
-        next:
+        blockNumber:
           type: string
-        prev:
+        blockTime:
+          type: string
+        burntAt:
+          type: string
+        id:
+          type: string
+        licenseTemplate:
+          type: string
+        licenseTermsId:
+          type: string
+        licensorIpId:
+          type: string
+        owner:
+          type: string
+        transferable:
           type: string
       type: object
     github_com_storyprotocol_protocol-api_api_internal_models_protocolv2.LicenseTokenQueryOptions:
@@ -122,31 +132,21 @@ components:
               type: string
           type: object
       type: object
+    github_com_storyprotocol_protocol-api_api_internal_models_protocolv1.LicenseTokensResponse:
+      properties:
+        data:
+          items:
+            $ref: '#/components/schemas/github_com_storyprotocol_protocol-api_api_internal_models_protocolv1.LicenseToken'
+          type: array
+        next:
+          type: string
+        prev:
+          type: string
+      type: object
     github_com_storyprotocol_protocol-api_api_internal_models_protocolv2.LicenseTokenRequestBody:
       properties:
         options:
           $ref: '#/components/schemas/github_com_storyprotocol_protocol-api_api_internal_models_protocolv2.LicenseTokenQueryOptions'
-      type: object
-    github_com_storyprotocol_protocol-api_api_internal_models_protocolv1.LicenseToken:
-      properties:
-        blockNumber:
-          type: string
-        blockTime:
-          type: string
-        burntAt:
-          type: string
-        id:
-          type: string
-        licenseTemplate:
-          type: string
-        licenseTermsId:
-          type: string
-        licensorIpId:
-          type: string
-        owner:
-          type: string
-        transferable:
-          type: string
       type: object
   securitySchemes:
     ApiKeyAuth:

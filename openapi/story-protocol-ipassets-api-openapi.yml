@@ -147,48 +147,61 @@ paths:
       x-operation-id-source: derived
 components:
   schemas:
-    github_com_storyprotocol_protocol-api_api_internal_models_protocolv2.IpAssetEdgeRequestBody:
+    github_com_storyprotocol_protocol-api_api_internal_models_protocolv3.IPAssetResponse:
       properties:
-        options:
-          $ref: '#/components/schemas/github_com_storyprotocol_protocol-api_api_internal_models_protocolv2.IpAssetEdgeQueryOptions'
+        data:
+          $ref: '#/components/schemas/github_com_storyprotocol_protocol-api_api_internal_models_protocolv3.IPAsset'
       type: object
     github_com_storyprotocol_protocol-api_api_internal_models_protocolv2.IpAssetRequestBody:
       properties:
         options:
           $ref: '#/components/schemas/github_com_storyprotocol_protocol-api_api_internal_models_protocolv2.IpAssetQueryOptions'
       type: object
-    github_com_storyprotocol_protocol-api_api_internal_models_protocolv3.IPAsset:
+    github_com_storyprotocol_protocol-api_api_internal_models_protocolv3.NftMetadata:
       properties:
-        ancestorCount:
-          type: integer
-        blockNumber:
+        chainId:
           type: string
-        blockTimestamp:
+        imageUrl:
           type: string
-        childrenCount:
-          type: integer
-        descendantCount:
-          type: integer
-        id:
+        name:
           type: string
-        ipId:
+        tokenContract:
           type: string
-        isGroup:
-          type: boolean
-        latestArbitrationPolicy:
+        tokenId:
           type: string
-        nftMetadata:
-          $ref: '#/components/schemas/github_com_storyprotocol_protocol-api_api_internal_models_protocolv3.NftMetadata'
-        parentCount:
-          type: integer
-        rootCount:
-          type: integer
-        rootIpIds:
-          items:
-            type: string
-          type: array
-        transactionHash:
+        tokenUri:
           type: string
+      type: object
+    github_com_storyprotocol_protocol-api_api_internal_models_protocolv2.IpAssetEdgeQueryOptions:
+      properties:
+        orderBy:
+          type: string
+        orderDirection:
+          type: string
+        pagination:
+          properties:
+            after:
+              type: string
+            before:
+              type: string
+            limit:
+              type: integer
+          type: object
+        where:
+          properties:
+            blockNumber:
+              type: string
+            ipId:
+              type: string
+            licenseTermsId:
+              type: string
+            licenseTokenId:
+              type: string
+            parentIpId:
+              type: string
+            transactionHash:
+              type: string
+          type: object
       type: object
     github_com_storyprotocol_protocol-api_api_internal_models_protocolv2.IpAssetQueryOptions:
       properties:
@@ -235,53 +248,6 @@ components:
               type: string
           type: object
       type: object
-    github_com_storyprotocol_protocol-api_api_internal_models_protocolv3.NftMetadata:
-      properties:
-        chainId:
-          type: string
-        imageUrl:
-          type: string
-        name:
-          type: string
-        tokenContract:
-          type: string
-        tokenId:
-          type: string
-        tokenUri:
-          type: string
-      type: object
-    github_com_storyprotocol_protocol-api_api_internal_models_protocolv1.IPAssetEdgeResponse:
-      properties:
-        data:
-          items:
-            $ref: '#/components/schemas/github_com_storyprotocol_protocol-api_api_internal_models_protocolv1.IpAssetEdge'
-          type: array
-        next:
-          type: string
-        prev:
-          type: string
-      type: object
-    github_com_storyprotocol_protocol-api_api_internal_models_protocolv3.IPAssetResponse:
-      properties:
-        data:
-          $ref: '#/components/schemas/github_com_storyprotocol_protocol-api_api_internal_models_protocolv3.IPAsset'
-      type: object
-    github_com_storyprotocol_protocol-api_api_internal_models_protocolv1.IpAssetMetadata:
-      properties:
-        id:
-          type: string
-        metadataHash:
-          type: string
-        metadataJson: {}
-        metadataUri:
-          type: string
-        nftMetadataHash:
-          type: string
-        nftTokenUri:
-          type: string
-        registrationDate:
-          type: string
-      type: object
     github_com_storyprotocol_protocol-api_api_internal_models_protocolv3.IPAssetsResponse:
       properties:
         data:
@@ -296,37 +262,6 @@ components:
           type: string
         prev:
           type: string
-      type: object
-    github_com_storyprotocol_protocol-api_api_internal_models_protocolv2.IpAssetEdgeQueryOptions:
-      properties:
-        orderBy:
-          type: string
-        orderDirection:
-          type: string
-        pagination:
-          properties:
-            after:
-              type: string
-            before:
-              type: string
-            limit:
-              type: integer
-          type: object
-        where:
-          properties:
-            blockNumber:
-              type: string
-            ipId:
-              type: string
-            licenseTermsId:
-              type: string
-            licenseTokenId:
-              type: string
-            parentIpId:
-              type: string
-            transactionHash:
-              type: string
-          type: object
       type: object
     github_com_storyprotocol_protocol-api_api_internal_models_protocolv1.IpAssetEdge:
       properties:
@@ -347,6 +282,71 @@ components:
         transactionHash:
           type: string
         transactionIndex:
+          type: string
+      type: object
+    github_com_storyprotocol_protocol-api_api_internal_models_protocolv1.IpAssetMetadata:
+      properties:
+        id:
+          type: string
+        metadataHash:
+          type: string
+        metadataJson: {}
+        metadataUri:
+          type: string
+        nftMetadataHash:
+          type: string
+        nftTokenUri:
+          type: string
+        registrationDate:
+          type: string
+      type: object
+    github_com_storyprotocol_protocol-api_api_internal_models_protocolv1.IPAssetEdgeResponse:
+      properties:
+        data:
+          items:
+            $ref: '#/components/schemas/github_com_storyprotocol_protocol-api_api_internal_models_protocolv1.IpAssetEdge'
+          type: array
+        next:
+          type: string
+        prev:
+          type: string
+      type: object
+    github_com_storyprotocol_protocol-api_api_internal_models_protocolv2.IpAssetEdgeRequestBody:
+      properties:
+        options:
+          $ref: '#/components/schemas/github_com_storyprotocol_protocol-api_api_internal_models_protocolv2.IpAssetEdgeQueryOptions'
+      type: object
+    github_com_storyprotocol_protocol-api_api_internal_models_protocolv3.IPAsset:
+      properties:
+        ancestorCount:
+          type: integer
+        blockNumber:
+          type: string
+        blockTimestamp:
+          type: string
+        childrenCount:
+          type: integer
+        descendantCount:
+          type: integer
+        id:
+          type: string
+        ipId:
+          type: string
+        isGroup:
+          type: boolean
+        latestArbitrationPolicy:
+          type: string
+        nftMetadata:
+          $ref: '#/components/schemas/github_com_storyprotocol_protocol-api_api_internal_models_protocolv3.NftMetadata'
+        parentCount:
+          type: integer
+        rootCount:
+          type: integer
+        rootIpIds:
+          items:
+            type: string
+          type: array
+        transactionHash:
           type: string
       type: object
   securitySchemes:

@@ -84,24 +84,21 @@ components:
         data:
           $ref: '#/components/schemas/github_com_storyprotocol_protocol-api_api_internal_models_protocolv1.Permission'
       type: object
-    github_com_storyprotocol_protocol-api_api_internal_models_protocolv1.Permission:
+    github_com_storyprotocol_protocol-api_api_internal_models_protocolv1.PermissionsResponse:
       properties:
-        blockNumber:
+        data:
+          items:
+            $ref: '#/components/schemas/github_com_storyprotocol_protocol-api_api_internal_models_protocolv1.Permission'
+          type: array
+        next:
           type: string
-        blockTimestamp:
+        prev:
           type: string
-        func:
-          type: string
-        id:
-          type: string
-        permission:
-          type: string
-        signer:
-          type: string
-        to:
-          type: string
-        uuid:
-          type: string
+      type: object
+    github_com_storyprotocol_protocol-api_api_internal_models_protocolv2.PermissionRequestBody:
+      properties:
+        options:
+          $ref: '#/components/schemas/github_com_storyprotocol_protocol-api_api_internal_models_protocolv2.PermissionQueryOptions'
       type: object
     github_com_storyprotocol_protocol-api_api_internal_models_protocolv2.PermissionQueryOptions:
       properties:
@@ -134,21 +131,24 @@ components:
               type: string
           type: object
       type: object
-    github_com_storyprotocol_protocol-api_api_internal_models_protocolv1.PermissionsResponse:
+    github_com_storyprotocol_protocol-api_api_internal_models_protocolv1.Permission:
       properties:
-        data:
-          items:
-            $ref: '#/components/schemas/github_com_storyprotocol_protocol-api_api_internal_models_protocolv1.Permission'
-          type: array
-        next:
+        blockNumber:
           type: string
-        prev:
+        blockTimestamp:
           type: string
-      type: object
-    github_com_storyprotocol_protocol-api_api_internal_models_protocolv2.PermissionRequestBody:
-      properties:
-        options:
-          $ref: '#/components/schemas/github_com_storyprotocol_protocol-api_api_internal_models_protocolv2.PermissionQueryOptions'
+        func:
+          type: string
+        id:
+          type: string
+        permission:
+          type: string
+        signer:
+          type: string
+        to:
+          type: string
+        uuid:
+          type: string
       type: object
   securitySchemes:
     ApiKeyAuth:

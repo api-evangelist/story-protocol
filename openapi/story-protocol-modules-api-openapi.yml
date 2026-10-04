@@ -79,16 +79,6 @@ paths:
       x-operation-id-source: derived
 components:
   schemas:
-    github_com_storyprotocol_protocol-api_api_internal_models_protocolv1.ModuleResponse:
-      properties:
-        data:
-          $ref: '#/components/schemas/github_com_storyprotocol_protocol-api_api_internal_models_protocolv1.Module'
-      type: object
-    github_com_storyprotocol_protocol-api_api_internal_models_protocolv2.ModuleRequestBody:
-      properties:
-        options:
-          $ref: '#/components/schemas/github_com_storyprotocol_protocol-api_api_internal_models_protocolv2.ModuleQueryOptions'
-      type: object
     github_com_storyprotocol_protocol-api_api_internal_models_protocolv1.ModulesResponse:
       properties:
         data:
@@ -100,26 +90,15 @@ components:
         prev:
           type: string
       type: object
-    github_com_storyprotocol_protocol-api_api_internal_models_protocolv1.Module:
+    github_com_storyprotocol_protocol-api_api_internal_models_protocolv1.ModuleResponse:
       properties:
-        blockNumber:
-          type: string
-        blockTimestamp:
-          type: string
-        deletedAt:
-          type: string
-        id:
-          type: string
-        module:
-          type: string
-        moduleType:
-          type: string
-        moduleTypeInterfaceId:
-          type: string
-        name:
-          type: string
-        transactionHash:
-          type: string
+        data:
+          $ref: '#/components/schemas/github_com_storyprotocol_protocol-api_api_internal_models_protocolv1.Module'
+      type: object
+    github_com_storyprotocol_protocol-api_api_internal_models_protocolv2.ModuleRequestBody:
+      properties:
+        options:
+          $ref: '#/components/schemas/github_com_storyprotocol_protocol-api_api_internal_models_protocolv2.ModuleQueryOptions'
       type: object
     github_com_storyprotocol_protocol-api_api_internal_models_protocolv2.ModuleQueryOptions:
       properties:
@@ -143,6 +122,27 @@ components:
             id:
               type: string
           type: object
+      type: object
+    github_com_storyprotocol_protocol-api_api_internal_models_protocolv1.Module:
+      properties:
+        blockNumber:
+          type: string
+        blockTimestamp:
+          type: string
+        deletedAt:
+          type: string
+        id:
+          type: string
+        module:
+          type: string
+        moduleType:
+          type: string
+        moduleTypeInterfaceId:
+          type: string
+        name:
+          type: string
+        transactionHash:
+          type: string
       type: object
   securitySchemes:
     ApiKeyAuth:

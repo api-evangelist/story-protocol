@@ -115,16 +115,6 @@ components:
         prev:
           type: string
       type: object
-    github_com_storyprotocol_protocol-api_api_internal_models_protocolv1.CollectionResponse:
-      properties:
-        data:
-          $ref: '#/components/schemas/github_com_storyprotocol_protocol-api_api_internal_models_protocolv1.Collection'
-      type: object
-    github_com_storyprotocol_protocol-api_api_internal_models_protocolv1.CollectionsRequestBody:
-      properties:
-        options:
-          $ref: '#/components/schemas/github_com_storyprotocol_protocol-api_api_internal_models_protocolv1.CollectionQueryOptions'
-      type: object
     github_com_storyprotocol_protocol-api_api_internal_models_protocolv1.CollectionQueryOptions:
       properties:
         orderBy:
@@ -145,6 +135,16 @@ components:
             blockNumberLte:
               type: string
           type: object
+      type: object
+    github_com_storyprotocol_protocol-api_api_internal_models_protocolv1.CollectionResponse:
+      properties:
+        data:
+          $ref: '#/components/schemas/github_com_storyprotocol_protocol-api_api_internal_models_protocolv1.Collection'
+      type: object
+    github_com_storyprotocol_protocol-api_api_internal_models_protocolv1.CollectionsRequestBody:
+      properties:
+        options:
+          $ref: '#/components/schemas/github_com_storyprotocol_protocol-api_api_internal_models_protocolv1.CollectionQueryOptions'
       type: object
   securitySchemes:
     ApiKeyAuth:
