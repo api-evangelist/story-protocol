@@ -1,0 +1,92 @@
+slug: story-protocol
+provider: Story Protocol
+generated_by: planning/capability-mapping/scripts/classify_capabilities.py
+model: claude-opus-5
+frame:
+- Software & Technology
+min_confidence: 0.7
+capability_model:
+  source: https://github.com/vincentmakes/turbo-ea-capabilities
+  license: CC-BY-4.0
+  attribution: Turbo EA Capabilities by Vincent Verdet — Turbo EA, https://github.com/vincentmakes/turbo-ea-capabilities,
+    CC BY 4.0
+  notice: NOTICE
+edge_count: 8
+edges:
+- tag: IPLicenseTerms
+  spec_file: story-protocol-iplicenseterms-api-openapi.yml
+  capability_id: BC-840.40
+  capability_id_l1: BC-840
+  capability_name: IP Licensing Management
+  confidence: 0.85
+  evidence: GET /api/v3/licenses/ip/terms/{ipId} "Get IP License Terms for an IP"; schemas "IPLicenseTerm",
+    "LicensingConfig"
+  reason: Operations return the licensing terms attached to specific IP assets, i.e. the terms under which
+    IP is out-licensed — IP Licensing Management.
+- tag: IPAssets
+  spec_file: story-protocol-ipassets-api-openapi.yml
+  capability_id: BC-840
+  capability_id_l1: BC-840
+  capability_name: Intellectual Property Management
+  confidence: 0.8
+  evidence: GET /api/v3/assets/{assetId} "Get an IPAsset"; GET /api/v3/assets/{assetId}/metadata "Get
+    metadata for an IPAsset"
+  reason: The surface exposes registered intellectual-property assets and their metadata/derivative edges
+    on the IP blockchain — IP asset registry management. Which L2 (copyright vs patent) is not determinable
+    from the generic 'IPAsset' records, so L1 only.
+- tag: LicenseTemplates
+  spec_file: story-protocol-licensetemplates-api-openapi.yml
+  capability_id: BC-840.40
+  capability_id_l1: BC-840
+  capability_name: IP Licensing Management
+  confidence: 0.8
+  evidence: POST /api/v3/licenses/templates "List LicenseTemplates"; schema "LicenseTemplate"
+  reason: License templates are the reusable legal licensing frameworks applied to IP assets on this protocol,
+    squarely IP licensing administration rather than software-product licensing of the vendor's own SaaS.
+- tag: LicenseTerms
+  spec_file: story-protocol-licenseterms-api-openapi.yml
+  capability_id: BC-840.40
+  capability_id_l1: BC-840
+  capability_name: IP Licensing Management
+  confidence: 0.8
+  evidence: GET /api/v3/licenses/terms/{licenseTermId} "Get a LicenseTerm"; schemas "LicenseTerm", "Term"
+  reason: Indexes the catalogue of license terms available for licensing registered IP, which realises
+    IP Licensing Management.
+- tag: Royalties
+  spec_file: story-protocol-royalties-api-openapi.yml
+  capability_id: BC-840.40
+  capability_id_l1: BC-840
+  capability_name: IP Licensing Management
+  confidence: 0.8
+  evidence: GET /api/v3/royalties/payments/{royaltyPayId} "Get a RoyaltyPay"; schema "RoyaltyPay"
+  reason: Royalty payment records tied to licensed IP map to IP Licensing Management, which explicitly
+    covers royalties. Not treasury or AR, since these are protocol royalty events on IP.
+- tag: LicenseTokens
+  spec_file: story-protocol-licensetokens-api-openapi.yml
+  capability_id: BC-840.40
+  capability_id_l1: BC-840
+  capability_name: IP Licensing Management
+  confidence: 0.75
+  evidence: GET /api/v3/licenses/tokens/{licenseTokenId} "Get an LicenseToken"; schema "LicenseToken"
+  reason: License tokens represent issued licenses over IP assets; reading them is tracking granted out-licenses,
+    i.e. IP Licensing Management. Slight ambiguity because the token is also a blockchain primitive.
+- tag: IP Group
+  spec_file: story-protocol-ip-group-api-openapi.yml
+  capability_id: BC-840
+  capability_id_l1: BC-840
+  capability_name: Intellectual Property Management
+  confidence: 0.7
+  evidence: POST /api/v3/ip-groups  "List IP groups"; schema "IPGroup", "IPGroupEdge"
+  reason: 'The operations index groupings of registered onchain intellectual-property assets and their
+    relationship edges, which is IP portfolio/asset administration (BC-840). No single L2 fits: groups
+    are not specifically patents, trademarks or licensing, so only the L1 is asserted.'
+- tag: Licenses
+  spec_file: story-protocol-licenses-api-openapi.yml
+  capability_id: BC-840.40
+  capability_id_l1: BC-840
+  capability_name: IP Licensing Management
+  confidence: 0.7
+  evidence: POST /api/v3/licenses/mintingfees "List LicenseMintingFeePays"; schema "LicenseMintingFeePaid"
+  reason: The operations expose fees paid to mint licenses over IP assets — licensing fee/royalty records,
+    part of IP Licensing Management. Not general financial accounting since these are protocol-level license
+    fee events.

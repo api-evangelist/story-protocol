@@ -208,6 +208,9 @@ maintainers:
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: CapabilityMap
+  url: capabilities/story-protocol-capability-edges.yml
+  name: Story Protocol Business Capability Map
 - type: Website
   url: https://story.foundation
 - type: DeveloperPortal
