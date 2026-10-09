@@ -1,85 +1,28 @@
-generated: '2026-07-21'
+generated: '2026-09-23'
 method: generated
-source: openapi/story-protocol-openapi-original.json
+source: openapi/story-protocol-collections-api-openapi.yml, openapi/story-protocol-disputes-api-openapi.yml,
+  openapi/story-protocol-ip-group-api-openapi.yml, openapi/story-protocol-ipassets-api-openapi.yml,
+  openapi/story-protocol-iplicenseterms-api-openapi.yml, openapi/story-protocol-licenses-api-openapi.yml,
+  openapi/story-protocol-licensetemplates-api-openapi.yml, openapi/story-protocol-licenseterms-api-openapi.yml,
+  openapi/story-protocol-licensetokens-api-openapi.yml, openapi/story-protocol-modules-api-openapi.yml,
+  openapi/story-protocol-permissions-api-openapi.yml, openapi/story-protocol-royalties-api-openapi.yml,
+  openapi/story-protocol-transactions-api-openapi.yml
 description: Recommended x-agentic-access execution contracts, classified heuristically from
   the OpenAPI. A governance starting point for exposing this API to AI agents — review and bind
   audience per deployment. See research/curity/agentic-governance/.
 summary:
   operations: 33
   by_action_class:
-    acting: 18
-    connected: 15
+    connected: 32
+    acting: 1
   by_consequence:
-    write: 17
-    read: 15
-    physical: 1
+    read: 32
+    write: 1
   human_in_the_loop_required: 0
 operations:
-- path: /api/v3/assets
-  method: post
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /api/v3/assets/edges
-  method: post
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /api/v3/assets/{assetId}
-  method: get
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /api/v3/assets/{assetId}/metadata
-  method: get
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
 - path: /api/v3/collections
   method: post
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /api/v3/collections/{collectionId}
-  method: get
+  operationId: postApiV3Collections
   x-agentic-access:
     action-class: connected
     consequence: read
@@ -87,38 +30,29 @@ operations:
     token:
       max-ttl: 3600
     audit: none
-- path: /api/v3/detailed-ip-license-terms
-  method: post
+- path: /api/v3/collections/{collectionId}
+  method: get
+  operationId: getApiV3CollectionsByCollectionId
   x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
+    action-class: connected
+    consequence: read
+    subject: optional
     token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
+      max-ttl: 3600
+    audit: none
 - path: /api/v3/disputes
   method: post
+  operationId: postApiV3Disputes
   x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
+    action-class: connected
+    consequence: read
+    subject: optional
     token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
+      max-ttl: 3600
+    audit: none
 - path: /api/v3/disputes/{disputeId}
   method: get
+  operationId: getApiV3DisputesByDisputeId
   x-agentic-access:
     action-class: connected
     consequence: read
@@ -128,51 +62,97 @@ operations:
     audit: none
 - path: /api/v3/ip-group-edges
   method: post
+  operationId: postApiV3IpGroupEdges
   x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
+    action-class: connected
+    consequence: read
+    subject: optional
     token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
+      max-ttl: 3600
+    audit: none
 - path: /api/v3/ip-groups
   method: post
+  operationId: postApiV3IpGroups
   x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
+    action-class: connected
+    consequence: read
+    subject: optional
     token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
+      max-ttl: 3600
+    audit: none
+- path: /api/v3/assets
+  method: post
+  operationId: postApiV3Assets
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /api/v3/assets/edges
+  method: post
+  operationId: postApiV3AssetsEdges
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /api/v3/assets/{assetId}
+  method: get
+  operationId: getApiV3AssetsByAssetId
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /api/v3/assets/{assetId}/metadata
+  method: get
+  operationId: getApiV3AssetsByAssetIdMetadata
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /api/v3/detailed-ip-license-terms
+  method: post
+  operationId: postApiV3DetailedIpLicenseTerms
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
 - path: /api/v3/licenses/ip/terms
   method: post
+  operationId: postApiV3LicensesIpTerms
   x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
+    action-class: connected
+    consequence: read
+    subject: optional
     token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
+      max-ttl: 3600
+    audit: none
 - path: /api/v3/licenses/ip/terms/{ipId}
   method: get
+  operationId: getApiV3LicensesIpTermsByIpId
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /api/v3/licenses/terms/default
+  method: get
+  operationId: getApiV3LicensesTermsDefault
   x-agentic-access:
     action-class: connected
     consequence: read
@@ -182,21 +162,37 @@ operations:
     audit: none
 - path: /api/v3/licenses/mintingfees
   method: post
+  operationId: postApiV3LicensesMintingfees
   x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
+    action-class: connected
+    consequence: read
+    subject: optional
     token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
+      max-ttl: 3600
+    audit: none
 - path: /api/v3/licenses/mintingfees/{licenseMintingFeePaidId}
   method: get
+  operationId: getApiV3LicensesMintingfeesByLicenseMintingFeePaidId
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /api/v4/licenses/mintingfees
+  method: post
+  operationId: postApiV4LicensesMintingfees
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /api/v4/licenses/mintingfees/{licenseMintingFeePaidId}
+  method: get
+  operationId: getApiV4LicensesMintingfeesByLicenseMintingFeePaidId
   x-agentic-access:
     action-class: connected
     consequence: read
@@ -206,21 +202,17 @@ operations:
     audit: none
 - path: /api/v3/licenses/templates
   method: post
+  operationId: postApiV3LicensesTemplates
   x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
+    action-class: connected
+    consequence: read
+    subject: optional
     token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
+      max-ttl: 3600
+    audit: none
 - path: /api/v3/licenses/templates/{licenseTemplateId}
   method: get
+  operationId: getApiV3LicensesTemplatesByLicenseTemplateId
   x-agentic-access:
     action-class: connected
     consequence: read
@@ -230,21 +222,7 @@ operations:
     audit: none
 - path: /api/v3/licenses/terms
   method: post
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /api/v3/licenses/terms/default
-  method: get
+  operationId: postApiV3LicensesTerms
   x-agentic-access:
     action-class: connected
     consequence: read
@@ -254,6 +232,7 @@ operations:
     audit: none
 - path: /api/v3/licenses/terms/{licenseTermId}
   method: get
+  operationId: getApiV3LicensesTermsByLicenseTermId
   x-agentic-access:
     action-class: connected
     consequence: read
@@ -263,6 +242,7 @@ operations:
     audit: none
 - path: /api/v3/licenses/tokens
   method: post
+  operationId: postApiV3LicensesTokens
   x-agentic-access:
     action-class: acting
     consequence: write
@@ -278,6 +258,7 @@ operations:
     audit: required
 - path: /api/v3/licenses/tokens/{licenseTokenId}
   method: get
+  operationId: getApiV3LicensesTokensByLicenseTokenId
   x-agentic-access:
     action-class: connected
     consequence: read
@@ -287,21 +268,17 @@ operations:
     audit: none
 - path: /api/v3/modules
   method: post
+  operationId: postApiV3Modules
   x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
+    action-class: connected
+    consequence: read
+    subject: optional
     token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
+      max-ttl: 3600
+    audit: none
 - path: /api/v3/modules/{moduleId}
   method: get
+  operationId: getApiV3ModulesByModuleId
   x-agentic-access:
     action-class: connected
     consequence: read
@@ -311,21 +288,17 @@ operations:
     audit: none
 - path: /api/v3/permissions
   method: post
+  operationId: postApiV3Permissions
   x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
+    action-class: connected
+    consequence: read
+    subject: optional
     token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
+      max-ttl: 3600
+    audit: none
 - path: /api/v3/permissions/{permissionId}
   method: get
+  operationId: getApiV3PermissionsByPermissionId
   x-agentic-access:
     action-class: connected
     consequence: read
@@ -335,23 +308,17 @@ operations:
     audit: none
 - path: /api/v3/royalties/payments
   method: post
+  operationId: postApiV3RoyaltiesPayments
   x-agentic-access:
-    action-class: acting
-    consequence: physical
-    subject: required
-    audience: null
+    action-class: connected
+    consequence: read
+    subject: optional
     token:
-      max-ttl: 300
-      exchange: true
-      purpose-required: true
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
+      max-ttl: 3600
+    audit: none
 - path: /api/v3/royalties/payments/{royaltyPayId}
   method: get
+  operationId: getApiV3RoyaltiesPaymentsByRoyaltyPayId
   x-agentic-access:
     action-class: connected
     consequence: read
@@ -361,36 +328,7 @@ operations:
     audit: none
 - path: /api/v3/transactions
   method: post
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /api/v3/transactions/latest
-  method: post
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /api/v3/transactions/{trxId}
-  method: get
+  operationId: postApiV3Transactions
   x-agentic-access:
     action-class: connected
     consequence: read
@@ -398,23 +336,19 @@ operations:
     token:
       max-ttl: 3600
     audit: none
-- path: /api/v4/licenses/mintingfees
+- path: /api/v3/transactions/latest
   method: post
+  operationId: postApiV3TransactionsLatest
   x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
+    action-class: connected
+    consequence: read
+    subject: optional
     token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /api/v4/licenses/mintingfees/{licenseMintingFeePaidId}
+      max-ttl: 3600
+    audit: none
+- path: /api/v3/transactions/{trxId}
   method: get
+  operationId: getApiV3TransactionsByTrxId
   x-agentic-access:
     action-class: connected
     consequence: read
