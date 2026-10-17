@@ -118,18 +118,6 @@ components:
         umaLink:
           type: string
       type: object
-    github_com_storyprotocol_protocol-api_api_internal_models_protocolv2.DisputeRequestBody:
-      properties:
-        options:
-          $ref: '#/components/schemas/github_com_storyprotocol_protocol-api_api_internal_models_protocolv2.DisputeQueryOptions'
-      type: object
-    big.Int:
-      type: object
-    github_com_storyprotocol_protocol-api_api_internal_models_protocolv1.DisputeResponse:
-      properties:
-        data:
-          $ref: '#/components/schemas/github_com_storyprotocol_protocol-api_api_internal_models_protocolv1.Dispute'
-      type: object
     github_com_storyprotocol_protocol-api_api_internal_models_protocolv2.DisputeQueryOptions:
       properties:
         orderBy:
@@ -161,6 +149,18 @@ components:
           items:
             $ref: '#/components/schemas/github_com_storyprotocol_protocol-api_api_internal_models_protocolv1.Dispute'
           type: array
+      type: object
+    big.Int:
+      type: object
+    github_com_storyprotocol_protocol-api_api_internal_models_protocolv1.DisputeResponse:
+      properties:
+        data:
+          $ref: '#/components/schemas/github_com_storyprotocol_protocol-api_api_internal_models_protocolv1.Dispute'
+      type: object
+    github_com_storyprotocol_protocol-api_api_internal_models_protocolv2.DisputeRequestBody:
+      properties:
+        options:
+          $ref: '#/components/schemas/github_com_storyprotocol_protocol-api_api_internal_models_protocolv2.DisputeQueryOptions'
       type: object
   securitySchemes:
     ApiKeyAuth:

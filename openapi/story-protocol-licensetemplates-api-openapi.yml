@@ -84,6 +84,11 @@ components:
         data:
           $ref: '#/components/schemas/github_com_storyprotocol_protocol-api_api_internal_models_protocolv1.LicenseTemplate'
       type: object
+    github_com_storyprotocol_protocol-api_api_internal_models_protocolv2.LicenseTemplatesRequestBody:
+      properties:
+        options:
+          $ref: '#/components/schemas/github_com_storyprotocol_protocol-api_api_internal_models_protocolv2.LicenseTemplatesQueryOptions'
+      type: object
     github_com_storyprotocol_protocol-api_api_internal_models_protocolv1.LicenseTemplatesResponse:
       properties:
         data:
@@ -94,11 +99,6 @@ components:
           type: string
         prev:
           type: string
-      type: object
-    github_com_storyprotocol_protocol-api_api_internal_models_protocolv2.LicenseTemplatesRequestBody:
-      properties:
-        options:
-          $ref: '#/components/schemas/github_com_storyprotocol_protocol-api_api_internal_models_protocolv2.LicenseTemplatesQueryOptions'
       type: object
     github_com_storyprotocol_protocol-api_api_internal_models_protocolv1.LicenseTemplate:
       properties:
